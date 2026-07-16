@@ -1,7 +1,7 @@
 # ASD State
 
-- Version: 1
-- Date: 2026-07-13
+- Version: 2
+- Date: 2026-07-17
 - Status: Active
 
 ---
@@ -190,11 +190,31 @@ Fable
 
 ## ASD、おはよう。
 
+Always begins with **Daily Initialization** before reporting project status.
+
+Persistent State (`docs/asd-state.md`) and Session Context (the current date and any project status derived from it) are treated separately: Session Context must never be copied from the previous ASD session, a previous Daily Summary, `docs/asd-state.md`, or prior chat history.
+
+**Daily Initialization**
+
+Required fields:
+
+- Current Date (derived from the current runtime/conversation context — never inherited)
+- ASD State Version
+- Last ASD State Update
+- Current Project Overview
+- Today's Priorities
+- Blockers
+- Recommended First Action
+
+After Daily Initialization completes, the normal Morning Brief continues.
+
 Returns
 
 - Current project overview
 - Today's priorities
 - Blockers
+
+Ref: asd#8
 
 ---
 
