@@ -1,6 +1,6 @@
 # ASD State
 
-- Version: 5
+- Version: 6
 - Date: 2026-07-17
 - Status: Active
 
@@ -186,14 +186,16 @@ Each plugin has exactly two docs, in `ga7ming3249/figma-os`, alongside its `READ
 - `HISTORY.md` — required fields: Status, Version, Last Reviewed, Related Issues; body: Overview, Development History, Design Decisions, Rejected Ideas, Future Notes. Not a diary or work log — kept in sync with current understanding (Git history already provides the log). Updated only on Architecture Review completion or a major design shift, not on every Issue.
 - `ROADMAP.md` — sections: Now / Next / Future / Icebox only, no history. Updated on Issue start, Priority change, or Version change, as part of Architecture Review.
 
-**Migration Status** (Epic [#13](https://github.com/ga7ming3249/asd/issues/13))
+**Migration Status** — ✅ Complete (Epic [#13](https://github.com/ga7ming3249/asd/issues/13), closed 2026-07-17)
 
-- ✅ `docs/ASD_HISTORY.md` — done, Approved, Issue [#14](https://github.com/ga7ming3249/asd/issues/14) closed
-- ✅ `docs/ROADMAP.md` — done, Approved, Issue [#15](https://github.com/ga7ming3249/asd/issues/15) closed
-- Type Adjuster `HISTORY.md`/`ROADMAP.md` (model case, Issue [#16](https://github.com/ga7ming3249/asd/issues/16)) — content Approved; now placed in `figma-os/type-adjuster/` per the repository-split rule above
-- Remaining 10 plugins (Issues [#17](https://github.com/ga7ming3249/asd/issues/17)–[#26](https://github.com/ga7ming3249/asd/issues/26)): not started, will be created directly in `figma-os/<plugin>/`
+All 13 child Issues (#14–#26) are closed and Approved:
 
-Until each plugin's docs are migrated, `docs/figma-os-state.md` remains the product-state source for it.
+- `docs/ASD_HISTORY.md`, `docs/ROADMAP.md` (this repo)
+- All 11 figma-os plugins' `HISTORY.md` + `ROADMAP.md`, in `figma-os/<plugin>/` alongside each plugin's code (Guide Stamp, Instance Checker, Margin Preflight, Pocket Preview, Type Inventory, Status Stamp, Color Inventory, Component Package, Type Adjuster, Type Polish, Design Style Sheet)
+
+`docs/figma-os-state.md` remains the live product-state source (current priorities, health, open Issues); per-plugin `HISTORY.md`/`ROADMAP.md` in figma-os now hold each plugin's design history and roadmap as the Documentation Architecture intends.
+
+**Open follow-up** (deliberately out of Epic #13's scope, per Architecture Review on Issue #25): a "Design Knowledge Source Review" — triaging uncommitted local source material discovered during migration (e.g. Type Polish's `PRINCIPLES.md`, `doc/trial-log.md`) into ASD-wide principles, plugin HISTORY, ROADMAP, Trial Log, or Claude-Code-only instructions — not yet created as an Issue.
 
 **Session Resume order**
 
