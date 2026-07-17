@@ -1,6 +1,6 @@
 # Figma OS State
 
-- Version: 4
+- Version: 5
 - Date: 2026-07-17
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
@@ -39,8 +39,8 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 | Experimental Plugins | 2 (Type Polish; Design Style Sheet v1.x frozen spike) |
 | Documentation | 🟢 Synced (Documentation Sync completed 2026-07-17) |
 | Known Critical Bugs | 0 |
-| High Priority Issues | 1 (ASD #9, Guide Stamp) |
-| Current Development Focus | Guide Stamp (Canvas Guides) |
+| High Priority Issues | 0 |
+| Current Development Focus | Component Package production trial & polish |
 | State Confidence | Verified (2026-07-17) — items not verifiable are marked Unknown |
 
 ---
@@ -49,23 +49,29 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 
 Current recommended implementation order. This is a recommendation, not a commitment — it may change whenever Product State is updated.
 
-**P1 — Guide Stamp: Canvas Guides (ASD #9)**
-
-Reason: Component Package v1 Core is complete and frozen. Additive implementation with low architectural risk, already Approved for Implementation, highest immediate user value.
-
-Prerequisite: None
-
-**P2 — Component Package: production trial & polish**
+**P1 — Component Package: production trial & polish**
 
 Reason: Recently merged (PR #1, 2026-07-16). Mature it through daily production use and collect small improvements as new Issues before starting the next Foundation work.
 
 Prerequisite: None (the trial itself is the work)
 
+**P2 — Color Inventory: Generate Inventory Page**
+
+Reason: v1 core (Generate / Raw Colors Workbench / Promote) is in production trial; Inventory Page generation is the next increment toward Production promotion.
+
+Prerequisite: None
+
 **P3 — Type Inventory: multiline support (ASD #3)**
 
 Reason: Backlog item per ASD priority assessment. Clear workaround exists; lower user impact.
 
-Prerequisite: Guide Stamp Canvas Guides (ASD #9) completed
+Prerequisite: None (Guide Stamp Canvas Guides, ASD #9, completed 2026-07-17)
+
+**P4 — Composer / Design Style Sheet v2**
+
+Reason: Foundation plugins (Color Inventory, Component Package) need to mature through production use first; see Decisions Pending.
+
+Prerequisite: Component Package and Color Inventory production trials substantially complete
 
 ---
 
@@ -90,13 +96,13 @@ Architecture
 Stable
 
 Current Focus
-Guide Stamp
+Component Package production trial & polish
 
 Highest Priority
-Canvas Guides (ASD #9)
+Color Inventory — Generate Inventory Page
 
 Next Milestone
-Guide Stamp Canvas Guides complete
+Component Package and Color Inventory ready for Production promotion
 
 Blockers
 None
@@ -147,7 +153,7 @@ This table reflects the verified repository and documentation state as of 2026-0
 
 | Plugin | Dir | Version | Phase | Status | Notes |
 |---|---|---|---|---|---|
-| Guide Stamp | `guide-stamp/` | v2.x | Maintenance | Production | Open ASD Issue #9 (Canvas Guides, P1) |
+| Guide Stamp | `guide-stamp/` | v2.x | Maintenance | Production | Canvas Guides added (ASD #9, closed 2026-07-17) |
 | Instance Checker | `instance-checker/` | v1.x | Maintenance | Production | |
 | Margin Preflight | `margin-preflight/` | v1.x | Feature Enhancement | Production | Known issue: some Auto Layout frames undetected (collecting cases) |
 | Pocket Preview | `pocket-preview/` | v1.0 | Maintenance | Production | Figma / device / Claude Code (MCP) utility panel |
@@ -164,6 +170,17 @@ Out of scope: **Reference Assistant** lives in its own repository (not part of `
 ---
 
 # Recent Changes
+
+## Guide Stamp: Canvas Guides — completed (ASD Issue #9, closed 2026-07-17)
+
+Implemented in figma-os commits `53c515f` (Canvas Guide feature) and `46e0972` (Architecture Review fix), pushed to `main`.
+
+- Native Canvas Guide generation using `FrameNode.guides` — additive to the existing Frame Overlay feature (Center Guide / Rule of Thirds / Delete Selected / Delete All), which is unchanged
+- Guides are generated in the selected Frame's local coordinate system (origin at the frame's top-left); page-level guides (`figma.currentPage.guides`) are never touched
+- Strict validation: exactly one FrameNode must be selected; every margin must satisfy `0 <= margin <= frame.width`, or the whole request is rejected
+- Offsets de-duplicated and sorted ascending before assignment
+
+Architecture Review (ChatGPT): ✅ Approved. One specification mismatch was found and corrected before approval — an unspecified `round2()` rounding step was removed so guide offsets match the Issue #9 spec (`margin` / `frame.width/2` / `frame.width-margin`) exactly, unrounded.
 
 ## Component Package v1 Core — completed (ASD Issue #2, closed 2026-07-17)
 
@@ -189,8 +206,9 @@ Issue #2 is frozen as the v1 Core baseline. All future enhancements go through n
 
 | Issue | Plugin | Priority | Summary |
 |---|---|---|---|
-| #9 | Guide Stamp | P1 | Add native Figma Canvas Guides (center + mirrored margins) on selected parent frame |
 | #3 | Type Inventory | P3 | Preserve multiline text (backlog; after higher-priority work) |
+
+Closed since last update: #9 (Guide Stamp — Canvas Guides).
 
 (ASD-framework and Reference Assistant issues — #4, #6, #8 — do not touch figma-os code.)
 
