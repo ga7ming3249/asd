@@ -1,6 +1,6 @@
 # ASD State
 
-- Version: 7
+- Version: 8
 - Date: 2026-07-17
 - Status: Active
 
@@ -186,7 +186,19 @@ Each plugin has exactly two docs, in `ga7ming3249/figma-os`, alongside its `READ
 - `HISTORY.md` — required fields: Status, Version, Last Reviewed, Related Issues; body: Overview, Development History, Design Decisions, Rejected Ideas, Future Notes. Not a diary or work log — kept in sync with current understanding (Git history already provides the log). Updated only on Architecture Review completion or a major design shift, not on every Issue.
 - `ROADMAP.md` — sections: Now / Next / Future / Icebox only, no history. Updated on Issue start, Priority change, or Version change, as part of Architecture Review.
 
-**Living documents, not one-time migration output** (added 2026-07-17, per Issue #25 follow-up): Issue text and Git history alone often can't fully reconstruct pre-Issue design history — design rationale, rejected approaches, and field experience frequently only exist in past chat context. Type Adjuster's and Type Polish's first-pass `HISTORY.md`/`ROADMAP.md` were both superseded once that chat context was reviewed and supplied as a primary source. The same gap likely exists for other plugins. When earlier primary material (past chat, Product Review notes, pre-Issue design history) surfaces, `HISTORY.md`/`ROADMAP.md` should be updated to incorporate it — Issue/Git history is not treated as the sole source of truth for pre-Issue history.
+**Documentation Migration = Knowledge Reconstruction** (revised 2026-07-17, per Issue #25 follow-up): Documentation Migration is not a transcription task that ports Issue text and Git history into files. Its purpose is **Product Knowledge Reconstruction** — recovering and preserving product knowledge regardless of where it originated. Type Adjuster's and Type Polish's first-pass `HISTORY.md`/`ROADMAP.md` were both superseded once pre-Issue chat context was reviewed and found to hold design rationale, rejected approaches, boundary decisions, and field experience that Issue/Git history alone could not reconstruct. The same gap likely exists for other plugins.
+
+When authoring or updating `HISTORY.md`/`ROADMAP.md`, treat the following as primary sources, in priority order (high to low):
+
+1. The product's current design principles (e.g. `PRINCIPLES.md`)
+2. Product Review / Architecture Review records
+3. Pre-Issue chat (design rationale, judgment reasoning, trial and error)
+4. GitHub Issues
+5. Git history
+
+Design rationale, judgment reasoning, boundary decisions, rejected ideas, field-derived insight, and the product's self-definition over time are all in scope for inclusion whenever they have documentation value — even when they exist nowhere in Issues or Git. GitHub remains where documentation outcomes are written and read from, but it is not treated as the sole source of truth for what that documentation should contain; product knowledge as a whole is.
+
+**Living documents, not one-time migration output**: `HISTORY.md`/`ROADMAP.md` are never a fixed, completed artifact once a Migration Issue closes. Whenever earlier primary material (past chat, Product Review notes, pre-Issue design history) surfaces, they should be updated to incorporate it.
 
 **Migration Status** — ✅ Complete (Epic [#13](https://github.com/ga7ming3249/asd/issues/13), closed 2026-07-17)
 
