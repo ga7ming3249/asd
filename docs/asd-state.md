@@ -1,6 +1,6 @@
 # ASD State
 
-- Version: 4
+- Version: 5
 - Date: 2026-07-17
 - Status: Active
 
@@ -162,32 +162,43 @@ Adopted 2026-07-17 (Issue #12). Documentation is managed with the same lifecycle
 3. ASD-wide state and per-Plugin state are kept separate.
 4. Documentation work is tracked through Issues — nothing is deferred to "later" informally.
 5. GitHub is the single source of truth. Chat is for design/discussion/review; final outcomes are always written back to GitHub.
+6. **Plugin Documentation is managed in the same repository as its code** (`ga7ming3249/figma-os`), colocated with each plugin's `README.md` — not in the `asd` repository. This was corrected during Architecture Review on Issue #16 (2026-07-17): keeping code, README, HISTORY, and ROADMAP in one repository per plugin prevents sync drift and keeps each plugin's knowledge self-contained.
 
-**Structure** (target — see Migration Status below for what exists today)
+**Repository split**
+
+- `ga7ming3249/asd` holds: Governance, Architecture (Specifications/ADRs/Proposals), State (`asd-state.md`, `figma-os-state.md`), ASD-wide History (`docs/ASD_HISTORY.md`), ASD-wide Roadmap (`docs/ROADMAP.md`).
+- `ga7ming3249/figma-os` holds: plugin code, and now each plugin's `README.md` + `HISTORY.md` + `ROADMAP.md`.
+
+**Structure** (see Migration Status below for what exists today)
 
 |  | Whole (ASD-wide) | Individual (per-Plugin) |
 |---|---|---|
-| Past | `docs/ASD_HISTORY.md` | `plugins/<name>/HISTORY.md` |
-| Present | `docs/asd-state.md` | *(covered by the Plugin's own docs)* |
-| Future | `docs/ROADMAP.md` | `plugins/<name>/ROADMAP.md` |
+| Past | `docs/ASD_HISTORY.md` (asd repo) | `figma-os/<plugin>/HISTORY.md` |
+| Present | `docs/asd-state.md` (asd repo) | *(covered by the Plugin's own docs)* |
+| Future | `docs/ROADMAP.md` (asd repo) | `figma-os/<plugin>/ROADMAP.md` |
 
 `asd-state.md` holds only current-state facts (active Issues, repo structure, operating rules, Architect rules, which docs to consult) — never development history, long-range speculation, or old history; those live in `ASD_HISTORY.md` / `ROADMAP.md` / Plugin docs instead.
 
-**Plugin Documentation Standard** (target)
+**Plugin Documentation Standard**
 
-Each plugin will have exactly two docs:
+Each plugin has exactly two docs, in `ga7ming3249/figma-os`, alongside its `README.md`:
 
 - `HISTORY.md` — required fields: Status, Version, Last Reviewed, Related Issues; body: Overview, Development History, Design Decisions, Rejected Ideas, Future Notes. Not a diary or work log — kept in sync with current understanding (Git history already provides the log). Updated only on Architecture Review completion or a major design shift, not on every Issue.
 - `ROADMAP.md` — sections: Now / Next / Future / Icebox only, no history. Updated on Issue start, Priority change, or Version change, as part of Architecture Review.
 
-**Migration Status**
+**Migration Status** (Epic [#13](https://github.com/ga7ming3249/asd/issues/13))
 
-`docs/ASD_HISTORY.md`, `docs/ROADMAP.md` (ASD-wide), and every `plugins/<name>/HISTORY.md` + `ROADMAP.md` **do not exist yet**. Issue #12 registered and approved the architecture only. Per-Issue #12 follow-up, the next steps (not yet started) are: create a "Documentation Migration" Epic Issue, then 11 child Issues (one per plugin) for History/Roadmap setup, then `docs/ASD_HISTORY.md`, then Type Adjuster's docs first, then the remaining plugins in sequence. Until migration completes, product state continues to live in `docs/figma-os-state.md`.
+- ✅ `docs/ASD_HISTORY.md` — done, Approved, Issue [#14](https://github.com/ga7ming3249/asd/issues/14) closed
+- ✅ `docs/ROADMAP.md` — done, Approved, Issue [#15](https://github.com/ga7ming3249/asd/issues/15) closed
+- Type Adjuster `HISTORY.md`/`ROADMAP.md` (model case, Issue [#16](https://github.com/ga7ming3249/asd/issues/16)) — content Approved; now placed in `figma-os/type-adjuster/` per the repository-split rule above
+- Remaining 10 plugins (Issues [#17](https://github.com/ga7ming3249/asd/issues/17)–[#26](https://github.com/ga7ming3249/asd/issues/26)): not started, will be created directly in `figma-os/<plugin>/`
 
-**Session Resume order** (target, once migration completes)
+Until each plugin's docs are migrated, `docs/figma-os-state.md` remains the product-state source for it.
 
-- Claude Code: `CLAUDE.md` → `docs/asd-state.md` → target Plugin's `HISTORY.md` + `ROADMAP.md`
-- ChatGPT (new chat): `docs/asd-state.md` → target Plugin's `HISTORY.md` → target Plugin's `ROADMAP.md`
+**Session Resume order**
+
+- Claude Code: `CLAUDE.md` (figma-os repo) → `docs/asd-state.md` (asd repo) → target Plugin's `HISTORY.md` + `ROADMAP.md` (figma-os repo, alongside its code)
+- ChatGPT (new chat): `docs/asd-state.md` (asd repo) → target Plugin's `HISTORY.md` → target Plugin's `ROADMAP.md` (figma-os repo — read via GitHub Connector or provided by Claude Code, since figma-os is private)
 
 Until the Migration Epic and per-plugin docs exist, continue using `docs/figma-os-state.md` as the product-state source in this order.
 
