@@ -1,6 +1,6 @@
 # Figma OS State
 
-- Version: 1
+- Version: 2
 - Date: 2026-07-17
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
@@ -21,6 +21,8 @@ Rules (mirroring `asd-state.md`):
 - Claude Code updates this document after significant merges or status changes, with Human Authorization.
 - This document reports verified facts only. Anything unverified is marked Unknown — Unknown is not a risk.
 
+**Verification channel**: The ChatGPT GitHub Connector is a secondary, read-only verification channel. It is used only to audit that Product State matches the repository when additional confidence is required — never for determining priorities, architecture decisions, or Dashboard generation. Primary sources are always this document and `asd-state.md`. Connector read validation: pending (per GitHub Connector Read Validation plan).
+
 ---
 
 # Product Health
@@ -30,11 +32,10 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 | Field | State |
 |---|---|
 | Architecture | 🟢 Stable |
-| Production Plugins | 6 (+2 in production trial: Color Inventory, Component Package) |
-| Beta Plugins | 1 (Type Adjuster) |
-| Experimental Plugins | 1 (Type Polish) |
-| Frozen | 1 (Design Style Sheet v1.x, spike) |
-| Documentation | 🟡 Partially Synced (4 known gaps — see Documentation Sync) |
+| Production Plugins | 6 |
+| Beta Plugins | 3 (Type Adjuster; Color Inventory and Component Package in production trial) |
+| Experimental Plugins | 2 (Type Polish; Design Style Sheet v1.x frozen spike) |
+| Documentation | 🟢 Synced (Documentation Sync completed 2026-07-17) |
 | Known Critical Bugs | 0 |
 | High Priority Issues | 1 (ASD #9, Guide Stamp) |
 | Current Development Focus | Guide Stamp (Canvas Guides) |
@@ -150,11 +151,11 @@ This table reflects the actual repository state, which is ahead of `PLUGINS.md` 
 | Pocket Preview | `pocket-preview/` | v1.0 | Maintenance | Production | Figma / device / Claude Code (MCP) utility panel |
 | Type Inventory | `type-inventory/` | v1.4 | Feature Enhancement | Production | Open ASD Issue #3 (multiline support, P3, backlog) |
 | Status Stamp | `status-stamp/` | v0.3 | Design Sprint | Production | ASD Issue #1 (stamp-selection update) closed |
-| Color Inventory | `color-inventory/` | v1 core | — | In production trial | Spec v0.3. Not yet listed in PLUGINS.md/README (doc gap) |
-| Component Package | `component-package/` | v1 Core | — | Implemented, merged | PR #1 merged 2026-07-16. PLUGINS.md still says "Planned" (doc gap) |
+| Color Inventory | `color-inventory/` | v1.0 | Design Sprint | Beta | Spec v0.3. v1 core (Generate / Raw Colors Workbench / Promote) in production trial. Promotion criteria in ROADMAP.md |
+| Component Package | `component-package/` | v1.0 | Design Sprint | Beta | v1 Core merged (PR #1, 2026-07-16). Spec of record: ASD Issue #2 + supplemental comments. Promotion criteria in ROADMAP.md |
 | Type Adjuster | `type-adjuster/` | v0.4 | Utility Polish | Beta | Promotion criteria defined in ROADMAP.md |
 | Type Polish | `type-polish/` | v0.6 | Research | Experimental | Knowledge-design phase; feature development paused |
-| Design Style Sheet | (directory not present) | v1.x | Frozen (spike) | Frozen | Directory absent from repo; ROADMAP spec links broken (see Documentation Sync) |
+| Design Style Sheet | `design-style-sheet/` | v0.1.1 | Concept | Experimental (frozen spike) | v1.x preserved in repo as a frozen historical artifact (2026-07-17). No feature development; preservation fixes only. v2 redesign via new ASD Issue |
 
 Out of scope: **Reference Assistant** lives in its own repository (not part of `figma-os`). Its operational state is tracked through ASD Issues #4–#6.
 
@@ -195,14 +196,9 @@ Issue #2 is frozen as the v1 Core baseline. All future enhancements go through n
 
 # Documentation Sync
 
-Gaps between figma-os internal docs and actual state, found 2026-07-17:
+No known gaps.
 
-1. `PLUGINS.md` lists Component Package as "Planned / no directory" — actual: implemented and merged (PR #1).
-2. `README.md` and `PLUGINS.md` plugin tables omit Color Inventory — actual: `color-inventory/` exists with v1 core complete (per ROADMAP.md).
-3. `ROADMAP.md` links to `design-style-sheet/doc/specification-v0.2.md`, but no `design-style-sheet/` directory exists in the repo. Location of the frozen DSS v1.x spike: Unknown.
-4. Component Package's design pivot (disposable report → persistent Non-Destructive catalog) is recorded in ASD Issue #2 but not yet reflected in figma-os ROADMAP/PLUGINS.
-
-Recommended follow-up: a small docs-sync commit in figma-os (tracked as its own Issue if desired).
+(Last sync: 2026-07-17, figma-os commit `ab69c8b` — README/PLUGINS/ROADMAP/CLAUDE aligned with repository state; DSS v1.x spike committed as a frozen artifact, resolving the previously broken ROADMAP links. New inconsistencies discovered later are recorded here as new items, not as historical notes.)
 
 ---
 
