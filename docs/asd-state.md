@@ -1,6 +1,6 @@
 # ASD State
 
-- Version: 2
+- Version: 3
 - Date: 2026-07-17
 - Status: Active
 
@@ -223,6 +223,21 @@ Ref: asd#8
 Returns
 
 Project Dashboard.
+
+Standard Sections
+
+1. Governance
+2. Current Status
+3. Current Risks
+4. Recommended Actions
+5. Overall Assessment
+
+Notes
+
+- Unknown and Not Synced indicate information has not yet been verified.
+- Unknown is not treated as a risk.
+- Current Risks contains only actual architectural or governance risks.
+- Status and Assessment must remain separate.
 
 ---
 
