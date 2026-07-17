@@ -1,6 +1,6 @@
 # Figma OS State
 
-- Version: 5
+- Version: 6
 - Date: 2026-07-17
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
@@ -161,7 +161,7 @@ This table reflects the verified repository and documentation state as of 2026-0
 | Status Stamp | `status-stamp/` | v0.3 | Design Sprint | Production | ASD Issue #1 (stamp-selection update) closed |
 | Color Inventory | `color-inventory/` | v1.0 | Design Sprint | Beta | Spec v0.3. v1 core (Generate / Raw Colors Workbench / Promote) in production trial. Promotion criteria in ROADMAP.md |
 | Component Package | `component-package/` | v1.0 | Design Sprint | Beta | v1 Core merged (PR #1, 2026-07-16). Spec of record: ASD Issue #2 + supplemental comments. Promotion criteria in ROADMAP.md |
-| Type Adjuster | `type-adjuster/` | v0.4 | Utility Polish | Beta | Promotion criteria defined in ROADMAP.md |
+| Type Adjuster | `type-adjuster/` | v0.5 | Feature Enhancement | Beta | Virtual Body punctuation adjustment (Gap) added (ASD #11, closed 2026-07-17). Promotion criteria defined in ROADMAP.md |
 | Type Polish | `type-polish/` | v0.6 | Research | Experimental | Knowledge-design phase; feature development paused |
 | Design Style Sheet | `design-style-sheet/` | v0.1.1 | Concept | Experimental (frozen spike) | v1.x preserved in repo as a frozen historical artifact (2026-07-17). No feature development; preservation fixes only. v2 redesign via new ASD Issue |
 
@@ -170,6 +170,19 @@ Out of scope: **Reference Assistant** lives in its own repository (not part of `
 ---
 
 # Recent Changes
+
+## Type Adjuster: Virtual Body punctuation adjustment — completed (ASD Issue #11, closed 2026-07-17)
+
+Implemented in figma-os commits `db6d9fb` (feature) and `26cc6a5` (documentation), pushed to `main`.
+
+- Gap: punctuation-glyph spacing adjustment via the Virtual Body approach — a split punctuation glyph is converted to a fixed-width TextNode (its own declared box), not an inserted spacer node. The earlier Gap Spacer approach was tried and rejected during development (see the plugin's `experiments/spike-*` history)
+- LEFT / CENTER / RIGHT alignment via `textAlignHorizontal`, persisted in pluginData
+- Gap editing only mutates existing TextNodes (resize + pluginData) — no node creation, so no proliferation risk; handlers are synchronous, so each edit is one Undo step
+- Existing Baseline / Split / Tracking code paths are unchanged; Reset/Scale/Slider gained a `role==='virtualBody'` branch each
+
+A Split-frame-naming change (`outerFrame.name`) found mixed into the same local working tree during ASD #10's audit was out of scope for this Issue and was reverted before commit.
+
+Version: v0.4 → v0.5. Status: **Beta maintained** — on-device verification (Auto Layout fixed-width rendering, LEFT/CENTER/RIGHT, Undo, Reset round-trip, regression check against Baseline/Split/Tracking) was completed by the Vision Owner directly (outside this environment) with no significant issues found; Architecture Review (ChatGPT): ✅ Approved. Production promotion was explicitly out of scope for this Issue.
 
 ## Guide Stamp: Canvas Guides — completed (ASD Issue #9, closed 2026-07-17)
 
@@ -208,7 +221,7 @@ Issue #2 is frozen as the v1 Core baseline. All future enhancements go through n
 |---|---|---|---|
 | #3 | Type Inventory | P3 | Preserve multiline text (backlog; after higher-priority work) |
 
-Closed since last update: #9 (Guide Stamp — Canvas Guides).
+Closed since last update: #9 (Guide Stamp — Canvas Guides), #11 (Type Adjuster — Virtual Body punctuation adjustment).
 
 (ASD-framework and Reference Assistant issues — #4, #6, #8 — do not touch figma-os code.)
 

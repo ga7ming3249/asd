@@ -1,6 +1,6 @@
 # ASD State
 
-- Version: 3
+- Version: 4
 - Date: 2026-07-17
 - Status: Active
 
@@ -140,6 +140,56 @@ ADR-001
 Publisher Role Assignment
 
 Status: Accepted
+
+**Current Architecture Proposal**
+
+Documentation Architecture v1.0
+
+Issue: [ga7ming3249/asd#12](https://github.com/ga7ming3249/asd/issues/12)
+
+Status: Approved — adopted as ASD's official documentation policy (2026-07-17)
+
+---
+
+# Documentation Architecture
+
+Adopted 2026-07-17 (Issue #12). Documentation is managed with the same lifecycle as development: Architecture → Migration → Implementation → Review → Close. "Write it later" is not permitted — documentation work goes through Issues like any other work.
+
+**Principles**
+
+1. Documentation follows the same lifecycle as development (Architecture / Migration / Implementation / Review / Close).
+2. Past, Present, and Future are kept separate: Past → HISTORY, Present → asd-state, Future → ROADMAP.
+3. ASD-wide state and per-Plugin state are kept separate.
+4. Documentation work is tracked through Issues — nothing is deferred to "later" informally.
+5. GitHub is the single source of truth. Chat is for design/discussion/review; final outcomes are always written back to GitHub.
+
+**Structure** (target — see Migration Status below for what exists today)
+
+|  | Whole (ASD-wide) | Individual (per-Plugin) |
+|---|---|---|
+| Past | `docs/ASD_HISTORY.md` | `plugins/<name>/HISTORY.md` |
+| Present | `docs/asd-state.md` | *(covered by the Plugin's own docs)* |
+| Future | `docs/ROADMAP.md` | `plugins/<name>/ROADMAP.md` |
+
+`asd-state.md` holds only current-state facts (active Issues, repo structure, operating rules, Architect rules, which docs to consult) — never development history, long-range speculation, or old history; those live in `ASD_HISTORY.md` / `ROADMAP.md` / Plugin docs instead.
+
+**Plugin Documentation Standard** (target)
+
+Each plugin will have exactly two docs:
+
+- `HISTORY.md` — required fields: Status, Version, Last Reviewed, Related Issues; body: Overview, Development History, Design Decisions, Rejected Ideas, Future Notes. Not a diary or work log — kept in sync with current understanding (Git history already provides the log). Updated only on Architecture Review completion or a major design shift, not on every Issue.
+- `ROADMAP.md` — sections: Now / Next / Future / Icebox only, no history. Updated on Issue start, Priority change, or Version change, as part of Architecture Review.
+
+**Migration Status**
+
+`docs/ASD_HISTORY.md`, `docs/ROADMAP.md` (ASD-wide), and every `plugins/<name>/HISTORY.md` + `ROADMAP.md` **do not exist yet**. Issue #12 registered and approved the architecture only. Per-Issue #12 follow-up, the next steps (not yet started) are: create a "Documentation Migration" Epic Issue, then 11 child Issues (one per plugin) for History/Roadmap setup, then `docs/ASD_HISTORY.md`, then Type Adjuster's docs first, then the remaining plugins in sequence. Until migration completes, product state continues to live in `docs/figma-os-state.md`.
+
+**Session Resume order** (target, once migration completes)
+
+- Claude Code: `CLAUDE.md` → `docs/asd-state.md` → target Plugin's `HISTORY.md` + `ROADMAP.md`
+- ChatGPT (new chat): `docs/asd-state.md` → target Plugin's `HISTORY.md` → target Plugin's `ROADMAP.md`
+
+Until the Migration Epic and per-plugin docs exist, continue using `docs/figma-os-state.md` as the product-state source in this order.
 
 ---
 
@@ -293,6 +343,7 @@ ASD knowledge is preserved through:
 - ADRs
 - GitHub
 - `docs/asd-state.md`
+- `docs/ASD_HISTORY.md` / `docs/ROADMAP.md` / per-plugin `HISTORY.md` + `ROADMAP.md` (target structure per Documentation Architecture v1.0 — pending Migration, see above)
 
 ---
 
