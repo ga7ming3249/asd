@@ -1,6 +1,6 @@
 # Figma OS State
 
-- Version: 2
+- Version: 3
 - Date: 2026-07-17
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
@@ -21,7 +21,9 @@ Rules (mirroring `asd-state.md`):
 - Claude Code updates this document after significant merges or status changes, with Human Authorization.
 - This document reports verified facts only. Anything unverified is marked Unknown — Unknown is not a risk.
 
-**Verification channel**: The ChatGPT GitHub Connector is a secondary, read-only verification channel. It is used only to audit that Product State matches the repository when additional confidence is required — never for determining priorities, architecture decisions, or Dashboard generation. Primary sources are always this document and `asd-state.md`. Connector read validation: pending (per GitHub Connector Read Validation plan).
+**Verification channel**: The ChatGPT GitHub Connector is a secondary, read-only verification channel. It is used only to audit that Product State matches the repository when additional confidence is required — never for determining priorities, architecture decisions, or Dashboard generation. Primary sources are always this document and `asd-state.md`.
+
+Connector Read Validation: **Partially Verified (2026-07-17)** — ASD repository readable (metadata, commits, Issues, PR search confirmed); figma-os repository access pending. Validation is not fully complete until the Connector installation grants access to `figma-os` (commit `ab69c8b`, documentation sync, `design-style-sheet/`, and PR #1 remain independently unverified).
 
 ---
 
