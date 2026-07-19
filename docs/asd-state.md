@@ -1,6 +1,6 @@
 # ASD State
 
-- Version: 13
+- Version: 14
 - Date: 2026-07-19
 - Status: Active
 
@@ -155,8 +155,20 @@ Status: Approved — adopted as ASD's official documentation policy (2026-07-17)
 
 ## Current Project Overview
 
-- Type Adjuster vertical writing layout foundation is complete ([asd#27](https://github.com/ga7ming3249/asd/issues/27), Architect Final Review: Accept, rev8) — milestone closed.
-- Two Knowledge Review Issues are open to build typography knowledge for Type Adjuster / Type Polish, ahead of future implementation work: Japanese Vertical Typography & Latin Kerning ([asd#28](https://github.com/ga7ming3249/asd/issues/28)), OpenType Typography Features ([asd#29](https://github.com/ga7ming3249/asd/issues/29)).
+- Type Adjuster Vertical Layout Foundation Completed ([asd#27](https://github.com/ga7ming3249/asd/issues/27), Architect Final Review: Accept, rev8).
+- Knowledge Review Phase Started.
+- Typography Knowledge Base Expansion — Japanese Vertical Typography & Latin Kerning ([asd#28](https://github.com/ga7ming3249/asd/issues/28)), OpenType Typography Features ([asd#29](https://github.com/ga7ming3249/asd/issues/29)).
+- Type Polish / Type Adjuster 共通知識基盤の整備開始。
+
+## Project Phase
+
+Previous: Implementation Phase
+
+↓
+
+Current: **Knowledge Review Phase**
+
+Type Adjuster の基盤実装（縦組みレイアウト基盤、asd#27）完了後、Typography Knowledge Base 構築（asd#28, asd#29）へ移行。
 
 ## Active Issues
 
@@ -164,6 +176,39 @@ Status: Approved — adopted as ASD's official documentation policy (2026-07-17)
 |---|---|---|---|---|
 | [#28](https://github.com/ga7ming3249/asd/issues/28) | Type Adjuster / Type Polish | - | Open | Knowledge Review: Japanese Vertical Typography & Latin Kerning |
 | [#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | Open | OpenType Typography Features Knowledge Review |
+
+## Architecture Notes
+
+- Vertical Layout Foundation established by Issue #27.
+- Wrapper / Outer responsibility separation established.
+- `relayoutVerticalWrapper()` を単一レイアウト入口とする設計原則確立。
+- 今後の縦中横・OpenType対応はこの基盤を拡張する方針。
+
+## Knowledge Roadmap
+
+Conceptual map of the Typography Knowledge Base — not an implementation plan.
+
+```
+Typography Knowledge Base
+
+├── Issue #28
+│   Typography Theory
+│   ├── Japanese Typography
+│   ├── Vertical Writing
+│   ├── Latin Kerning
+│   └── CSS Writing Modes
+│
+└── Issue #29
+    OpenType Capabilities
+    ├── GSUB
+    ├── GPOS
+    ├── kern
+    ├── palt
+    ├── pwid
+    ├── vert
+    ├── liga
+    └── OpenType Feature Research
+```
 
 ---
 
