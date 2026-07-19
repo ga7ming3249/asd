@@ -1,6 +1,6 @@
 # ASD State
 
-- Version: 14
+- Version: 15
 - Date: 2026-07-19
 - Status: Active
 
@@ -111,15 +111,33 @@ Codex is not used for GitHub Issue publication.
 
 ---
 
-## Product Reviewer
+## Independent Reviewer
 
-Fable
+- Current primary model: GPT-5.6 Sol
+- Environment: Claude Code
+- Role: implementation supervision and independent technical review
 
 Responsibilities
 
-- Product Review
-- UX Review
-- Strategic Review
+- Third-party review of specifications and design
+- Technical validity check of the implementation approach
+- Flagging oversights, contradictions, and future risks
+- Proposing alternatives
+- Additional verification prior to Accept Review
+
+The Independent Reviewer is not the final decision-maker. Product decisions remain with the Owner; architecture and ASD governance decisions go through Architect Review.
+
+**Reviewer model is not fixed.** The Owner selects the reviewer model based on availability, cost, fit for the task, context capacity, technical review capability, and independence from the Architect and implementation roles. Fable5 remains the preferred reviewer when available; GPT-5.6 Sol (run in Claude Code) is the current primary reviewer while Fable5's usage conditions make daily use impractical. This is an availability-based reviewer selection, not a permanent replacement — Fable5 may return, exclusively or alongside GPT-5.6 Sol, once its access conditions improve. See `owner-rules.md` for the full policy.
+
+---
+
+## Operational Note — Reviewer Availability (2026-07-20〜)
+
+- 2026年7月20日以降、Fable5は利用条件上、日常的な監修への使用が困難になる見込み。
+- 当面はGPT-5.6 SolをClaude Code上で独立レビュー担当（Independent Reviewer）として使用する。
+- これは恒久的なFable5の廃止ではない。Temporary operational replacement であり、Fable5をGPT-5.6 Solへ完全移管したものではない。
+- 将来Fable5が再び実用的な条件で利用可能になった場合、Owner判断で優先的または併用で復帰できる。
+- レビューワーの切り替えはASDの基本責務やAccept権限を変更しない。Owner・Claude Code・Architectの役割分担はそのまま維持される。
 
 ---
 
@@ -314,13 +332,32 @@ GitHub
     ↓
 Claude Code
 (Implementation)
-    ↓
-ChatGPT
-(Architecture Review)
-    ↓
-Fable
-(Product Review)
 ```
+
+---
+
+# Review Workflow
+
+```
+Owner
+  ↓
+Specification / Scope
+  ↓
+Claude Code Implementation
+  ↓
+Independent Technical Review
+  - Currently GPT-5.6 Sol
+  - Fable5 may be used when available
+  ↓
+Architect Review
+  ↓
+Owner Accept / Close
+```
+
+Independent Technical Review and Architect Review are distinct responsibilities:
+
+- **Independent Technical Review** — third-party verification of the implementation and specification.
+- **Architect Review** — consistency with ASD as a whole, separation of responsibilities, long-term architecture, and the Accept / Request changes decision.
 
 ---
 
