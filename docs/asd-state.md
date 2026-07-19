@@ -1,6 +1,6 @@
 # ASD State
 
-- Version: 12
+- Version: 13
 - Date: 2026-07-19
 - Status: Active
 
@@ -155,11 +155,15 @@ Status: Approved — adopted as ASD's official documentation policy (2026-07-17)
 
 ## Current Project Overview
 
-- Type Adjuster vertical writing support is implemented, accepted, and closed ([asd#27](https://github.com/ga7ming3249/asd/issues/27), Architect Final Review: Accept).
+- Type Adjuster vertical writing layout foundation is complete ([asd#27](https://github.com/ga7ming3249/asd/issues/27), Architect Final Review: Accept, rev8) — milestone closed.
+- Two Knowledge Review Issues are open to build typography knowledge for Type Adjuster / Type Polish, ahead of future implementation work: Japanese Vertical Typography & Latin Kerning ([asd#28](https://github.com/ga7ming3249/asd/issues/28)), OpenType Typography Features ([asd#29](https://github.com/ga7ming3249/asd/issues/29)).
 
 ## Active Issues
 
-No active Issues.
+| Issue | Plugin | Priority | Status | Summary |
+|---|---|---|---|---|
+| [#28](https://github.com/ga7ming3249/asd/issues/28) | Type Adjuster / Type Polish | - | Open | Knowledge Review: Japanese Vertical Typography & Latin Kerning |
+| [#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | Open | OpenType Typography Features Knowledge Review |
 
 ---
 
