@@ -1,6 +1,6 @@
 # ASD State
 
-- Version: 10
+- Version: 11
 - Date: 2026-07-19
 - Status: Active
 
@@ -155,15 +155,12 @@ Status: Approved — adopted as ASD's official documentation policy (2026-07-17)
 
 ## Current Project Overview
 
-- Type Adjuster vertical writing support is under architectural design ([asd#27](https://github.com/ga7ming3249/asd/issues/27)).
-- Product / UX / Architecture review completed.
-- Implementation will begin after Trial Exit, starting with Phase 0 (technical validation).
+- Type Adjuster vertical writing support is complete and closed ([asd#27](https://github.com/ga7ming3249/asd/issues/27), Architect Final Review: Accept).
 
 ## Active Issues
 
 | Issue | Plugin | Priority | Status | Summary |
 |---|---|---|---|---|
-| [#27](https://github.com/ga7ming3249/asd/issues/27) | Type Adjuster | P2 | Open | Vertical Writing Architecture Review |
 
 ---
 
