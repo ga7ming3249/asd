@@ -1,10 +1,10 @@
 # Figma OS State
 
-- Version: 6
-- Date: 2026-07-17
+- Version: 7
+- Date: 2026-07-21
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
-- Verified against: `ga7ming3249/figma-os` main branch and ASD Issues, as of 2026-07-17
+- Verified against: `ga7ming3249/figma-os` main branch (`cf52eda`) and ASD Issues, as of 2026-07-21
 
 ---
 
@@ -40,8 +40,9 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 | Documentation | 🟢 Synced (Documentation Sync completed 2026-07-17) |
 | Known Critical Bugs | 0 |
 | High Priority Issues | 0 |
-| Current Development Focus | Component Package production trial & polish |
-| State Confidence | Verified (2026-07-17) — items not verifiable are marked Unknown |
+| Current Development Focus | Issue #30 — Japanese Vertical — Standard (Gate 1 Closed / Gate 2 Ready) |
+| Recommended First Action | Gate 2 Architect Kickoff (asd#30) |
+| State Confidence | Verified (2026-07-21) — items not verifiable are marked Unknown |
 
 ---
 
@@ -96,13 +97,13 @@ Architecture
 Stable
 
 Current Focus
-Component Package production trial & polish
+Issue #30 — Japanese Vertical — Standard (Gate 1 Closed / Gate 2 Ready)
 
 Highest Priority
-Color Inventory — Generate Inventory Page
+Gate 2 Architect Kickoff (asd#30)
 
 Next Milestone
-Component Package and Color Inventory ready for Production promotion
+Gate 2 — Result UI
 
 Blockers
 None
@@ -161,8 +162,8 @@ This table reflects the verified repository and documentation state as of 2026-0
 | Status Stamp | `status-stamp/` | v0.3 | Design Sprint | Production | ASD Issue #1 (stamp-selection update) closed |
 | Color Inventory | `color-inventory/` | v1.0 | Design Sprint | Beta | Spec v0.3. v1 core (Generate / Raw Colors Workbench / Promote) in production trial. Promotion criteria in ROADMAP.md |
 | Component Package | `component-package/` | v1.0 | Design Sprint | Beta | v1 Core merged (PR #1, 2026-07-16). Spec of record: ASD Issue #2 + supplemental comments. Promotion criteria in ROADMAP.md |
-| Type Adjuster | `type-adjuster/` | v0.5 | Feature Enhancement | Beta | Virtual Body punctuation adjustment (Gap) added (ASD #11, closed 2026-07-17). Promotion criteria defined in ROADMAP.md |
-| Type Polish | `type-polish/` | v0.6 | Research | Experimental | Knowledge-design phase; feature development paused |
+| Type Adjuster | `type-adjuster/` | v0.5 | Feature Enhancement | Beta | Manual final-adjustment tool — owns explicit Local Fix execution and final manual adjustment; not an automatic composition engine (asd#30 responsibility boundary). Promotion criteria defined in ROADMAP.md |
+| Type Polish | `type-polish/` | v0.6 | Research | Experimental | Issue #30 scoped exception — Gate 1 complete. Owns analysis, candidate generation, rule evaluation, recommendation, and decision ownership |
 | Design Style Sheet | `design-style-sheet/` | v0.1.1 | Concept | Experimental (frozen spike) | v1.x preserved in repo as a frozen historical artifact (2026-07-17). No feature development; preservation fixes only. v2 redesign via new ASD Issue |
 
 Out of scope: **Reference Assistant** lives in its own repository (not part of `figma-os`). Its operational state is tracked through ASD Issues #4–#6.
@@ -171,47 +172,20 @@ Out of scope: **Reference Assistant** lives in its own repository (not part of `
 
 # Recent Changes
 
-## Type Adjuster: Virtual Body punctuation adjustment — completed (ASD Issue #11, closed 2026-07-17)
+## Issue #29 — OpenType Typography Features Capability Review: findings completed
 
-Implemented in figma-os commits `db6d9fb` (feature) and `26cc6a5` (documentation), pushed to `main`.
+- OpenType write unsupported
+- `vert` / `vrt2` / `vkrn` not required
+- Latin run preservation
+- Node split loses kerning
+- Unsafe Unicode rejected
+- Remaining Desktop acceptance items outstanding
 
-- Gap: punctuation-glyph spacing adjustment via the Virtual Body approach — a split punctuation glyph is converted to a fixed-width TextNode (its own declared box), not an inserted spacer node. The earlier Gap Spacer approach was tried and rejected during development (see the plugin's `experiments/spike-*` history)
-- LEFT / CENTER / RIGHT alignment via `textAlignHorizontal`, persisted in pluginData
-- Gap editing only mutates existing TextNodes (resize + pluginData) — no node creation, so no proliferation risk; handlers are synchronous, so each edit is one Undo step
-- Existing Baseline / Split / Tracking code paths are unchanged; Reset/Scale/Slider gained a `role==='virtualBody'` branch each
+## Issue #30 — Japanese Vertical — Standard: Architecture-gated scoped exception
 
-A Split-frame-naming change (`outerFrame.name`) found mixed into the same local working tree during ASD #10's audit was out of scope for this Issue and was reverted before commit.
-
-Version: v0.4 → v0.5. Status: **Beta maintained** — on-device verification (Auto Layout fixed-width rendering, LEFT/CENTER/RIGHT, Undo, Reset round-trip, regression check against Baseline/Split/Tracking) was completed by the Vision Owner directly (outside this environment) with no significant issues found; Architecture Review (ChatGPT): ✅ Approved. Production promotion was explicitly out of scope for this Issue.
-
-## Guide Stamp: Canvas Guides — completed (ASD Issue #9, closed 2026-07-17)
-
-Implemented in figma-os commits `53c515f` (Canvas Guide feature) and `46e0972` (Architecture Review fix), pushed to `main`.
-
-- Native Canvas Guide generation using `FrameNode.guides` — additive to the existing Frame Overlay feature (Center Guide / Rule of Thirds / Delete Selected / Delete All), which is unchanged
-- Guides are generated in the selected Frame's local coordinate system (origin at the frame's top-left); page-level guides (`figma.currentPage.guides`) are never touched
-- Strict validation: exactly one FrameNode must be selected; every margin must satisfy `0 <= margin <= frame.width`, or the whole request is rejected
-- Offsets de-duplicated and sorted ascending before assignment
-
-Architecture Review (ChatGPT): ✅ Approved. One specification mismatch was found and corrected before approval — an unspecified `round2()` rounding step was removed so guide offsets match the Issue #9 spec (`margin` / `frame.width/2` / `frame.width-margin`) exactly, unrounded.
-
-## Component Package v1 Core — completed (ASD Issue #2, closed 2026-07-17)
-
-Implemented in figma-os PR #1 (merged 2026-07-16, +2,804 lines, 11 commits). Verified on Figma by the Vision Owner before merge.
-
-Final architecture, established through 10 supplemental specifications on Issue #2:
-
-- Source Organizer — physically consolidates Component Masters onto a Package page (not a viewer)
-- Safe Component Relocation — Component Sets moved whole; standalone masters replaced in place by an Instance
-- Page-Scoped — collects only from `figma.currentPage`; one Source Page = one Package (identified by Source Page ID in pluginData)
-- Non-Destructive Update — differential updates only; **Regenerable Output does not apply to this plugin** (unlike report-based Foundation plugins)
-- Preserve Component Master Geometry — masters isolated in fixed-size Preview Containers, never direct children of Auto Layout
-- Figma OS Report Layout — shared header/section/parent-frame structure with Type Inventory / Color Inventory
-- Report Appearance — user-configurable background color persisted in pluginData
-
-Core principles now treated as baseline: Never Delete / Never Modify / Never Resize / Never Break Instance Links.
-
-Issue #2 is frozen as the v1 Core baseline. All future enhancements go through new Issues.
+- Gate 0 complete
+- Gate 1 Closed
+- Gate 2 Ready
 
 ---
 
@@ -220,6 +194,9 @@ Issue #2 is frozen as the v1 Core baseline. All future enhancements go through n
 | Issue | Plugin | Priority | Summary |
 |---|---|---|---|
 | #3 | Type Inventory | P3 | Preserve multiline text (backlog; after higher-priority work) |
+| #28 | Type Adjuster / Type Polish | - | Japanese Vertical Typography & Latin Kerning — Knowledge Review deliverables completed |
+| #29 | Type Adjuster / Type Polish | - | OpenType Typography Features — Capability Review findings completed |
+| #30 | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Architecture-gated scoped exception. Gate 1 Closed / Gate 2 Ready |
 
 Closed since last update: #9 (Guide Stamp — Canvas Guides), #11 (Type Adjuster — Virtual Body punctuation adjustment).
 

@@ -1,7 +1,7 @@
 # ASD State
 
-- Version: 15
-- Date: 2026-07-19
+- Version: 16
+- Date: 2026-07-21
 - Status: Active
 
 ---
@@ -174,33 +174,34 @@ Status: Approved — adopted as ASD's official documentation policy (2026-07-17)
 ## Current Project Overview
 
 - Type Adjuster Vertical Layout Foundation Completed ([asd#27](https://github.com/ga7ming3249/asd/issues/27), Architect Final Review: Accept, rev8).
-- Knowledge Review Phase Started.
-- Typography Knowledge Base Expansion — Japanese Vertical Typography & Latin Kerning ([asd#28](https://github.com/ga7ming3249/asd/issues/28)), OpenType Typography Features ([asd#29](https://github.com/ga7ming3249/asd/issues/29)).
-- Type Polish / Type Adjuster 共通知識基盤の整備開始。
+- Typography Knowledge Base — Japanese Vertical Typography & Latin Kerning ([asd#28](https://github.com/ga7ming3249/asd/issues/28)) and OpenType Typography Features ([asd#29](https://github.com/ga7ming3249/asd/issues/29)) knowledge deliverables completed.
+- Japanese Vertical — Standard implementation proceeding as an Architecture-gated scoped exception ([asd#30](https://github.com/ga7ming3249/asd/issues/30)) — Gate 1 Closed / Gate 2 Ready.
 
 ## Project Phase
 
-Previous: Implementation Phase
+Previous: Knowledge Review Phase
 
 ↓
 
-Current: **Knowledge Review Phase**
+Current: **Architecture-gated Implementation Phase**
 
-Type Adjuster の基盤実装（縦組みレイアウト基盤、asd#27）完了後、Typography Knowledge Base 構築（asd#28, asd#29）へ移行。
+Current Position: Gate 1 Closed / Gate 2 Ready
+
+Typography Knowledge Base（asd#28, asd#29）を基盤として、Japanese Vertical — Standard の実装を Architecture-gated scoped exception（asd#30）として進行中。
 
 ## Active Issues
 
 | Issue | Plugin | Priority | Status | Summary |
 |---|---|---|---|---|
-| [#28](https://github.com/ga7ming3249/asd/issues/28) | Type Adjuster / Type Polish | - | Open | Knowledge Review: Japanese Vertical Typography & Latin Kerning |
-| [#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | Open | OpenType Typography Features Knowledge Review |
+| [#28](https://github.com/ga7ming3249/asd/issues/28) | Type Adjuster / Type Polish | - | Open | Knowledge Review deliverables completed — Japanese Vertical Typography & Latin Kerning knowledge foundation |
+| [#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | Open | Knowledge Review deliverables completed — OpenType Typography Features |
+| [#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Active | Japanese Vertical — Standard — Architecture-gated scoped exception. Gate 1 Closed / Gate 2 Ready |
 
 ## Architecture Notes
 
-- Vertical Layout Foundation established by Issue #27.
-- Wrapper / Outer responsibility separation established.
-- `relayoutVerticalWrapper()` を単一レイアウト入口とする設計原則確立。
-- 今後の縦中横・OpenType対応はこの基盤を拡張する方針。
+- Vertical Layout Foundation established by Issue #27; Wrapper / Outer responsibility separation and `relayoutVerticalWrapper()` as the single layout entry point are the current design principles.
+- Type Polish owns analysis, candidate generation, rule evaluation, recommendation, and decision ownership.
+- Type Adjuster owns explicit Local Fix execution and final manual adjustment; it never becomes an automatic composition engine.
 
 ## Knowledge Roadmap
 
