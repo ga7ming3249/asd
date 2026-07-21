@@ -1,6 +1,6 @@
 # ASD State
 
-- Version: 16
+- Version: 17
 - Date: 2026-07-21
 - Status: Active
 
@@ -470,6 +470,49 @@ ASD knowledge is preserved through:
 - GitHub
 - `docs/asd-state.md`
 - `docs/ASD_HISTORY.md` / `docs/ROADMAP.md` / per-plugin `HISTORY.md` + `ROADMAP.md` (target structure per Documentation Architecture v1.0 — pending Migration, see above)
+
+---
+
+## State Synchronization Policy
+
+### 1. Milestone Synchronization
+
+ASD State is synchronized whenever the project's current state materially changes.
+
+Examples:
+
+- Project Phase changes
+- Gate completion
+- Architecture decisions
+- Major Issue transitions
+- Beta → Stable
+- Release milestones
+
+ASD State represents the current project state only. Historical progress remains in GitHub history rather than accumulating inside the state document.
+
+### 2. Context Handoff Synchronization
+
+ASD State is synchronized before intentionally starting a new Architect session when the current conversation is no longer an efficient working context.
+
+Examples:
+
+- Conversation becomes excessively long
+- Context quality begins to degrade
+- Performance decreases
+- A fresh Architect chat is intentionally created
+- Work is handed over between Architect sessions
+
+The purpose of this synchronization is not to preserve chat history. The purpose is to ensure that the next Architect session can reconstruct the current project state directly from ASD State without relying on conversational memory.
+
+### Design Principle
+
+Chat conversations are temporary working spaces.
+
+ASD State is the canonical project memory.
+
+Architect sessions may change.
+
+Project state must remain continuous.
 
 ---
 
