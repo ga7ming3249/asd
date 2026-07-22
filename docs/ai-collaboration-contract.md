@@ -43,6 +43,8 @@ GitHub is the operational source of truth.
 
 Issue Drafts created by ChatGPT become the authoritative source before registration.
 
+Which repository owns a given Issue is defined by `docs/repository-issue-ownership.md` (Repository Issue Ownership Policy, adopted 2026-07-22).
+
 ---
 
 ## 4. Explicit responsibilities.
