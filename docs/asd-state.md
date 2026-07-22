@@ -1,6 +1,6 @@
 # ASD State
 
-- Version: 20
+- Version: 21
 - Date: 2026-07-22
 - Status: Active
 
@@ -149,7 +149,7 @@ Specification 001
 
 AI Collaboration Contract
 
-Status: Draft v0.9
+Status: Draft v0.10
 
 **Current ADR**
 
@@ -185,6 +185,7 @@ Status: Adopted (2026-07-22) — defines which repository (`asd`, `figma-os`, or
 - Type Adjuster Scale UI synchronization Issue registered ([figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2)) — independent Product Improvement, no Gate dependency.
 - Type Polish Utility ownership consolidation decision Issue registered ([figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3)) — Product Architecture Decision, depends on figma-os#2 before any Utility removal is considered.
 - Repository Issue Ownership Reorganization Phase 2 executed (2026-07-22): [asd#3](https://github.com/ga7ming3249/asd/issues/3) transferred to [figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4) (Type Inventory multiline support — not started, Successor Issue method) and closed; [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2)'s bare `#30` cross-repository references corrected to `ga7ming3249/asd#30`; Repository Issue Ownership Policy adopted (`docs/repository-issue-ownership.md`). See `docs/ASD-Issues-17-24-Architecture-Review-Bundle-2026-07-22.md` for the #17–#24 review bundle.
+- Repository Issue Ownership Reorganization Phase 3 executed (2026-07-22): Documentation Migration Epic #13's remaining 8 child Issues (asd#17–#24) received Architecture Review and were Closed — #17, #18, #21, #24 after a limited Product Documentation correction (`figma-os` commit `c9def97`), #19, #20, #22, #23 without correction. `docs/ai-collaboration-contract.md` updated to v0.10 (Publisher role: Codex → Claude Code; Codex: Publisher → Specialist Engineer).
 
 ## Project Phase
 
@@ -217,7 +218,7 @@ Typography Knowledge Base（asd#28, asd#29）を基盤として、Japanese Verti
 
 ## Current main
 
-Verified main: `c87ff2a856810abf899b3f47e71bcc886f73e36d`
+Verified main: `c9def9785e86272c8d21d61f14a500cd8b45793c` (Repository Issue Ownership Reorganization Phase 3 documentation commit, 2026-07-22)
 
 ## Outstanding Work
 
@@ -307,19 +308,14 @@ Design rationale, judgment reasoning, boundary decisions, rejected ideas, field-
 
 **Living documents, not one-time migration output**: `HISTORY.md`/`ROADMAP.md` are never a fixed, completed artifact once a Migration Issue closes. Whenever earlier primary material (past chat, Product Review notes, pre-Issue design history) surfaces, they should be updated to incorporate it — regardless of whether that plugin's Documentation Migration Issue is already closed. Type Adjuster and Type Polish (both revised 2026-07-17) are the first applied instances of this policy; the same retroactive treatment applies to any other already-migrated plugin (Guide Stamp, Instance Checker, Margin Preflight, Pocket Preview, Type Inventory, Status Stamp, Color Inventory, Component Package, Design Style Sheet) if pre-Issue primary sources for it are later found.
 
-**Migration Status** (Epic [#13](https://github.com/ga7ming3249/asd/issues/13), closed 2026-07-17) — deliverable migration and GitHub Issue lifecycle are tracked separately, since they are no longer in sync (corrected 2026-07-22; see `docs/ASD-Issues-17-24-Architecture-Review-Bundle-2026-07-22.md`):
+**Migration Status** — ✅ Complete (Epic [#13](https://github.com/ga7ming3249/asd/issues/13), closed 2026-07-17)
 
 *Deliverable migration (成果物移行状態)* — ✅ Complete, evidence-verified 2026-07-22:
 
 - `docs/ASD_HISTORY.md`, `docs/ROADMAP.md` (this repo)
 - All 11 figma-os plugins' `HISTORY.md` + `ROADMAP.md` exist in `figma-os/<plugin>/` alongside each plugin's code (Guide Stamp, Instance Checker, Margin Preflight, Pocket Preview, Type Inventory, Status Stamp, Color Inventory, Component Package, Type Adjuster, Type Polish, Design Style Sheet), and the commit that added each file is reachable on `figma-os` `main`.
 
-*GitHub Issue lifecycle (Issue管理状態)* — not fully complete, of the 13 child Issues (#14–#26):
-
-- Closed: #14, #15, #16, #25, #26 (5)
-- Open, Completion Report submitted, Architecture Review / Close reconciliation pending: #17, #18, #19, #20, #21, #22, #23, #24 (8)
-
-#17–#24 are not asserted as Accepted, nor as incomplete — their file/commit evidence is verified, but the Architecture Review step (and therefore the Close decision) has not been recorded on GitHub. This reconciliation does not itself accept or close them; it only distinguishes verified deliverable state from open Issue-lifecycle state.
+*GitHub Issue lifecycle (Issue管理状態)* — ✅ Complete, reconciled 2026-07-22: all 13 child Issues (#14–#26) are Closed. #14, #15, #16, #25, #26 closed at first pass; #17–#24 received Architecture Review (Accepted) and were closed in the Phase 3 reconciliation — #17, #18, #21, #24 required a limited Product Documentation correction first (see `figma-os` commit `c9def97`), #19, #20, #22, #23 were accepted without correction. `docs/ASD-Issues-17-24-Architecture-Review-Bundle-2026-07-22.md` remains available as the historical evidence record for that review.
 
 `docs/figma-os-state.md` remains the live product-state source (current priorities, health, open Issues); per-plugin `HISTORY.md`/`ROADMAP.md` in figma-os now hold each plugin's design history and roadmap as the Documentation Architecture intends.
 
