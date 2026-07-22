@@ -1,6 +1,6 @@
 # ASD State
 
-- Version: 19
+- Version: 20
 - Date: 2026-07-22
 - Status: Active
 
@@ -167,6 +167,12 @@ Issue: [ga7ming3249/asd#12](https://github.com/ga7ming3249/asd/issues/12)
 
 Status: Approved — adopted as ASD's official documentation policy (2026-07-17)
 
+**Repository Issue Ownership Policy**
+
+`docs/repository-issue-ownership.md`
+
+Status: Adopted (2026-07-22) — defines which repository (`asd`, `figma-os`, or a future Product Repository) owns and tracks a given GitHub Issue, based on the Primary Deliverable's Canonical Source.
+
 ---
 
 # Current State
@@ -178,6 +184,7 @@ Status: Approved — adopted as ASD's official documentation policy (2026-07-17)
 - Japanese Vertical — Standard implementation proceeding as an Architecture-gated scoped exception ([asd#30](https://github.com/ga7ming3249/asd/issues/30)) — Gate 3 Formally Closed / Gate 4 Architect Kickoff Required.
 - Type Adjuster Scale UI synchronization Issue registered ([figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2)) — independent Product Improvement, no Gate dependency.
 - Type Polish Utility ownership consolidation decision Issue registered ([figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3)) — Product Architecture Decision, depends on figma-os#2 before any Utility removal is considered.
+- Repository Issue Ownership Reorganization Phase 2 executed (2026-07-22): [asd#3](https://github.com/ga7ming3249/asd/issues/3) transferred to [figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4) (Type Inventory multiline support — not started, Successor Issue method) and closed; [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2)'s bare `#30` cross-repository references corrected to `ga7ming3249/asd#30`; Repository Issue Ownership Policy adopted (`docs/repository-issue-ownership.md`). See `docs/ASD-Issues-17-24-Architecture-Review-Bundle-2026-07-22.md` for the #17–#24 review bundle.
 
 ## Project Phase
 
@@ -221,7 +228,7 @@ Remaining Gates:
 - Gate 4 — Safe Local Fix MVP
 - Gate 5 — Desktop Acceptance
 
-Issue remains Open.
+Issue remains Open. asd#30 stays the Parent Coordination Issue (Architecture Gates / Global Architect Review / State Synchronization); a `figma-os` Implementation Issue for Gate 4 will hold the actual Source/Tests/Documentation work once created. Per `docs/repository-issue-ownership.md`, that Implementation Issue is created only after a confirmed Gate 4 Architect Kickoff (Objective, In/Out Scope, Acceptance Criteria, Architecture Constraints) — not yet recorded as of 2026-07-22 (Gate 3's closing comment states Gate 4 is not authorized by that closure).
 
 ## Knowledge Roadmap
 
@@ -300,12 +307,19 @@ Design rationale, judgment reasoning, boundary decisions, rejected ideas, field-
 
 **Living documents, not one-time migration output**: `HISTORY.md`/`ROADMAP.md` are never a fixed, completed artifact once a Migration Issue closes. Whenever earlier primary material (past chat, Product Review notes, pre-Issue design history) surfaces, they should be updated to incorporate it — regardless of whether that plugin's Documentation Migration Issue is already closed. Type Adjuster and Type Polish (both revised 2026-07-17) are the first applied instances of this policy; the same retroactive treatment applies to any other already-migrated plugin (Guide Stamp, Instance Checker, Margin Preflight, Pocket Preview, Type Inventory, Status Stamp, Color Inventory, Component Package, Design Style Sheet) if pre-Issue primary sources for it are later found.
 
-**Migration Status** — ✅ Complete (Epic [#13](https://github.com/ga7ming3249/asd/issues/13), closed 2026-07-17)
+**Migration Status** (Epic [#13](https://github.com/ga7ming3249/asd/issues/13), closed 2026-07-17) — deliverable migration and GitHub Issue lifecycle are tracked separately, since they are no longer in sync (corrected 2026-07-22; see `docs/ASD-Issues-17-24-Architecture-Review-Bundle-2026-07-22.md`):
 
-All 13 child Issues (#14–#26) are closed and Approved:
+*Deliverable migration (成果物移行状態)* — ✅ Complete, evidence-verified 2026-07-22:
 
 - `docs/ASD_HISTORY.md`, `docs/ROADMAP.md` (this repo)
-- All 11 figma-os plugins' `HISTORY.md` + `ROADMAP.md`, in `figma-os/<plugin>/` alongside each plugin's code (Guide Stamp, Instance Checker, Margin Preflight, Pocket Preview, Type Inventory, Status Stamp, Color Inventory, Component Package, Type Adjuster, Type Polish, Design Style Sheet)
+- All 11 figma-os plugins' `HISTORY.md` + `ROADMAP.md` exist in `figma-os/<plugin>/` alongside each plugin's code (Guide Stamp, Instance Checker, Margin Preflight, Pocket Preview, Type Inventory, Status Stamp, Color Inventory, Component Package, Type Adjuster, Type Polish, Design Style Sheet), and the commit that added each file is reachable on `figma-os` `main`.
+
+*GitHub Issue lifecycle (Issue管理状態)* — not fully complete, of the 13 child Issues (#14–#26):
+
+- Closed: #14, #15, #16, #25, #26 (5)
+- Open, Completion Report submitted, Architecture Review / Close reconciliation pending: #17, #18, #19, #20, #21, #22, #23, #24 (8)
+
+#17–#24 are not asserted as Accepted, nor as incomplete — their file/commit evidence is verified, but the Architecture Review step (and therefore the Close decision) has not been recorded on GitHub. This reconciliation does not itself accept or close them; it only distinguishes verified deliverable state from open Issue-lifecycle state.
 
 `docs/figma-os-state.md` remains the live product-state source (current priorities, health, open Issues); per-plugin `HISTORY.md`/`ROADMAP.md` in figma-os now hold each plugin's design history and roadmap as the Documentation Architecture intends.
 

@@ -1,6 +1,6 @@
 # Figma OS State
 
-- Version: 9
+- Version: 10
 - Date: 2026-07-22
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
@@ -62,7 +62,7 @@ Reason: v1 core (Generate / Raw Colors Workbench / Promote) is in production tri
 
 Prerequisite: None
 
-**P3 — Type Inventory: multiline support (ASD #3)**
+**P3 — Type Inventory: multiline support ([figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4))**
 
 Reason: Backlog item per ASD priority assessment. Clear workaround exists; lower user impact.
 
@@ -162,7 +162,7 @@ This table reflects the verified repository and documentation state as of 2026-0
 | Instance Checker | `instance-checker/` | v1.x | Maintenance | Production | |
 | Margin Preflight | `margin-preflight/` | v1.x | Feature Enhancement | Production | Known issue: some Auto Layout frames undetected (collecting cases) |
 | Pocket Preview | `pocket-preview/` | v1.0 | Maintenance | Production | Figma / device / Claude Code (MCP) utility panel |
-| Type Inventory | `type-inventory/` | v1.4 | Feature Enhancement | Production | Open ASD Issue #3 (multiline support, P3, backlog) |
+| Type Inventory | `type-inventory/` | v1.4 | Feature Enhancement | Production | Open [figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4) (multiline support, P3, backlog — transferred from asd#3, 2026-07-22) |
 | Status Stamp | `status-stamp/` | v0.3 | Design Sprint | Production | ASD Issue #1 (stamp-selection update) closed |
 | Color Inventory | `color-inventory/` | v1.0 | Design Sprint | Beta | Spec v0.3. v1 core (Generate / Raw Colors Workbench / Promote) in production trial. Promotion criteria in ROADMAP.md |
 | Component Package | `component-package/` | v1.0 | Design Sprint | Beta | v1 Core merged (PR #1, 2026-07-16). Spec of record: ASD Issue #2 + supplemental comments. Promotion criteria in ROADMAP.md |
@@ -204,16 +204,16 @@ Out of scope: **Reference Assistant** lives in its own repository (not part of `
 
 | Issue | Plugin | Priority | Summary |
 |---|---|---|---|
-| #3 | Type Inventory | P3 | Preserve multiline text (backlog; after higher-priority work) |
+| [figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4) | Type Inventory | P3 | Preserve multiline text (backlog; after higher-priority work). Transferred from asd#3 (2026-07-22, Repository Issue Ownership Reorganization) |
 | #28 | Type Adjuster / Type Polish | - | Japanese Vertical Typography & Latin Kerning — Knowledge Review deliverables completed |
 | #29 | Type Adjuster / Type Polish | - | OpenType Typography Features — Capability Review findings completed |
 | #30 | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Architecture-gated scoped exception. Gate 3 Formally Closed / Gate 4 Architect Kickoff Required |
 | [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) | Type Adjuster | Medium | Synchronize Scale UI with current selection; improve fine adjustment controls. No Gate dependency |
 | [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) | Type Polish / Type Adjuster | Medium | Product Architecture Decision — canonical Utility (Scale/Baseline/Tracking) ownership. Depends on figma-os#2 |
 
-Closed since last update: #9 (Guide Stamp — Canvas Guides), #11 (Type Adjuster — Virtual Body punctuation adjustment).
+Closed since last update: asd#9 (Guide Stamp — Canvas Guides), asd#11 (Type Adjuster — Virtual Body punctuation adjustment), asd#3 (Type Inventory multiline — transferred to figma-os#4, 2026-07-22).
 
-(ASD-framework and Reference Assistant issues — #4, #6, #8 — do not touch figma-os code.)
+(ASD-framework and Reference Assistant issues — asd#4, asd#6, asd#8 — do not touch figma-os code. Note: distinct from figma-os#4 above, which is a different repository's Issue #4.)
 
 ---
 

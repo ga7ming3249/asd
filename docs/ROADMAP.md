@@ -1,6 +1,6 @@
 # ASD Roadmap
 
-- Version: 4
+- Version: 5
 - Last Reviewed: 2026-07-22
 - Status: Active
 
@@ -50,9 +50,9 @@ Product Architecture Decision（実装ではない）。figma-os#2完了後にUt
 
 # Future
 
-**Type Inventory: 多行テキスト対応**（[#3](https://github.com/ga7ming3249/asd/issues/3)、P3・Backlog）
+**Type Inventory: 多行テキスト対応**（[figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4)、P3・Backlog）
 
-明確なワークアラウンドが存在し優先度は低い。Guide Stamp Canvas Guides完了により前提条件は解消済み。
+明確なワークアラウンドが存在し優先度は低い。Guide Stamp Canvas Guides完了により前提条件は解消済み。2026-07-22、Repository Issue Ownership Reorganizationによりasd#3からfigma-osへ移管。
 
 **Composer / Design Style Sheet v2 再設計**
 
