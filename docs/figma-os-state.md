@@ -1,10 +1,10 @@
 # Figma OS State
 
-- Version: 7
-- Date: 2026-07-21
+- Version: 8
+- Date: 2026-07-22
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
-- Verified against: `ga7ming3249/figma-os` main branch (`cf52eda`) and ASD Issues, as of 2026-07-21
+- Verified against: `ga7ming3249/figma-os` main branch (`c87ff2a856810abf899b3f47e71bcc886f73e36d`) and ASD Issues, as of 2026-07-22
 
 ---
 
@@ -40,9 +40,9 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 | Documentation | 🟢 Synced (Documentation Sync completed 2026-07-17) |
 | Known Critical Bugs | 0 |
 | High Priority Issues | 0 |
-| Current Development Focus | Issue #30 — Japanese Vertical — Standard (Gate 1 Closed / Gate 2 Ready) |
-| Recommended First Action | Gate 2 Architect Kickoff (asd#30) |
-| State Confidence | Verified (2026-07-21) — items not verifiable are marked Unknown |
+| Current Development Focus | Issue #30 — Japanese Vertical — Standard — Gate 4: Safe Local Fix MVP (Gate 3 complete; Manual Handoff Transport adopted; execution not yet implemented) |
+| Recommended First Action | Gate 4 Architect Kickoff (asd#30) |
+| State Confidence | Verified (2026-07-22) — items not verifiable are marked Unknown |
 
 ---
 
@@ -97,13 +97,13 @@ Architecture
 Stable
 
 Current Focus
-Issue #30 — Japanese Vertical — Standard (Gate 1 Closed / Gate 2 Ready)
+Issue #30 — Japanese Vertical — Standard — Gate 4: Safe Local Fix MVP
 
 Highest Priority
-Gate 2 Architect Kickoff (asd#30)
+Gate 4 Architect Kickoff (asd#30)
 
 Next Milestone
-Gate 2 — Result UI
+Gate 4 — Safe Local Fix MVP
 
 Blockers
 None
@@ -163,7 +163,7 @@ This table reflects the verified repository and documentation state as of 2026-0
 | Color Inventory | `color-inventory/` | v1.0 | Design Sprint | Beta | Spec v0.3. v1 core (Generate / Raw Colors Workbench / Promote) in production trial. Promotion criteria in ROADMAP.md |
 | Component Package | `component-package/` | v1.0 | Design Sprint | Beta | v1 Core merged (PR #1, 2026-07-16). Spec of record: ASD Issue #2 + supplemental comments. Promotion criteria in ROADMAP.md |
 | Type Adjuster | `type-adjuster/` | v0.5 | Feature Enhancement | Beta | Manual final-adjustment tool — owns explicit Local Fix execution and final manual adjustment; not an automatic composition engine (asd#30 responsibility boundary). Promotion criteria defined in ROADMAP.md |
-| Type Polish | `type-polish/` | v0.6 | Research | Experimental | Issue #30 scoped exception — Gate 1 complete. Owns analysis, candidate generation, rule evaluation, recommendation, and decision ownership |
+| Type Polish | `type-polish/` | v0.6 | Research | Experimental | Issue #30 scoped exception — Gate 3 complete. Owns Analysis, Recommendation, User Decision, and Manual Handoff production |
 | Design Style Sheet | `design-style-sheet/` | v0.1.1 | Concept | Experimental (frozen spike) | v1.x preserved in repo as a frozen historical artifact (2026-07-17). No feature development; preservation fixes only. v2 redesign via new ASD Issue |
 
 Out of scope: **Reference Assistant** lives in its own repository (not part of `figma-os`). Its operational state is tracked through ASD Issues #4–#6.
@@ -185,7 +185,9 @@ Out of scope: **Reference Assistant** lives in its own repository (not part of `
 
 - Gate 0 complete
 - Gate 1 Closed
-- Gate 2 Ready
+- Gate 2 complete
+- Gate 3 Formally Closed
+- Gate 4 Architect Kickoff Required
 
 ---
 
@@ -196,7 +198,7 @@ Out of scope: **Reference Assistant** lives in its own repository (not part of `
 | #3 | Type Inventory | P3 | Preserve multiline text (backlog; after higher-priority work) |
 | #28 | Type Adjuster / Type Polish | - | Japanese Vertical Typography & Latin Kerning — Knowledge Review deliverables completed |
 | #29 | Type Adjuster / Type Polish | - | OpenType Typography Features — Capability Review findings completed |
-| #30 | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Architecture-gated scoped exception. Gate 1 Closed / Gate 2 Ready |
+| #30 | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Architecture-gated scoped exception. Gate 3 Formally Closed / Gate 4 Architect Kickoff Required |
 
 Closed since last update: #9 (Guide Stamp — Canvas Guides), #11 (Type Adjuster — Virtual Body punctuation adjustment).
 

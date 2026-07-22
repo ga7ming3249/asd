@@ -1,7 +1,7 @@
 # ASD Roadmap
 
-- Version: 2
-- Last Reviewed: 2026-07-21
+- Version: 3
+- Last Reviewed: 2026-07-22
 - Status: Active
 
 ---
@@ -20,9 +20,11 @@ Documentation Architecture v1.0（[#12](https://github.com/ga7ming3249/asd/issue
 
 **Issue #30 — Japanese Vertical — Standard Implementation**（Architecture-gated scoped exception）
 
-Current milestone: Gate 2 — Result UI
+Gate 3 — Manual Handoff Transport: Completed
 
-Next: Gate 3 / Gate 4 / Gate 5
+Next milestone: Gate 4 — Safe Local Fix MVP
+
+After that: Gate 5 — Desktop Acceptance
 
 **Component Package: production trial & polish**
 

@@ -1,7 +1,7 @@
 # ASD State
 
-- Version: 17
-- Date: 2026-07-21
+- Version: 18
+- Date: 2026-07-22
 - Status: Active
 
 ---
@@ -175,7 +175,7 @@ Status: Approved — adopted as ASD's official documentation policy (2026-07-17)
 
 - Type Adjuster Vertical Layout Foundation Completed ([asd#27](https://github.com/ga7ming3249/asd/issues/27), Architect Final Review: Accept, rev8).
 - Typography Knowledge Base — Japanese Vertical Typography & Latin Kerning ([asd#28](https://github.com/ga7ming3249/asd/issues/28)) and OpenType Typography Features ([asd#29](https://github.com/ga7ming3249/asd/issues/29)) knowledge deliverables completed.
-- Japanese Vertical — Standard implementation proceeding as an Architecture-gated scoped exception ([asd#30](https://github.com/ga7ming3249/asd/issues/30)) — Gate 1 Closed / Gate 2 Ready.
+- Japanese Vertical — Standard implementation proceeding as an Architecture-gated scoped exception ([asd#30](https://github.com/ga7ming3249/asd/issues/30)) — Gate 3 Formally Closed / Gate 4 Architect Kickoff Required.
 
 ## Project Phase
 
@@ -185,7 +185,7 @@ Previous: Knowledge Review Phase
 
 Current: **Architecture-gated Implementation Phase**
 
-Current Position: Gate 1 Closed / Gate 2 Ready
+Current Position: Gate 3 Formally Closed / Gate 4 Architect Kickoff Required
 
 Typography Knowledge Base（asd#28, asd#29）を基盤として、Japanese Vertical — Standard の実装を Architecture-gated scoped exception（asd#30）として進行中。
 
@@ -195,13 +195,29 @@ Typography Knowledge Base（asd#28, asd#29）を基盤として、Japanese Verti
 |---|---|---|---|---|
 | [#28](https://github.com/ga7ming3249/asd/issues/28) | Type Adjuster / Type Polish | - | Open | Knowledge Review deliverables completed — Japanese Vertical Typography & Latin Kerning knowledge foundation |
 | [#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | Open | Knowledge Review deliverables completed — OpenType Typography Features |
-| [#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Active | Japanese Vertical — Standard — Architecture-gated scoped exception. Gate 1 Closed / Gate 2 Ready |
+| [#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Active | Japanese Vertical — Standard — Architecture-gated scoped exception. Gate 3 Formally Closed / Gate 4 Architect Kickoff Required |
 
 ## Architecture Notes
 
 - Vertical Layout Foundation established by Issue #27; Wrapper / Outer responsibility separation and `relayoutVerticalWrapper()` as the single layout entry point are the current design principles.
-- Type Polish owns analysis, candidate generation, rule evaluation, recommendation, and decision ownership.
-- Type Adjuster owns explicit Local Fix execution and final manual adjustment; it never becomes an automatic composition engine.
+- Type Polish owns Analysis, Recommendation, User Decision, and Manual Handoff production.
+- Type Adjuster owns current-selection validation and final manual adjustment; Manual Local Fix execution is planned for Gate 4. It never becomes an automatic composition engine.
+- Transport: Manual Handoff Transport — Status: Adopted. Current implementation covers Transport production; execution (consumption side) is not yet implemented.
+
+## Current main
+
+Verified main: `c87ff2a856810abf899b3f47e71bcc886f73e36d`
+
+## Outstanding Work
+
+**Issue #30**
+
+Remaining Gates:
+
+- Gate 4 — Safe Local Fix MVP
+- Gate 5 — Desktop Acceptance
+
+Issue remains Open.
 
 ## Knowledge Roadmap
 
