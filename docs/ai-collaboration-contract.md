@@ -1,9 +1,9 @@
-# AI Collaboration Contract v0.9 (Draft)
+# AI Collaboration Contract v0.10 (Draft)
 
 > ASD Specification 001
 >
 > Status: Draft
-> Version: 0.9
+> Version: 0.10
 > Owner: ASD (AI System Director)
 
 ---
@@ -62,8 +62,8 @@ Responsibilities must not overlap unless explicitly requested.
 | Vision Owner | Human | Product vision and final decisions |
 | Architect | ChatGPT | Architecture, specification, Issue Draft creation |
 | Project Manager | ASD | Project coordination and workflow |
-| Publisher | Codex | Faithfully publish Issue Drafts to GitHub |
-| Implementation | Claude Code / Codex (explicit only) | Coding and refactoring |
+| Publisher | Claude Code | Faithfully publish Issue Drafts to GitHub |
+| Implementation | Claude Code (primary) / Codex (explicit only) | Coding and refactoring |
 | Reviewer | ChatGPT / Fable | Design and quality review |
 
 ---
@@ -72,7 +72,7 @@ Responsibilities must not overlap unless explicitly requested.
 
 ## Rule 0
 
-Codex acts as a **Publisher**, not an **Author**.
+Claude Code acts as a **Publisher**, not an **Author**.
 
 ---
 
@@ -202,22 +202,16 @@ ChatGPT does not directly implement code.
 
 Role
 
-Publisher
+Specialist Engineer
 
 Responsibilities
 
-- Register Issue Drafts.
-- Preserve Issue contents.
-- Respect this Contract.
+- Optional implementation.
+- Alternative implementation.
+- PR review.
+- Experimental work.
 
-Codex does not:
-
-- redesign
-- summarize
-- infer
-- implement
-
-unless explicitly instructed.
+Codex is not used for GitHub Issue publication.
 
 ---
 
@@ -225,14 +219,22 @@ unless explicitly instructed.
 
 Role
 
-Implementation Engineer
+Publisher / Primary Engineer
 
 Responsibilities
 
+- Register, update, and close Issues, faithfully reproducing approved content (Publisher).
 - Implement Issues.
 - Refactor.
 - Write tests.
 - Improve code quality.
+
+As Publisher, Claude Code does not:
+
+- redesign
+- summarize
+- infer
+- implement beyond what was explicitly instructed
 
 Claude Code should not redefine architecture.
 
@@ -265,7 +267,7 @@ ChatGPT
 
 ↓
 
-Codex
+Claude Code
 
 (Publish)
 
@@ -311,6 +313,14 @@ Future versions may introduce:
 ---
 
 # Change Log
+
+## v0.10 (Role Alignment)
+
+- Publisher role reassigned from Codex to Claude Code, matching `docs/asd-state.md` and `docs/repository-issue-ownership.md`
+- Codex reassigned from Publisher to Specialist Engineer (optional/alternative implementation, PR review, experimental work); Codex is not used for GitHub Issue publication
+- Claude Code Profile updated to reflect combined Publisher / Primary Engineer responsibilities
+- Rule 0 updated to name Claude Code as Publisher
+- Standard Workflow's Publish step updated from Codex to Claude Code
 
 ## v0.9 (Draft)
 
