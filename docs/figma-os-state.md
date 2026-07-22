@@ -1,6 +1,6 @@
 # Figma OS State
 
-- Version: 8
+- Version: 9
 - Date: 2026-07-22
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
@@ -84,6 +84,10 @@ Unresolved architectural or product decisions requiring Vision Owner and/or Arch
 
 Waiting for architecture decision. DSS v1.x is frozen as a spike; v2 is to be redesigned as a Composer after Foundation matures. Includes the recorded ROADMAP homework: redefine the page-generation role split between DSS Colors section and Color Inventory.
 
+**Type Polish Utility ownership** ([figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3))
+
+Waiting for Product Architecture Decision on whether Scale/Baseline/Tracking Utility controls remain in Type Polish or become exclusively owned by Type Adjuster. Depends on completion of [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) (Type Adjuster Scale UI synchronization) before any Utility removal is considered. No implementation until this decision is approved.
+
 ---
 
 # Architect Snapshot
@@ -162,8 +166,8 @@ This table reflects the verified repository and documentation state as of 2026-0
 | Status Stamp | `status-stamp/` | v0.3 | Design Sprint | Production | ASD Issue #1 (stamp-selection update) closed |
 | Color Inventory | `color-inventory/` | v1.0 | Design Sprint | Beta | Spec v0.3. v1 core (Generate / Raw Colors Workbench / Promote) in production trial. Promotion criteria in ROADMAP.md |
 | Component Package | `component-package/` | v1.0 | Design Sprint | Beta | v1 Core merged (PR #1, 2026-07-16). Spec of record: ASD Issue #2 + supplemental comments. Promotion criteria in ROADMAP.md |
-| Type Adjuster | `type-adjuster/` | v0.5 | Feature Enhancement | Beta | Manual final-adjustment tool — owns explicit Local Fix execution and final manual adjustment; not an automatic composition engine (asd#30 responsibility boundary). Promotion criteria defined in ROADMAP.md |
-| Type Polish | `type-polish/` | v0.6 | Research | Experimental | Issue #30 scoped exception — Gate 3 complete. Owns Analysis, Recommendation, User Decision, and Manual Handoff production |
+| Type Adjuster | `type-adjuster/` | v0.5 | Feature Enhancement | Beta | Manual final-adjustment tool — owns explicit Local Fix execution and final manual adjustment; not an automatic composition engine (asd#30 responsibility boundary). Open [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) (Scale UI current-selection sync, Medium). Promotion criteria defined in ROADMAP.md |
+| Type Polish | `type-polish/` | v0.6 | Research | Experimental | Issue #30 scoped exception — Gate 3 complete. Owns Analysis, Recommendation, User Decision, and Manual Handoff production. Utility (Scale/Baseline/Tracking) ownership under review — [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) |
 | Design Style Sheet | `design-style-sheet/` | v0.1.1 | Concept | Experimental (frozen spike) | v1.x preserved in repo as a frozen historical artifact (2026-07-17). No feature development; preservation fixes only. v2 redesign via new ASD Issue |
 
 Out of scope: **Reference Assistant** lives in its own repository (not part of `figma-os`). Its operational state is tracked through ASD Issues #4–#6.
@@ -189,6 +193,11 @@ Out of scope: **Reference Assistant** lives in its own repository (not part of `
 - Gate 3 Formally Closed
 - Gate 4 Architect Kickoff Required
 
+## figma-os#2 / figma-os#3 — registered (2026-07-22)
+
+- [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) — Type Adjuster Scale UI: synchronize with current selection, improve fine adjustment controls. Independent Product Improvement, no Gate dependency.
+- [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) — Product Architecture Decision: canonical ownership of Utility (Scale/Baseline/Tracking) between Type Polish and Type Adjuster. Depends on figma-os#2 completion before any Utility removal.
+
 ---
 
 # Open ASD Issues affecting figma-os
@@ -199,6 +208,8 @@ Out of scope: **Reference Assistant** lives in its own repository (not part of `
 | #28 | Type Adjuster / Type Polish | - | Japanese Vertical Typography & Latin Kerning — Knowledge Review deliverables completed |
 | #29 | Type Adjuster / Type Polish | - | OpenType Typography Features — Capability Review findings completed |
 | #30 | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Architecture-gated scoped exception. Gate 3 Formally Closed / Gate 4 Architect Kickoff Required |
+| [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) | Type Adjuster | Medium | Synchronize Scale UI with current selection; improve fine adjustment controls. No Gate dependency |
+| [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) | Type Polish / Type Adjuster | Medium | Product Architecture Decision — canonical Utility (Scale/Baseline/Tracking) ownership. Depends on figma-os#2 |
 
 Closed since last update: #9 (Guide Stamp — Canvas Guides), #11 (Type Adjuster — Virtual Body punctuation adjustment).
 
