@@ -1,6 +1,6 @@
 # Figma OS State
 
-- Version: 17
+- Version: 18
 - Date: 2026-07-23
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
@@ -40,8 +40,8 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 | Documentation | 🟢 Synced (Documentation Sync completed 2026-07-17) |
 | Known Critical Bugs | 0 |
 | High Priority Issues | 0 |
-| Current Development Focus | [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) scoped Scale UI implementation |
-| Recommended First Action | create and verify isolated worktree, then implement accepted contract |
+| Current Development Focus | [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) — Architect Review: Changes Required; Findings A/B/C correction and Desktop Verification pending |
+| Recommended First Action | 1) verify preservation of the existing isolated worktree, branch, HEAD, and dirty/untracked set; 2) correct Findings A/B/C; 3) re-run automated verification; 4) perform Desktop Verification; 5) Architect re-review |
 | Gate 5 | [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) — Open / Authorized / Owner Priority Hold / not started |
 | State Confidence | Phase A Accepted 2026-07-23; `main@c9def978...` unchanged; Gate 4 head `dc636115...` remains separate |
 
@@ -51,11 +51,11 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 
 Current recommended implementation order. This is a recommendation, not a commitment — it may change whenever Product State is updated.
 
-**P1 — figma-os#2: Type Adjuster Scale UI synchronization, scoped implementation**
+**P1 — figma-os#2: Type Adjuster Scale UI synchronization, Changes Required**
 
-Reason: Vision Owner priority decision (2026-07-23) — prioritized ahead of Gate 5 Desktop Acceptance. Phase A (Current Scale Contract and Integration Review) received a corrected report and Architect Accept on 2026-07-23; scoped implementation is authorized in an isolated worktree outside Dropbox, baseline canonical `main@c9def978...`, not the unmerged Gate 4 head. No commit, push, PR, or main merge before the implementation report receives Architect Review.
+Reason: Vision Owner priority decision (2026-07-23) — prioritized ahead of Gate 5 Desktop Acceptance. Phase A remains Accepted; scoped implementation was carried out in the isolated worktree (baseline canonical `main@c9def978...`, not the unmerged Gate 4 head) but is uncommitted, and Architect judgment on it is **Changes Required** pending Findings A/B/C and Desktop Verification (see Decisions Pending). No commit, push, PR, or main merge before the implementation report receives Architect Review.
 
-Prerequisite: None
+Prerequisite: Findings A/B/C corrected and Desktop Verification Cases 2, 4, 6, 7, 8 completed
 
 **P2 — figma-os#6: Gate 5 Desktop Acceptance**
 
@@ -107,6 +107,16 @@ Waiting for architecture decision. DSS v1.x is frozen as a spike; v2 is to be re
 
 Waiting for Product Architecture Decision on whether Scale/Baseline/Tracking Utility controls remain in Type Polish or become exclusively owned by Type Adjuster. Depends on completion of [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) (Type Adjuster Scale UI synchronization) before any Utility removal is considered. No implementation until this decision is approved.
 
+**figma-os#2 Architect Review — Changes Required**
+
+Phase A Accept authorized scoped implementation; the implementation itself, once carried out in the isolated worktree, received Architect judgment **Changes Required**. 115/115 tests, Scoped Typecheck, Build, `git diff --check`, and Source/Dist parity all PASS. Three findings must be corrected before Desktop Verification and re-review:
+
+- Finding A: explicit cancel must consistently clear `pendingStartClientId` and update `invalidationEpoch`.
+- Finding B: adopt post-await epoch/token re-validation to prevent stale finalize; documenting an internal `await` prohibition alone does not satisfy this.
+- Finding C: correct `HISTORY.md`'s stated test count from 25 to the actual 29.
+
+Desktop Verification Cases 2, 4, 6, 7, and 8 remain outstanding evidence required before Architect re-review. No commit, push, PR, or main merge is authorized.
+
 ---
 
 # Architect Snapshot
@@ -120,16 +130,16 @@ Architecture
 Stable
 
 Current Focus
-figma-os#2 — Scale UI synchronization scoped implementation
+figma-os#2 — Findings A/B/C correction and Desktop Verification
 
 Highest Priority
-Implement the accepted Current Scale and interaction contract in an isolated worktree
+Resolve Findings A/B/C and obtain Desktop Evidence
 
 Next Milestone
-Issue #2 implementation report and Architect Review
+Architect Review after correction
 
 Blockers
-None for scoped implementation; commit/push/PR/main merge remain unauthorized
+Desktop Verification awaits Vision Owner; no blocker impedes the overall product architecture
 
 Overall Health
 Healthy
@@ -223,6 +233,15 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 - [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) remains Open / not started, downstream of figma-os#2 completion.
 - `figma-os#2` and Gate 4/5 (`dc636115...`) overlap in Type Adjuster and require an explicit future integration/reconciliation scope before combination; no rebase, cherry-pick, or merge between the lineages is authorized.
 
+## figma-os#2 — Phase A Accept and Nightly Integration (2026-07-23)
+
+- Phase A (Current Scale Contract and Integration Review) received a corrected report and Architect Accept. Phase A Accept remains valid and is not re-reviewed or withdrawn.
+- Scoped implementation was carried out in isolated worktree `/Users/atsushitogami/Developer/figma-os-issue-2-scale-sync` on branch `feature/issue-2-scale-state-sync` (baseline `main@c9def9785e86272c8d21d61f14a500cd8b45793c`), but remains uncommitted.
+- 115/115 tests, Scoped Typecheck, Build, `git diff --check`, and Source/Dist parity all PASS.
+- Desktop Verification Cases 1–8 have not been performed.
+- Architect judgment on the implementation: **Changes Required** — Findings A, B, and C (see Decisions Pending) must be corrected first, followed by Desktop Verification Cases 2, 4, 6, 7, and 8.
+- No commit, push, PR, or main merge is authorized.
+
 ## figma-os#2 / figma-os#3 — registered (2026-07-22)
 
 - [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) — Type Adjuster Scale UI: synchronize with current selection, improve fine adjustment controls. Independent Product Improvement, no Gate dependency.
@@ -237,7 +256,7 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 | [figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4) | Type Inventory | P3 | Preserve multiline text (backlog; after higher-priority work). Transferred from asd#3 (2026-07-22, Repository Issue Ownership Reorganization) |
 | [asd#28](https://github.com/ga7ming3249/asd/issues/28) | Type Adjuster / Type Polish | - | Japanese Vertical Typography & Latin Kerning — Knowledge Review deliverables completed |
 | [asd#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | OpenType Typography Features — Capability Review findings completed |
-| [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) | Type Adjuster | Priority 1 | Synchronize Scale UI with current selection; improve fine adjustment controls. Phase A Accepted; scoped implementation authorized in an isolated worktree outside Dropbox, baseline `main@c9def978...`; no commit, push, PR, or main merge before implementation review |
+| [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) | Type Adjuster | Priority 1 | Synchronize Scale UI with current selection; improve fine adjustment controls. Phase A Accepted; scoped implementation carried out in an isolated worktree outside Dropbox but uncommitted, baseline `main@c9def978...`. Architect judgment: Changes Required — Findings A/B/C and Desktop Verification Cases 1–8 outstanding; no commit, push, PR, or main merge before implementation review |
 | [asd#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Parent Coordination Issue for Gate 5 Desktop Acceptance. Gate 5 on Owner Priority Hold pending figma-os#2 |
 | [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) | Type Adjuster / Type Polish | - | Gate 5 — Desktop Acceptance. Architect-verified and authorized; inherited baseline `dc636115...` (unmerged feature branch). Desktop Acceptance not started; Owner Priority Hold pending figma-os#2. Product code changes, PR, and main merge remain unauthorized |
 | [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) | Type Polish / Type Adjuster | Medium | Product Architecture Decision — canonical Utility (Scale/Baseline/Tracking) ownership. Depends on figma-os#2 |
@@ -252,7 +271,7 @@ Closed since last update: asd#9 (Guide Stamp — Canvas Guides), asd#11 (Type Ad
 
 No known gaps — the reference inconsistencies found during the Repository Issue Ownership Reorganization (bare `asd#30`/`asd#3` references, a misquoted Issue title, three "new ASD Issue" pointers, and Component Package's Canonical Documentation description) were corrected in Phase 3 and verified against `figma-os` main.
 
-(Last sync: 2026-07-23, ASD-side documentation only — this State update records the Architect's verification of Gate 5 Primary Implementation Issue `figma-os#6` (exact Issue URL and specification match) and the resulting Gate 5 Desktop Acceptance authorization; the stale `Gate 5 Architect Kickoff Required` line in Recent Changes is corrected. Verified `figma-os/main` remains `c9def9785e86272c8d21d61f14a500cd8b45793c`, distinct from the accepted Gate 4 feature head `dc6361157345ebb8b17264f63aef8fa0e265c5eb`; `main` is not claimed to contain Gate 4. Prior sync: 2026-07-23 (earlier same day), figma-os#5 Gate 4 Formally Closed synchronization. Prior sync: 2026-07-22, figma-os commit `c9def97` — `guide-stamp`, `instance-checker`, `type-inventory`, `component-package` HISTORY.md/ROADMAP.md corrected per the asd#17–#24 Architecture Review. Earlier sync: 2026-07-17, commit `ab69c8b` — README/PLUGINS/ROADMAP/CLAUDE aligned with repository state; DSS v1.x spike committed as a frozen artifact, resolving the previously broken ROADMAP links. New inconsistencies discovered later are recorded here as new items, not as historical notes.)
+(Last sync: 2026-07-23, ASD Nightly Canonical State Synchronization, ASD-side documentation only — no `figma-os` product repository commit was made. This State update records that `figma-os#2`'s Phase A Accept remains valid while its scoped implementation, carried out uncommitted in an isolated worktree, received Architect judgment Changes Required pending Findings A/B/C and Desktop Verification. Verified `figma-os/main` remains `c9def9785e86272c8d21d61f14a500cd8b45793c`, distinct from the accepted Gate 4 feature head `dc6361157345ebb8b17264f63aef8fa0e265c5eb`; `main` is not claimed to contain Gate 4 or the figma-os#2 implementation. Prior sync: 2026-07-23 (earlier same day), Architect verification of Gate 5 Primary Implementation Issue `figma-os#6` and the resulting Gate 5 Desktop Acceptance authorization. Prior sync: 2026-07-23 (same day), figma-os#5 Gate 4 Formally Closed synchronization. Prior sync: 2026-07-22, figma-os commit `c9def97` — `guide-stamp`, `instance-checker`, `type-inventory`, `component-package` HISTORY.md/ROADMAP.md corrected per the asd#17–#24 Architecture Review. Earlier sync: 2026-07-17, commit `ab69c8b` — README/PLUGINS/ROADMAP/CLAUDE aligned with repository state; DSS v1.x spike committed as a frozen artifact, resolving the previously broken ROADMAP links. New inconsistencies discovered later are recorded here as new items, not as historical notes.)
 
 ---
 
