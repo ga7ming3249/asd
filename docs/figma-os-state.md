@@ -1,6 +1,6 @@
 # Figma OS State
 
-- Version: 13
+- Version: 14
 - Date: 2026-07-23
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
@@ -40,8 +40,8 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 | Documentation | 🟢 Synced (Documentation Sync completed 2026-07-17) |
 | Known Critical Bugs | 0 |
 | High Priority Issues | 0 |
-| Current Development Focus | Issue #30 — Japanese Vertical — Standard — Gate 4 Safe Local Fix MVP accepted and closed on feature branch; Gate 5 Desktop Acceptance requires Architect Kickoff |
-| Recommended First Action | Gate 5 Architect Kickoff for Desktop Acceptance (asd#30); do not start Desktop work or create a Gate 5 Implementation Issue before kickoff |
+| Current Development Focus | Issue #30 — Japanese Vertical — Standard — Gate 5 Desktop Acceptance: Architect Kickoff published, Gate-scoped Issue [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) created; Desktop work not started pending Architect verification |
+| Recommended First Action | Architect verification of the new Gate 5 Issue URL and reproduced specification (asd#30, figma-os#6) |
 | State Confidence | Verified (2026-07-23) — `main@c9def978...` does not contain Gate 4; accepted feature head is `dc636115...` |
 
 ---
@@ -101,16 +101,16 @@ Architecture
 Stable
 
 Current Focus
-Issue #30 — Gate 4 Safe Local Fix MVP accepted on feature branch; awaiting Gate 5 Architect Kickoff
+Issue #30 — Gate 5 Desktop Acceptance setup
 
 Highest Priority
-Gate 5 Desktop Acceptance Architect Kickoff (asd#30)
+Architect URL/specification verification (asd#30, figma-os#6)
 
 Next Milestone
-Gate 5 — Desktop Acceptance
+Gate 5 Desktop evidence execution
 
 Blockers
-Gate 5 is not yet authorized; Gate 4 is not merged to main and must be inherited from dc636115
+Architect verification only
 
 Overall Health
 Healthy
@@ -209,7 +209,8 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 | [figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4) | Type Inventory | P3 | Preserve multiline text (backlog; after higher-priority work). Transferred from asd#3 (2026-07-22, Repository Issue Ownership Reorganization) |
 | [asd#28](https://github.com/ga7ming3249/asd/issues/28) | Type Adjuster / Type Polish | - | Japanese Vertical Typography & Latin Kerning — Knowledge Review deliverables completed |
 | [asd#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | OpenType Typography Features — Capability Review findings completed |
-| [asd#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Gate 4 Formally Closed / Gate 5 Architect Kickoff Required. Gate 4 accepted at unmerged feature head `dc636115` |
+| [asd#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Parent Coordination Issue for Gate 5 Desktop Acceptance. Gate 5 Architect Kickoff published; awaiting Architect verification |
+| [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) | Type Adjuster / Type Polish | - | Gate 5 — Desktop Acceptance. Reproduces the approved Gate 5 Architect Kickoff; inherited baseline `dc636115...` (unmerged feature branch); Desktop work not started, awaiting Architect verification |
 | [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) | Type Adjuster | Medium | Synchronize Scale UI with current selection; improve fine adjustment controls. No Gate dependency |
 | [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) | Type Polish / Type Adjuster | Medium | Product Architecture Decision — canonical Utility (Scale/Baseline/Tracking) ownership. Depends on figma-os#2 |
 

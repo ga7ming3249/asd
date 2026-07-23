@@ -1,6 +1,6 @@
 # ASD Roadmap
 
-- Version: 7
+- Version: 8
 - Last Reviewed: 2026-07-23
 - Status: Active
 
@@ -22,13 +22,13 @@ Documentation Architecture v1.0（[#12](https://github.com/ga7ming3249/asd/issue
 
 Gate 4 — Safe Local Fix MVP: Completed / Formally Closed
 
-Accepted implementation: [figma-os#5](https://github.com/ga7ming3249/figma-os/issues/5), `dc6361157345ebb8b17264f63aef8fa0e265c5eb` on `feature/issue-30-gate4-safe-local-fix`
+Gate 5 — Desktop Acceptance: Architect Kickoff Published / Implementation Issue Created ([figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6))
+
+Desktop Acceptance has not started; execution is pending Architect verification of the new Issue URL and specification.
+
+Required baseline: `dc6361157345ebb8b17264f63aef8fa0e265c5eb` on `feature/issue-30-gate4-safe-local-fix`
 
 Merge status: not merged to `figma-os/main`; verified main remains `c9def9785e86272c8d21d61f14a500cd8b45793c`
-
-Next milestone: Gate 5 — Desktop Acceptance
-
-Gate 5 requires a separate Architect Kickoff and Gate-scoped `figma-os` Implementation Issue before work begins.
 
 **Component Package: production trial & polish**
 
