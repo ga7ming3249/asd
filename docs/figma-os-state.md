@@ -1,6 +1,6 @@
 # Figma OS State
 
-- Version: 14
+- Version: 15
 - Date: 2026-07-23
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
@@ -40,9 +40,9 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 | Documentation | 🟢 Synced (Documentation Sync completed 2026-07-17) |
 | Known Critical Bugs | 0 |
 | High Priority Issues | 0 |
-| Current Development Focus | Issue #30 — Japanese Vertical — Standard — Gate 5 Desktop Acceptance: Architect Kickoff published, Gate-scoped Issue [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) created; Desktop work not started pending Architect verification |
-| Recommended First Action | Architect verification of the new Gate 5 Issue URL and reproduced specification (asd#30, figma-os#6) |
-| State Confidence | Verified (2026-07-23) — `main@c9def978...` does not contain Gate 4; accepted feature head is `dc636115...` |
+| Current Development Focus | Issue #30 — Japanese Vertical — Standard — Gate 5 Desktop Acceptance in progress |
+| Recommended First Action | baseline/build verification, environment record, and Desktop evidence matrix in [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) |
+| State Confidence | Verified 2026-07-23 — Gate 4 accepted at `dc636115...`; `main@c9def978...` remains unchanged |
 
 ---
 
@@ -101,16 +101,16 @@ Architecture
 Stable
 
 Current Focus
-Issue #30 — Gate 5 Desktop Acceptance setup
+Issue #30 / figma-os#6 — Gate 5 Desktop Acceptance
 
 Highest Priority
-Architect URL/specification verification (asd#30, figma-os#6)
+Baseline and environment verification, then Desktop evidence matrix execution
 
 Next Milestone
-Gate 5 Desktop evidence execution
+Gate 5 Desktop evidence and Vision Owner visual acceptance
 
 Blockers
-Architect verification only
+None for acceptance work; product code changes remain unauthorized
 
 Overall Health
 Healthy
@@ -192,7 +192,9 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 - Gate 2 complete
 - Gate 3 Formally Closed
 - Gate 4 Formally Closed — [figma-os#5](https://github.com/ga7ming3249/figma-os/issues/5), accepted `dc6361157345ebb8b17264f63aef8fa0e265c5eb`
-- Gate 5 Architect Kickoff Required
+- Gate 5 Architect Kickoff Published
+- Gate 5 Primary Implementation Issue [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) created and Architect-verified
+- Gate 5 Desktop Acceptance authorized; product code changes and main merge remain unauthorized
 - Gate 4 remains unmerged; verified `figma-os/main` remains `c9def9785e86272c8d21d61f14a500cd8b45793c`
 
 ## figma-os#2 / figma-os#3 — registered (2026-07-22)
@@ -209,8 +211,8 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 | [figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4) | Type Inventory | P3 | Preserve multiline text (backlog; after higher-priority work). Transferred from asd#3 (2026-07-22, Repository Issue Ownership Reorganization) |
 | [asd#28](https://github.com/ga7ming3249/asd/issues/28) | Type Adjuster / Type Polish | - | Japanese Vertical Typography & Latin Kerning — Knowledge Review deliverables completed |
 | [asd#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | OpenType Typography Features — Capability Review findings completed |
-| [asd#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Parent Coordination Issue for Gate 5 Desktop Acceptance. Gate 5 Architect Kickoff published; awaiting Architect verification |
-| [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) | Type Adjuster / Type Polish | - | Gate 5 — Desktop Acceptance. Reproduces the approved Gate 5 Architect Kickoff; inherited baseline `dc636115...` (unmerged feature branch); Desktop work not started, awaiting Architect verification |
+| [asd#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Parent Coordination Issue for Gate 5 Desktop Acceptance. Architect verified figma-os#6; Gate 5 Desktop Acceptance authorized and in progress |
+| [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) | Type Adjuster / Type Polish | - | Gate 5 — Desktop Acceptance. Architect-verified; inherited baseline `dc636115...` (unmerged feature branch). Authorized: baseline/build verification, environment record, evidence matrix, approved acceptance cases. Product code changes, PR, and main merge remain unauthorized |
 | [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) | Type Adjuster | Medium | Synchronize Scale UI with current selection; improve fine adjustment controls. No Gate dependency |
 | [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) | Type Polish / Type Adjuster | Medium | Product Architecture Decision — canonical Utility (Scale/Baseline/Tracking) ownership. Depends on figma-os#2 |
 
@@ -224,7 +226,7 @@ Closed since last update: asd#9 (Guide Stamp — Canvas Guides), asd#11 (Type Ad
 
 No known gaps — the reference inconsistencies found during the Repository Issue Ownership Reorganization (bare `asd#30`/`asd#3` references, a misquoted Issue title, three "new ASD Issue" pointers, and Component Package's Canonical Documentation description) were corrected in Phase 3 and verified against `figma-os` main.
 
-(Last sync: 2026-07-23, ASD-side documentation only — this State update records Issue #30 Gate 4 (`figma-os#5`, accepted `dc6361157345ebb8b17264f63aef8fa0e265c5eb`) as Formally Closed on its unmerged feature branch; verified `figma-os/main` remains `c9def9785e86272c8d21d61f14a500cd8b45793c` and is not claimed to contain Gate 4. Prior sync: 2026-07-22, figma-os commit `c9def97` — `guide-stamp`, `instance-checker`, `type-inventory`, `component-package` HISTORY.md/ROADMAP.md corrected per the asd#17–#24 Architecture Review. Earlier sync: 2026-07-17, commit `ab69c8b` — README/PLUGINS/ROADMAP/CLAUDE aligned with repository state; DSS v1.x spike committed as a frozen artifact, resolving the previously broken ROADMAP links. New inconsistencies discovered later are recorded here as new items, not as historical notes.)
+(Last sync: 2026-07-23, ASD-side documentation only — this State update records the Architect's verification of Gate 5 Primary Implementation Issue `figma-os#6` (exact Issue URL and specification match) and the resulting Gate 5 Desktop Acceptance authorization; the stale `Gate 5 Architect Kickoff Required` line in Recent Changes is corrected. Verified `figma-os/main` remains `c9def9785e86272c8d21d61f14a500cd8b45793c`, distinct from the accepted Gate 4 feature head `dc6361157345ebb8b17264f63aef8fa0e265c5eb`; `main` is not claimed to contain Gate 4. Prior sync: 2026-07-23 (earlier same day), figma-os#5 Gate 4 Formally Closed synchronization. Prior sync: 2026-07-22, figma-os commit `c9def97` — `guide-stamp`, `instance-checker`, `type-inventory`, `component-package` HISTORY.md/ROADMAP.md corrected per the asd#17–#24 Architecture Review. Earlier sync: 2026-07-17, commit `ab69c8b` — README/PLUGINS/ROADMAP/CLAUDE aligned with repository state; DSS v1.x spike committed as a frozen artifact, resolving the previously broken ROADMAP links. New inconsistencies discovered later are recorded here as new items, not as historical notes.)
 
 ---
 
