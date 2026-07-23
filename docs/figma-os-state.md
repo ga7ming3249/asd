@@ -1,7 +1,7 @@
 # Figma OS State
 
-- Version: 11
-- Date: 2026-07-22
+- Version: 12
+- Date: 2026-07-23
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
 - Verified against: `ga7ming3249/figma-os` main branch (`c9def9785e86272c8d21d61f14a500cd8b45793c`) and ASD Issues, as of 2026-07-22
@@ -170,7 +170,7 @@ This table reflects the verified repository and documentation state as of 2026-0
 | Type Polish | `type-polish/` | v0.6 | Research | Experimental | Issue #30 scoped exception — Gate 3 complete. Owns Analysis, Recommendation, User Decision, and Manual Handoff production. Utility (Scale/Baseline/Tracking) ownership under review — [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) |
 | Design Style Sheet | `design-style-sheet/` | v0.1.1 | Concept | Experimental (frozen spike) | v1.x preserved in repo as a frozen historical artifact (2026-07-17). No feature development; preservation fixes only. v2 redesign via new ASD Issue |
 
-Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-22 it has no independent Git repository yet (local-only, not `git`-tracked); it is out of `figma-os` scope, and per `docs/repository-issue-ownership.md`'s Repository-not-yet-created rule, its Issues remain managed in `asd` until a Product Repository is created. Its operational state is tracked through asd Issues #4–#6.
+Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-23, repository `ga7ming3249/reference-assistant` exists as its independent Product Repository; its Product Issues are owned there. `asd#4` and `asd#6` were closed after Successor Issue transfer to that repository (2026-07-23); `asd#5` remains historical (closed, unchanged).
 
 ---
 
@@ -213,7 +213,7 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 
 Closed since last update: asd#9 (Guide Stamp — Canvas Guides), asd#11 (Type Adjuster — Virtual Body punctuation adjustment), asd#3 (Type Inventory multiline — transferred to figma-os#4, 2026-07-22).
 
-(ASD-framework and Reference Assistant issues — asd#4, asd#6, asd#8 — do not touch figma-os code. Note: distinct from figma-os#4 above, which is a different repository's Issue #4.)
+(ASD-framework issue asd#8 does not touch figma-os code. Note: distinct from figma-os#4 above, which is a different repository's Issue #4. Reference Assistant Issues are no longer tracked in `asd` — see Out of scope note above.)
 
 ---
 

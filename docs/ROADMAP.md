@@ -1,7 +1,7 @@
 # ASD Roadmap
 
-- Version: 5
-- Last Reviewed: 2026-07-22
+- Version: 6
+- Last Reviewed: 2026-07-23
 - Status: Active
 
 ---
@@ -30,6 +30,10 @@ After that: Gate 5 — Desktop Acceptance
 
 PR #1マージ（2026-07-16）済み。実運用を通じて成熟させ、改善点は新規Issueとして収集する段階。
 
+**Reference Assistant: Daily Preview operation**（[reference-assistant#1](https://github.com/ga7ming3249/reference-assistant/issues/1)、P1、Product Repositoryにて実施）
+
+2026-07-23、Vision Owner承認によりasd#4からSuccessor Issue方式で移管。実プロジェクトでの継続利用を通じて摩擦を発見し、証跡ベースの改善バックログを構築する。最初の実践目標は、実際の `collect → select → deliverable` サイクルを1件完了すること。
+
 ---
 
 # Next
@@ -46,6 +50,14 @@ Issue #30とは独立したProduct Improvement。Gate依存なし。
 
 Product Architecture Decision（実装ではない）。figma-os#2完了後にUtility削除を検討する前提。Issue #30 Gate 4への依存なし。
 
+**Reference Assistant: Daily Operation Guide**（[reference-assistant#2](https://github.com/ga7ming3249/reference-assistant/issues/2)、P2）
+
+2026-07-23、Vision Owner承認によりasd#6からSuccessor Issue方式で移管。`docs/daily-operation-guide.md` を作成し、日常運用手順を標準化する。
+
+**Reference Assistant: Library Location Selection and Safe Relocation architecture design**（[reference-assistant#3](https://github.com/ga7ming3249/reference-assistant/issues/3)、P2）
+
+GUIやリロケーション実装に先立ち、Library識別・選択・安全な移動モデルを定義するArchitecture Issue。
+
 ---
 
 # Future
@@ -57,6 +69,10 @@ Product Architecture Decision（実装ではない）。figma-os#2完了後にUt
 **Composer / Design Style Sheet v2 再設計**
 
 Foundation（Color Inventory / Component Package）が実運用で十分に成熟してから着手。DSS ColorsセクションとColor Inventoryの紙面生成の役割分担再定義が前提の宿題として残っている。
+
+**Reference Assistant: Future Candidates（証跡駆動）**
+
+GUI、Relevance/Safety、Tag、Flow、Export/Figma、Presentationは、Daily Preview評価による証跡と前提となるArchitecture決定が揃うまでコミットしない。
 
 ---
 

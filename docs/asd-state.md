@@ -1,7 +1,7 @@
 # ASD State
 
-- Version: 21
-- Date: 2026-07-22
+- Version: 22
+- Date: 2026-07-23
 - Status: Active
 
 ---
@@ -186,6 +186,7 @@ Status: Adopted (2026-07-22) — defines which repository (`asd`, `figma-os`, or
 - Type Polish Utility ownership consolidation decision Issue registered ([figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3)) — Product Architecture Decision, depends on figma-os#2 before any Utility removal is considered.
 - Repository Issue Ownership Reorganization Phase 2 executed (2026-07-22): [asd#3](https://github.com/ga7ming3249/asd/issues/3) transferred to [figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4) (Type Inventory multiline support — not started, Successor Issue method) and closed; [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2)'s bare `#30` cross-repository references corrected to `ga7ming3249/asd#30`; Repository Issue Ownership Policy adopted (`docs/repository-issue-ownership.md`). See `docs/ASD-Issues-17-24-Architecture-Review-Bundle-2026-07-22.md` for the #17–#24 review bundle.
 - Repository Issue Ownership Reorganization Phase 3 executed (2026-07-22): Documentation Migration Epic #13's remaining 8 child Issues (asd#17–#24) received Architecture Review and were Closed — #17, #18, #21, #24 after a limited Product Documentation correction (`figma-os` commit `c9def97`), #19, #20, #22, #23 without correction. `docs/ai-collaboration-contract.md` updated to v0.10 (Publisher role: Codex → Claude Code; Codex: Publisher → Specialist Engineer).
+- Reference Assistant established as an independent private repository (2026-07-23): `ga7ming3249/reference-assistant`, baseline `main` commit `f0025cb30acd25948b92abd9e06ff93b4974a15c`, CI baseline verified, stable local clone `/Users/atsushitogami/Developer/reference-assistant`. `asd#4` and `asd#6` migrated to that repository by the Successor Issue method after explicit Vision Owner approval; `asd#5` is retained, unchanged, as closed history.
 
 ## Project Phase
 
@@ -208,6 +209,9 @@ Typography Knowledge Base（asd#28, asd#29）を基盤として、Japanese Verti
 | [#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Active | Japanese Vertical — Standard — Architecture-gated scoped exception. Gate 3 Formally Closed / Gate 4 Architect Kickoff Required |
 | [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) | Type Adjuster | Medium | Open | Synchronize Scale UI with current selection and improve fine adjustment controls. No Gate dependency |
 | [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) | Type Polish / Type Adjuster | Medium | Open | Product Architecture Decision — canonical ownership of Utility (Scale/Baseline/Tracking). Depends on figma-os#2 completion before any Utility removal |
+| [reference-assistant#1](https://github.com/ga7ming3249/reference-assistant/issues/1) | Reference Assistant | P1 | Open | Daily Preview Operation — Primary Issue, Successor to asd#4 |
+| [reference-assistant#2](https://github.com/ga7ming3249/reference-assistant/issues/2) | Reference Assistant | P2 | Open | Create Reference Assistant Daily Operation Guide — Successor to asd#6 |
+| [reference-assistant#3](https://github.com/ga7ming3249/reference-assistant/issues/3) | Reference Assistant | P2 | Open | Design Library Location Selection and Safe Relocation Model — Architecture Issue |
 
 ## Architecture Notes
 
@@ -215,10 +219,11 @@ Typography Knowledge Base（asd#28, asd#29）を基盤として、Japanese Verti
 - Type Polish owns Analysis, Recommendation, User Decision, and Manual Handoff production.
 - Type Adjuster owns current-selection validation and final manual adjustment; Manual Local Fix execution is planned for Gate 4. It never becomes an automatic composition engine.
 - Transport: Manual Handoff Transport — Status: Adopted. Current implementation covers Transport production; execution (consumption side) is not yet implemented.
+- Reference Assistant product work belongs in its own Product Repository (`ga7ming3249/reference-assistant`). ASD is used only for cross-product/global governance, not for tracking that product's day-to-day Issues.
 
 ## Current main
 
-Verified main: `c9def9785e86272c8d21d61f14a500cd8b45793c` (Repository Issue Ownership Reorganization Phase 3 documentation commit, 2026-07-22)
+Verified main (`ga7ming3249/asd`): `56a39696e990607ec56ac7b886edb4634b7129ef`
 
 ## Outstanding Work
 
