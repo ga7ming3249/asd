@@ -1,6 +1,6 @@
 # Figma OS State
 
-- Version: 15
+- Version: 16
 - Date: 2026-07-23
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
@@ -40,9 +40,10 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 | Documentation | 🟢 Synced (Documentation Sync completed 2026-07-17) |
 | Known Critical Bugs | 0 |
 | High Priority Issues | 0 |
-| Current Development Focus | Issue #30 — Japanese Vertical — Standard — Gate 5 Desktop Acceptance in progress |
-| Recommended First Action | baseline/build verification, environment record, and Desktop evidence matrix in [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) |
-| State Confidence | Verified 2026-07-23 — Gate 4 accepted at `dc636115...`; `main@c9def978...` remains unchanged |
+| Current Development Focus | [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) Phase A — Current Scale Contract and Integration Review |
+| Recommended First Action | #2 baseline/code-flow/Scale contract investigation |
+| Gate 5 | [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) — Open / Authorized / Owner Priority Hold / not started |
+| State Confidence | Verified 2026-07-23 |
 
 ---
 
@@ -50,25 +51,43 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 
 Current recommended implementation order. This is a recommendation, not a commitment — it may change whenever Product State is updated.
 
-**P1 — Component Package: production trial & polish**
+**P1 — figma-os#2: Type Adjuster Scale UI synchronization, Phase A**
+
+Reason: Vision Owner priority decision (2026-07-23) — prioritized ahead of Gate 5 Desktop Acceptance. Only the Phase A read-only Architecture Review (Current Scale Contract and Integration Review) is authorized now; baseline is canonical `main@c9def978...`, not the unmerged Gate 4 head.
+
+Prerequisite: None
+
+**P2 — figma-os#6: Gate 5 Desktop Acceptance**
+
+Reason: Architect-verified and authorized, but placed on Owner Priority Hold (2026-07-23) pending figma-os#2. Not a defect, architecture blocker, rejection, or cancellation.
+
+Prerequisite: Resumes only after an explicit Owner priority decision
+
+**P3 — figma-os#3: Type Polish Utility ownership decision**
+
+Reason: Product Architecture Decision remains downstream of figma-os#2 completion.
+
+Prerequisite: figma-os#2 completion
+
+**P4 — Component Package: production trial & polish**
 
 Reason: Recently merged (PR #1, 2026-07-16). Mature it through daily production use and collect small improvements as new Issues before starting the next Foundation work.
 
 Prerequisite: None (the trial itself is the work)
 
-**P2 — Color Inventory: Generate Inventory Page**
+**P5 — Color Inventory: Generate Inventory Page**
 
 Reason: v1 core (Generate / Raw Colors Workbench / Promote) is in production trial; Inventory Page generation is the next increment toward Production promotion.
 
 Prerequisite: None
 
-**P3 — Type Inventory: multiline support ([figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4))**
+**P6 — Type Inventory: multiline support ([figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4))**
 
 Reason: Backlog item per ASD priority assessment. Clear workaround exists; lower user impact.
 
 Prerequisite: None (Guide Stamp Canvas Guides, ASD #9, completed 2026-07-17)
 
-**P4 — Composer / Design Style Sheet v2**
+**P7 — Composer / Design Style Sheet v2**
 
 Reason: Foundation plugins (Color Inventory, Component Package) need to mature through production use first; see Decisions Pending.
 
@@ -101,16 +120,16 @@ Architecture
 Stable
 
 Current Focus
-Issue #30 / figma-os#6 — Gate 5 Desktop Acceptance
+figma-os#2 — Scale UI synchronization, Phase A Current Scale Contract
 
 Highest Priority
-Baseline and environment verification, then Desktop evidence matrix execution
+Complete #2 Phase A and obtain Architect Accept before implementation
 
 Next Milestone
-Gate 5 Desktop evidence and Vision Owner visual acceptance
+figma-os#2 scoped implementation
 
 Blockers
-None for acceptance work; product code changes remain unauthorized
+Canonical Current Scale contract not yet accepted; Gate 5 is on Owner Priority Hold
 
 Overall Health
 Healthy
@@ -194,8 +213,15 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 - Gate 4 Formally Closed — [figma-os#5](https://github.com/ga7ming3249/figma-os/issues/5), accepted `dc6361157345ebb8b17264f63aef8fa0e265c5eb`
 - Gate 5 Architect Kickoff Published
 - Gate 5 Primary Implementation Issue [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) created and Architect-verified
-- Gate 5 Desktop Acceptance authorized; product code changes and main merge remain unauthorized
+- Gate 5 Desktop Acceptance authorized, then placed on Owner Priority Hold (2026-07-23) pending figma-os#2; product code changes and main merge remain unauthorized
 - Gate 4 remains unmerged; verified `figma-os/main` remains `c9def9785e86272c8d21d61f14a500cd8b45793c`
+
+## Vision Owner priority decision — figma-os#2 prioritized (2026-07-23)
+
+- [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) becomes Priority 1; Phase A read-only Architect Kickoff (Current Scale Contract and Integration Review) published. Baseline is canonical `main@c9def9785e86272c8d21d61f14a500cd8b45793c`, not the unmerged Gate 4 head `dc6361157345ebb8b17264f63aef8fa0e265c5eb`. No product code changes before Phase A Architect Accept.
+- [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) (Gate 5 Desktop Acceptance) placed on Owner Priority Hold — remains Open and authorized, not a defect or cancellation. Resumes only after an explicit Owner priority decision.
+- [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) remains Open / not started, downstream of figma-os#2 completion.
+- `figma-os#2` and Gate 4/5 (`dc636115...`) overlap in Type Adjuster and require an explicit future integration/reconciliation scope before combination; no rebase, cherry-pick, or merge between the lineages is authorized.
 
 ## figma-os#2 / figma-os#3 — registered (2026-07-22)
 
@@ -211,9 +237,9 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 | [figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4) | Type Inventory | P3 | Preserve multiline text (backlog; after higher-priority work). Transferred from asd#3 (2026-07-22, Repository Issue Ownership Reorganization) |
 | [asd#28](https://github.com/ga7ming3249/asd/issues/28) | Type Adjuster / Type Polish | - | Japanese Vertical Typography & Latin Kerning — Knowledge Review deliverables completed |
 | [asd#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | OpenType Typography Features — Capability Review findings completed |
-| [asd#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Parent Coordination Issue for Gate 5 Desktop Acceptance. Architect verified figma-os#6; Gate 5 Desktop Acceptance authorized and in progress |
-| [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) | Type Adjuster / Type Polish | - | Gate 5 — Desktop Acceptance. Architect-verified; inherited baseline `dc636115...` (unmerged feature branch). Authorized: baseline/build verification, environment record, evidence matrix, approved acceptance cases. Product code changes, PR, and main merge remain unauthorized |
-| [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) | Type Adjuster | Medium | Synchronize Scale UI with current selection; improve fine adjustment controls. No Gate dependency |
+| [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) | Type Adjuster | Priority 1 | Synchronize Scale UI with current selection; improve fine adjustment controls. Phase A read-only Architecture Review authorized; baseline `main@c9def978...`; no product code changes before Phase A Architect Accept |
+| [asd#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Parent Coordination Issue for Gate 5 Desktop Acceptance. Gate 5 on Owner Priority Hold pending figma-os#2 |
+| [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) | Type Adjuster / Type Polish | - | Gate 5 — Desktop Acceptance. Architect-verified and authorized; inherited baseline `dc636115...` (unmerged feature branch). Desktop Acceptance not started; Owner Priority Hold pending figma-os#2. Product code changes, PR, and main merge remain unauthorized |
 | [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) | Type Polish / Type Adjuster | Medium | Product Architecture Decision — canonical Utility (Scale/Baseline/Tracking) ownership. Depends on figma-os#2 |
 
 Closed since last update: asd#9 (Guide Stamp — Canvas Guides), asd#11 (Type Adjuster — Virtual Body punctuation adjustment), asd#3 (Type Inventory multiline — transferred to figma-os#4, 2026-07-22), figma-os#5 (Issue #30 Gate 4 — Safe Local Fix MVP, accepted `dc636115`, not merged to main).

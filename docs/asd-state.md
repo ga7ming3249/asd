@@ -1,6 +1,6 @@
 # ASD State
 
-- Version: 25
+- Version: 26
 - Date: 2026-07-23
 - Status: Active
 
@@ -181,9 +181,10 @@ Status: Adopted (2026-07-22) — defines which repository (`asd`, `figma-os`, or
 
 - Type Adjuster Vertical Layout Foundation Completed ([asd#27](https://github.com/ga7ming3249/asd/issues/27), Architect Final Review: Accept, rev8).
 - Typography Knowledge Base — Japanese Vertical Typography & Latin Kerning ([asd#28](https://github.com/ga7ming3249/asd/issues/28)) and OpenType Typography Features ([asd#29](https://github.com/ga7ming3249/asd/issues/29)) knowledge deliverables completed.
-- Japanese Vertical — Standard implementation proceeding as an Architecture-gated scoped exception ([asd#30](https://github.com/ga7ming3249/asd/issues/30)) — Architect verified the Gate 5 Issue URL and exact specification ([issuecomment-5056295573](https://github.com/ga7ming3249/figma-os/issues/6#issuecomment-5056295573) on [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6); [issuecomment-5056295803](https://github.com/ga7ming3249/asd/issues/30#issuecomment-5056295803) on `asd#30`); the previous verification-pending block is resolved and Gate 5 Desktop Acceptance is authorized. Initial work is acceptance planning, environment/baseline verification, evidence matrix preparation, and approved Desktop cases; product code changes, PR creation, and main merge remain unauthorized. Gate 4 remains accepted only at `dc6361157345ebb8b17264f63aef8fa0e265c5eb` on `feature/issue-30-gate4-safe-local-fix` ([figma-os#5](https://github.com/ga7ming3249/figma-os/issues/5), Closed) and is not merged to `figma-os/main`.
-- Type Adjuster Scale UI synchronization Issue registered ([figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2)) — independent Product Improvement, no Gate dependency.
-- Type Polish Utility ownership consolidation decision Issue registered ([figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3)) — Product Architecture Decision, depends on figma-os#2 before any Utility removal is considered.
+- Vision Owner priority decision (2026-07-23): [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) is prioritized ahead of Gate 5 Desktop Acceptance. [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) is Priority 1; only its Phase A read-only Architecture Review (Current Scale Contract and Integration Review) is authorized, using canonical `figma-os/main@c9def9785e86272c8d21d61f14a500cd8b45793c` — not the unmerged Gate 4 head. [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) remains Open / Authorized / Owner Priority Hold; Desktop Acceptance has not started and resumes only after an explicit Owner priority decision.
+- Japanese Vertical — Standard implementation proceeding as an Architecture-gated scoped exception ([asd#30](https://github.com/ga7ming3249/asd/issues/30)) — Gate 5 remains authorized and its Primary Implementation Issue [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) remains Open, but Desktop Acceptance is on Owner Priority Hold pending `figma-os#2`. Gate 4 remains accepted only at `dc6361157345ebb8b17264f63aef8fa0e265c5eb` on `feature/issue-30-gate4-safe-local-fix` ([figma-os#5](https://github.com/ga7ming3249/figma-os/issues/5), Closed) and is not merged to `figma-os/main`.
+- Type Adjuster Scale UI synchronization Issue registered ([figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2)) — now Priority 1, Phase A Architect Kickoff published; independent Product Improvement, no Gate dependency.
+- Type Polish Utility ownership consolidation decision Issue registered ([figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3)) — Product Architecture Decision, remains Open / not started, downstream of figma-os#2 completion before any Utility removal is considered.
 - Repository Issue Ownership Reorganization Phase 2 executed (2026-07-22): [asd#3](https://github.com/ga7ming3249/asd/issues/3) transferred to [figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4) (Type Inventory multiline support — not started, Successor Issue method) and closed; [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2)'s bare `#30` cross-repository references corrected to `ga7ming3249/asd#30`; Repository Issue Ownership Policy adopted (`docs/repository-issue-ownership.md`). See `docs/ASD-Issues-17-24-Architecture-Review-Bundle-2026-07-22.md` for the #17–#24 review bundle.
 - Repository Issue Ownership Reorganization Phase 3 executed (2026-07-22): Documentation Migration Epic #13's remaining 8 child Issues (asd#17–#24) received Architecture Review and were Closed — #17, #18, #21, #24 after a limited Product Documentation correction (`figma-os` commit `c9def97`), #19, #20, #22, #23 without correction. `docs/ai-collaboration-contract.md` updated to v0.10 (Publisher role: Codex → Claude Code; Codex: Publisher → Specialist Engineer).
 - Reference Assistant established as an independent private repository (2026-07-23): `ga7ming3249/reference-assistant`, baseline `main` commit `f0025cb30acd25948b92abd9e06ff93b4974a15c`, CI baseline verified, stable local clone `/Users/atsushitogami/Developer/reference-assistant`. `asd#4` and `asd#6` migrated to that repository by the Successor Issue method after explicit Vision Owner approval; `asd#5` is retained, unchanged, as closed history.
@@ -196,7 +197,7 @@ Previous: Knowledge Review Phase
 
 Current: **Architecture-gated Implementation Phase**
 
-Current Position: Gate 5 Architect Verification Complete / Desktop Acceptance In Progress
+Current Position: figma-os#2 Phase A Authorized / Gate 5 Owner Priority Hold
 
 Typography Knowledge Base（asd#28, asd#29）を基盤として、Japanese Vertical — Standard の実装を Architecture-gated scoped exception（asd#30）として進行中。
 
@@ -206,10 +207,10 @@ Typography Knowledge Base（asd#28, asd#29）を基盤として、Japanese Verti
 |---|---|---|---|---|
 | [#28](https://github.com/ga7ming3249/asd/issues/28) | Type Adjuster / Type Polish | - | Open | Knowledge Review deliverables completed — Japanese Vertical Typography & Latin Kerning knowledge foundation |
 | [#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | Open | Knowledge Review deliverables completed — OpenType Typography Features |
-| [#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Active | Japanese Vertical — Standard — Parent Coordination Issue for Gate 5 Desktop Acceptance. Architect verified figma-os#6; Gate 5 Desktop Acceptance authorized and in progress |
-| [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) | Type Adjuster / Type Polish | - | Open / Acceptance In Progress | Gate 5 — Desktop Acceptance. Architect-verified; inherited baseline `dc636115...` (unmerged, `figma-os` feature branch). Authorized: baseline/build verification, environment record, evidence matrix, approved acceptance cases. Product code changes, PR, and main merge remain unauthorized |
-| [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) | Type Adjuster | Medium | Open | Synchronize Scale UI with current selection and improve fine adjustment controls. No Gate dependency |
-| [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) | Type Polish / Type Adjuster | Medium | Open | Product Architecture Decision — canonical ownership of Utility (Scale/Baseline/Tracking). Depends on figma-os#2 completion before any Utility removal |
+| [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) | Type Adjuster | Priority 1 | Active / Phase A | Synchronize Scale UI with current selection and improve fine adjustment controls. Phase A read-only Architecture Review (Current Scale Contract and Integration Review) authorized; baseline `main@c9def978...`; no product code changes before Phase A Architect Accept |
+| [#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Active / Open Parent | Japanese Vertical — Standard — Parent Coordination Issue for Gate 5 Desktop Acceptance. Gate 5 on Owner Priority Hold pending figma-os#2 |
+| [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) | Type Adjuster / Type Polish | - | Open / Owner Priority Hold | Gate 5 — Desktop Acceptance. Architect-verified and authorized; inherited baseline `dc636115...` (unmerged, `figma-os` feature branch). Desktop Acceptance not started; Owner Priority Hold pending figma-os#2. Product code changes, PR, and main merge remain unauthorized |
+| [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) | Type Polish / Type Adjuster | Medium | Open / Downstream of #2 | Product Architecture Decision — canonical ownership of Utility (Scale/Baseline/Tracking). Depends on figma-os#2 completion before any Utility removal |
 | [reference-assistant#1](https://github.com/ga7ming3249/reference-assistant/issues/1) | Reference Assistant | P1 | Open | Daily Preview Operation — Primary Issue, Successor to asd#4 |
 | [reference-assistant#2](https://github.com/ga7ming3249/reference-assistant/issues/2) | Reference Assistant | P2 | Open | Create Reference Assistant Daily Operation Guide — Successor to asd#6 |
 | [reference-assistant#3](https://github.com/ga7ming3249/reference-assistant/issues/3) | Reference Assistant | P2 | Open | Design Library Location Selection and Safe Relocation Model — Architecture Issue |
@@ -221,6 +222,7 @@ Typography Knowledge Base（asd#28, asd#29）を基盤として、Japanese Verti
 - Type Adjuster owns current-selection validation, explicit Local Fix execution, and final manual adjustment. Gate 4 delivered `LF-UPRIGHT-001`, `LF-ROTATE-RUN-001`, group-member Nudge, and conflict-safe structural Reset. It remains non-judgmental and never becomes an automatic composition engine.
 - Transport and execution status: Manual Handoff Transport is Adopted; Safe Local Fix consumption and explicit execution are implemented and accepted on `feature/issue-30-gate4-safe-local-fix` at `dc6361157345ebb8b17264f63aef8fa0e265c5eb`. Real Figma Desktop acceptance remains Gate 5.
 - Gate 4 implementation is not present on verified `figma-os/main@c9def9785e86272c8d21d61f14a500cd8b45793c`; downstream work must inherit the accepted feature-branch commit explicitly.
+- `figma-os#2` uses canonical `main@c9def9785e86272c8d21d61f14a500cd8b45793c` as its baseline; Gate 4 and Gate 5 use the accepted, unmerged `dc6361157345ebb8b17264f63aef8fa0e265c5eb`. The two lineages overlap in Type Adjuster UI, backend/message flow, generated output, tests, and documentation, and require a future explicit integration/reconciliation scope — reviewing overlapping files and rerunning both regression suites — before they are combined. No rebase, cherry-pick, or merge between the lineages is authorized until then.
 - Reference Assistant product work belongs in its own Product Repository (`ga7ming3249/reference-assistant`). ASD is used only for cross-product/global governance, not for tracking that product's day-to-day Issues.
 
 ## Current main
@@ -232,6 +234,10 @@ Verified figma-os main: `c9def9785e86272c8d21d61f14a500cd8b45793c`
 Accepted, unmerged Gate 4 feature head: `dc6361157345ebb8b17264f63aef8fa0e265c5eb`
 
 ## Outstanding Work
+
+**Current work: `figma-os#2` Phase A**
+
+Phase A (Current Scale Contract and Integration Review) is a read-only Architecture Review. No implementation code for `figma-os#2` is authorized before an explicit Phase A Architect Accept. Baseline is canonical `figma-os/main@c9def9785e86272c8d21d61f14a500cd8b45793c` — not the unmerged Gate 4 head.
 
 **Issue #30**
 
@@ -245,11 +251,11 @@ Completed Gates:
 
 Remaining Gate:
 
-- Gate 5 — Desktop Acceptance ([figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6), Open / Acceptance In Progress)
+- Gate 5 — Desktop Acceptance ([figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6), Open / Owner Priority Hold)
 
 Issue remains Open. `asd#30` remains the Parent Coordination Issue for Architecture Gates, Global Architect Review, completion judgment, and State Synchronization.
 
-Gate 5 is authorized and in progress: the Architect verified the Issue URL and exact specification on 2026-07-23 ([issuecomment-5056295573](https://github.com/ga7ming3249/figma-os/issues/6#issuecomment-5056295573) on `figma-os#6`; [issuecomment-5056295803](https://github.com/ga7ming3249/asd/issues/30#issuecomment-5056295803) on `asd#30`). The previous verification-pending block is resolved. Initial authorized work is acceptance planning, environment/baseline verification, evidence matrix preparation, and approved Desktop cases. Product code changes, PR creation, and merge to `figma-os/main` remain unauthorized.
+Gate 5 remains authorized (Architect verified the Issue URL and exact specification on 2026-07-23), but the Vision Owner placed Desktop Acceptance on Owner Priority Hold on 2026-07-23 pending `figma-os#2`. This is not a defect, architecture blocker, rejection, or cancellation. Gate 5 resumes only after an explicit Owner priority decision. Product code changes, PR creation, and merge to `figma-os/main` remain unauthorized.
 
 Gate 5 must inherit `dc6361157345ebb8b17264f63aef8fa0e265c5eb` directly. It must not assume `figma-os/main@c9def978...` contains Gate 4.
 
