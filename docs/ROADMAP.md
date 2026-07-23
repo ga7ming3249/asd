@@ -1,6 +1,6 @@
 # ASD Roadmap
 
-- Version: 12
+- Version: 13
 - Last Reviewed: 2026-07-23
 - Status: Active
 
@@ -26,7 +26,7 @@ Phase A (Current Scale Contract and Integration Review): Accepted — remains va
 
 Scoped implementation carried out in an isolated worktree outside Dropbox (`/Users/atsushitogami/Developer/figma-os-issue-2-scale-sync`, branch `feature/issue-2-scale-state-sync`), but remains **uncommitted**.
 
-Architect judgment on the implementation: **Changes Required**. 115/115 tests, Scoped Typecheck, Build, `git diff --check`, and Source/Dist parity all PASS; Desktop Verification Cases 1–8 not yet performed. Findings A/B/C must be corrected, followed by Desktop Verification Cases 2, 4, 6, 7, 8, before Architect re-review.
+Architect judgment on the implementation: **Changes Required**. 115/115 tests, Scoped Typecheck, Build, `git diff --check`, and Source/Dist parity all PASS; Desktop Verification Cases 1–8 not yet performed. Findings A/B/C must be corrected first. After that, Desktop Verification Cases 1–8 must all be completed; Cases 2, 4, 6, 7, and 8 are the especially critical required evidence before Architect re-review.
 
 Baseline: `main@c9def9785e86272c8d21d61f14a500cd8b45793c`. Do not use the unmerged Gate 4 head.
 

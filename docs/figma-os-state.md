@@ -1,6 +1,6 @@
 # Figma OS State
 
-- Version: 18
+- Version: 19
 - Date: 2026-07-23
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
@@ -55,7 +55,7 @@ Current recommended implementation order. This is a recommendation, not a commit
 
 Reason: Vision Owner priority decision (2026-07-23) — prioritized ahead of Gate 5 Desktop Acceptance. Phase A remains Accepted; scoped implementation was carried out in the isolated worktree (baseline canonical `main@c9def978...`, not the unmerged Gate 4 head) but is uncommitted, and Architect judgment on it is **Changes Required** pending Findings A/B/C and Desktop Verification (see Decisions Pending). No commit, push, PR, or main merge before the implementation report receives Architect Review.
 
-Prerequisite: Findings A/B/C corrected and Desktop Verification Cases 2, 4, 6, 7, 8 completed
+Prerequisite: Findings A/B/C corrected and Desktop Verification Cases 1–8 all completed (Cases 2, 4, 6, 7, 8 are the especially critical required evidence)
 
 **P2 — figma-os#6: Gate 5 Desktop Acceptance**
 
@@ -115,7 +115,7 @@ Phase A Accept authorized scoped implementation; the implementation itself, once
 - Finding B: adopt post-await epoch/token re-validation to prevent stale finalize; documenting an internal `await` prohibition alone does not satisfy this.
 - Finding C: correct `HISTORY.md`'s stated test count from 25 to the actual 29.
 
-Desktop Verification Cases 2, 4, 6, 7, and 8 remain outstanding evidence required before Architect re-review. No commit, push, PR, or main merge is authorized.
+After Findings A/B/C are corrected, Desktop Verification Cases 1–8 must all be completed. Cases 2, 4, 6, 7, and 8 are the especially critical required evidence before Architect re-review. No commit, push, PR, or main merge is authorized.
 
 ---
 
@@ -239,7 +239,7 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 - Scoped implementation was carried out in isolated worktree `/Users/atsushitogami/Developer/figma-os-issue-2-scale-sync` on branch `feature/issue-2-scale-state-sync` (baseline `main@c9def9785e86272c8d21d61f14a500cd8b45793c`), but remains uncommitted.
 - 115/115 tests, Scoped Typecheck, Build, `git diff --check`, and Source/Dist parity all PASS.
 - Desktop Verification Cases 1–8 have not been performed.
-- Architect judgment on the implementation: **Changes Required** — Findings A, B, and C (see Decisions Pending) must be corrected first, followed by Desktop Verification Cases 2, 4, 6, 7, and 8.
+- Architect judgment on the implementation: **Changes Required** — Findings A, B, and C (see Decisions Pending) must be corrected first. After that, Desktop Verification Cases 1–8 must all be completed; Cases 2, 4, 6, 7, and 8 are the especially critical required evidence before Architect re-review.
 - No commit, push, PR, or main merge is authorized.
 
 ## figma-os#2 / figma-os#3 — registered (2026-07-22)
