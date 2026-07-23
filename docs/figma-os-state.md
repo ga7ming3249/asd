@@ -1,10 +1,10 @@
 # Figma OS State
 
-- Version: 12
+- Version: 13
 - Date: 2026-07-23
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
-- Verified against: `ga7ming3249/figma-os` main branch (`c9def9785e86272c8d21d61f14a500cd8b45793c`) and ASD Issues, as of 2026-07-22
+- Verified against: `ga7ming3249/figma-os` main branch (`c9def9785e86272c8d21d61f14a500cd8b45793c`), accepted Gate 4 feature head (`dc6361157345ebb8b17264f63aef8fa0e265c5eb`), and ASD Issues, as of 2026-07-23
 
 ---
 
@@ -40,9 +40,9 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 | Documentation | 🟢 Synced (Documentation Sync completed 2026-07-17) |
 | Known Critical Bugs | 0 |
 | High Priority Issues | 0 |
-| Current Development Focus | Issue #30 — Japanese Vertical — Standard — Gate 4: Safe Local Fix MVP (Gate 3 complete; Manual Handoff Transport adopted; execution not yet implemented) |
-| Recommended First Action | Gate 4 Architect Kickoff (asd#30) |
-| State Confidence | Verified (2026-07-22) — items not verifiable are marked Unknown |
+| Current Development Focus | Issue #30 — Japanese Vertical — Standard — Gate 4 Safe Local Fix MVP accepted and closed on feature branch; Gate 5 Desktop Acceptance requires Architect Kickoff |
+| Recommended First Action | Gate 5 Architect Kickoff for Desktop Acceptance (asd#30); do not start Desktop work or create a Gate 5 Implementation Issue before kickoff |
+| State Confidence | Verified (2026-07-23) — `main@c9def978...` does not contain Gate 4; accepted feature head is `dc636115...` |
 
 ---
 
@@ -101,16 +101,16 @@ Architecture
 Stable
 
 Current Focus
-Issue #30 — Japanese Vertical — Standard — Gate 4: Safe Local Fix MVP
+Issue #30 — Gate 4 Safe Local Fix MVP accepted on feature branch; awaiting Gate 5 Architect Kickoff
 
 Highest Priority
-Gate 4 Architect Kickoff (asd#30)
+Gate 5 Desktop Acceptance Architect Kickoff (asd#30)
 
 Next Milestone
-Gate 4 — Safe Local Fix MVP
+Gate 5 — Desktop Acceptance
 
 Blockers
-None
+Gate 5 is not yet authorized; Gate 4 is not merged to main and must be inherited from dc636115
 
 Overall Health
 Healthy
@@ -166,8 +166,8 @@ This table reflects the verified repository and documentation state as of 2026-0
 | Status Stamp | `status-stamp/` | v0.3 | Design Sprint | Production | ASD Issue #1 (stamp-selection update) closed |
 | Color Inventory | `color-inventory/` | v1.0 | Design Sprint | Beta | Spec v0.3. v1 core (Generate / Raw Colors Workbench / Promote) in production trial. Promotion criteria in ROADMAP.md |
 | Component Package | `component-package/` | v1.0 | Design Sprint | Beta | v1 Core merged (PR #1, 2026-07-16). Canonical Documentation: `component-package/HISTORY.md` + `ROADMAP.md`; `asd#2` body + supplemental comments are the Historical Specification Record from v1 Core implementation. Promotion criteria in ROADMAP.md |
-| Type Adjuster | `type-adjuster/` | v0.5 | Feature Enhancement | Beta | Manual final-adjustment tool — owns explicit Local Fix execution and final manual adjustment; not an automatic composition engine (asd#30 responsibility boundary). Open [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) (Scale UI current-selection sync, Medium). Promotion criteria defined in ROADMAP.md |
-| Type Polish | `type-polish/` | v0.6 | Research | Experimental | Issue #30 scoped exception — Gate 3 complete. Owns Analysis, Recommendation, User Decision, and Manual Handoff production. Utility (Scale/Baseline/Tracking) ownership under review — [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) |
+| Type Adjuster | `type-adjuster/` | v0.5 | Feature Enhancement | Beta | Gate 4 accepted on unmerged feature branch `dc636115`: explicit pending-request revalidation and Apply, `LF-UPRIGHT-001`, `LF-ROTATE-RUN-001`, validated group-member Nudge, conflict-safe structural Reset. Remains non-judgmental. Open [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) is independent |
+| Type Polish | `type-polish/` | v0.6 | Research | Experimental | Gate 4 accepted on unmerged feature branch `dc636115`: current-selection-only applied-marker reader, already-applied short-circuit, fail-closed blocked state, and zero document mutation. Owns Analysis, Recommendation, User Decision, and Handoff production. Utility ownership remains under [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) |
 | Design Style Sheet | `design-style-sheet/` | v0.1.1 | Concept | Experimental (frozen spike) | v1.x preserved in repo as a frozen historical artifact (2026-07-17). No feature development; preservation fixes only. v2 redesign via new ASD Issue |
 
 Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-23, repository `ga7ming3249/reference-assistant` exists as its independent Product Repository; its Product Issues are owned there. `asd#4` and `asd#6` were closed after Successor Issue transfer to that repository (2026-07-23); `asd#5` remains historical (closed, unchanged).
@@ -191,7 +191,9 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 - Gate 1 Closed
 - Gate 2 complete
 - Gate 3 Formally Closed
-- Gate 4 Architect Kickoff Required
+- Gate 4 Formally Closed — [figma-os#5](https://github.com/ga7ming3249/figma-os/issues/5), accepted `dc6361157345ebb8b17264f63aef8fa0e265c5eb`
+- Gate 5 Architect Kickoff Required
+- Gate 4 remains unmerged; verified `figma-os/main` remains `c9def9785e86272c8d21d61f14a500cd8b45793c`
 
 ## figma-os#2 / figma-os#3 — registered (2026-07-22)
 
@@ -207,11 +209,11 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 | [figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4) | Type Inventory | P3 | Preserve multiline text (backlog; after higher-priority work). Transferred from asd#3 (2026-07-22, Repository Issue Ownership Reorganization) |
 | [asd#28](https://github.com/ga7ming3249/asd/issues/28) | Type Adjuster / Type Polish | - | Japanese Vertical Typography & Latin Kerning — Knowledge Review deliverables completed |
 | [asd#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | OpenType Typography Features — Capability Review findings completed |
-| [asd#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Architecture-gated scoped exception. Gate 3 Formally Closed / Gate 4 Architect Kickoff Required |
+| [asd#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Gate 4 Formally Closed / Gate 5 Architect Kickoff Required. Gate 4 accepted at unmerged feature head `dc636115` |
 | [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) | Type Adjuster | Medium | Synchronize Scale UI with current selection; improve fine adjustment controls. No Gate dependency |
 | [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) | Type Polish / Type Adjuster | Medium | Product Architecture Decision — canonical Utility (Scale/Baseline/Tracking) ownership. Depends on figma-os#2 |
 
-Closed since last update: asd#9 (Guide Stamp — Canvas Guides), asd#11 (Type Adjuster — Virtual Body punctuation adjustment), asd#3 (Type Inventory multiline — transferred to figma-os#4, 2026-07-22).
+Closed since last update: asd#9 (Guide Stamp — Canvas Guides), asd#11 (Type Adjuster — Virtual Body punctuation adjustment), asd#3 (Type Inventory multiline — transferred to figma-os#4, 2026-07-22), figma-os#5 (Issue #30 Gate 4 — Safe Local Fix MVP, accepted `dc636115`, not merged to main).
 
 (ASD-framework issue asd#8 does not touch figma-os code. Note: distinct from figma-os#4 above, which is a different repository's Issue #4. Reference Assistant Issues are no longer tracked in `asd` — see Out of scope note above.)
 
@@ -221,7 +223,7 @@ Closed since last update: asd#9 (Guide Stamp — Canvas Guides), asd#11 (Type Ad
 
 No known gaps — the reference inconsistencies found during the Repository Issue Ownership Reorganization (bare `asd#30`/`asd#3` references, a misquoted Issue title, three "new ASD Issue" pointers, and Component Package's Canonical Documentation description) were corrected in Phase 3 and verified against `figma-os` main.
 
-(Last sync: 2026-07-22, figma-os commit `c9def97` — `guide-stamp`, `instance-checker`, `type-inventory`, `component-package` HISTORY.md/ROADMAP.md corrected per the asd#17–#24 Architecture Review. Prior sync: 2026-07-17, commit `ab69c8b` — README/PLUGINS/ROADMAP/CLAUDE aligned with repository state; DSS v1.x spike committed as a frozen artifact, resolving the previously broken ROADMAP links. New inconsistencies discovered later are recorded here as new items, not as historical notes.)
+(Last sync: 2026-07-23, ASD-side documentation only — this State update records Issue #30 Gate 4 (`figma-os#5`, accepted `dc6361157345ebb8b17264f63aef8fa0e265c5eb`) as Formally Closed on its unmerged feature branch; verified `figma-os/main` remains `c9def9785e86272c8d21d61f14a500cd8b45793c` and is not claimed to contain Gate 4. Prior sync: 2026-07-22, figma-os commit `c9def97` — `guide-stamp`, `instance-checker`, `type-inventory`, `component-package` HISTORY.md/ROADMAP.md corrected per the asd#17–#24 Architecture Review. Earlier sync: 2026-07-17, commit `ab69c8b` — README/PLUGINS/ROADMAP/CLAUDE aligned with repository state; DSS v1.x spike committed as a frozen artifact, resolving the previously broken ROADMAP links. New inconsistencies discovered later are recorded here as new items, not as historical notes.)
 
 ---
 

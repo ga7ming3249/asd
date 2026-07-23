@@ -1,6 +1,6 @@
 # ASD Roadmap
 
-- Version: 6
+- Version: 7
 - Last Reviewed: 2026-07-23
 - Status: Active
 
@@ -20,11 +20,15 @@ Documentation Architecture v1.0（[#12](https://github.com/ga7ming3249/asd/issue
 
 **Issue #30 — Japanese Vertical — Standard Implementation**（Architecture-gated scoped exception）
 
-Gate 3 — Manual Handoff Transport: Completed
+Gate 4 — Safe Local Fix MVP: Completed / Formally Closed
 
-Next milestone: Gate 4 — Safe Local Fix MVP
+Accepted implementation: [figma-os#5](https://github.com/ga7ming3249/figma-os/issues/5), `dc6361157345ebb8b17264f63aef8fa0e265c5eb` on `feature/issue-30-gate4-safe-local-fix`
 
-After that: Gate 5 — Desktop Acceptance
+Merge status: not merged to `figma-os/main`; verified main remains `c9def9785e86272c8d21d61f14a500cd8b45793c`
+
+Next milestone: Gate 5 — Desktop Acceptance
+
+Gate 5 requires a separate Architect Kickoff and Gate-scoped `figma-os` Implementation Issue before work begins.
 
 **Component Package: production trial & polish**
 

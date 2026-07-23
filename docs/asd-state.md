@@ -1,6 +1,6 @@
 # ASD State
 
-- Version: 22
+- Version: 23
 - Date: 2026-07-23
 - Status: Active
 
@@ -181,7 +181,7 @@ Status: Adopted (2026-07-22) — defines which repository (`asd`, `figma-os`, or
 
 - Type Adjuster Vertical Layout Foundation Completed ([asd#27](https://github.com/ga7ming3249/asd/issues/27), Architect Final Review: Accept, rev8).
 - Typography Knowledge Base — Japanese Vertical Typography & Latin Kerning ([asd#28](https://github.com/ga7ming3249/asd/issues/28)) and OpenType Typography Features ([asd#29](https://github.com/ga7ming3249/asd/issues/29)) knowledge deliverables completed.
-- Japanese Vertical — Standard implementation proceeding as an Architecture-gated scoped exception ([asd#30](https://github.com/ga7ming3249/asd/issues/30)) — Gate 3 Formally Closed / Gate 4 Architect Kickoff Required.
+- Japanese Vertical — Standard implementation proceeding as an Architecture-gated scoped exception ([asd#30](https://github.com/ga7ming3249/asd/issues/30)) — Gate 4 Safe Local Fix MVP Formally Closed / Gate 5 Architect Kickoff Required. Gate 4 implementation was accepted in [figma-os#5](https://github.com/ga7ming3249/figma-os/issues/5) at `dc6361157345ebb8b17264f63aef8fa0e265c5eb` on `feature/issue-30-gate4-safe-local-fix`; it is not merged to `figma-os/main`.
 - Type Adjuster Scale UI synchronization Issue registered ([figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2)) — independent Product Improvement, no Gate dependency.
 - Type Polish Utility ownership consolidation decision Issue registered ([figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3)) — Product Architecture Decision, depends on figma-os#2 before any Utility removal is considered.
 - Repository Issue Ownership Reorganization Phase 2 executed (2026-07-22): [asd#3](https://github.com/ga7ming3249/asd/issues/3) transferred to [figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4) (Type Inventory multiline support — not started, Successor Issue method) and closed; [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2)'s bare `#30` cross-repository references corrected to `ga7ming3249/asd#30`; Repository Issue Ownership Policy adopted (`docs/repository-issue-ownership.md`). See `docs/ASD-Issues-17-24-Architecture-Review-Bundle-2026-07-22.md` for the #17–#24 review bundle.
@@ -196,7 +196,7 @@ Previous: Knowledge Review Phase
 
 Current: **Architecture-gated Implementation Phase**
 
-Current Position: Gate 3 Formally Closed / Gate 4 Architect Kickoff Required
+Current Position: Gate 4 Formally Closed / Gate 5 Architect Kickoff Required
 
 Typography Knowledge Base（asd#28, asd#29）を基盤として、Japanese Vertical — Standard の実装を Architecture-gated scoped exception（asd#30）として進行中。
 
@@ -206,7 +206,7 @@ Typography Knowledge Base（asd#28, asd#29）を基盤として、Japanese Verti
 |---|---|---|---|---|
 | [#28](https://github.com/ga7ming3249/asd/issues/28) | Type Adjuster / Type Polish | - | Open | Knowledge Review deliverables completed — Japanese Vertical Typography & Latin Kerning knowledge foundation |
 | [#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | Open | Knowledge Review deliverables completed — OpenType Typography Features |
-| [#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Active | Japanese Vertical — Standard — Architecture-gated scoped exception. Gate 3 Formally Closed / Gate 4 Architect Kickoff Required |
+| [#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Active | Japanese Vertical — Standard — Gate 4 Safe Local Fix MVP Formally Closed / Gate 5 Architect Kickoff Required. Accepted implementation: `figma-os@dc636115` on the Gate 4 feature branch; not merged to main |
 | [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) | Type Adjuster | Medium | Open | Synchronize Scale UI with current selection and improve fine adjustment controls. No Gate dependency |
 | [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) | Type Polish / Type Adjuster | Medium | Open | Product Architecture Decision — canonical ownership of Utility (Scale/Baseline/Tracking). Depends on figma-os#2 completion before any Utility removal |
 | [reference-assistant#1](https://github.com/ga7ming3249/reference-assistant/issues/1) | Reference Assistant | P1 | Open | Daily Preview Operation — Primary Issue, Successor to asd#4 |
@@ -216,25 +216,41 @@ Typography Knowledge Base（asd#28, asd#29）を基盤として、Japanese Verti
 ## Architecture Notes
 
 - Vertical Layout Foundation established by Issue #27; Wrapper / Outer responsibility separation and `relayoutVerticalWrapper()` as the single layout entry point are the current design principles.
-- Type Polish owns Analysis, Recommendation, User Decision, and Manual Handoff production.
-- Type Adjuster owns current-selection validation and final manual adjustment; Manual Local Fix execution is planned for Gate 4. It never becomes an automatic composition engine.
-- Transport: Manual Handoff Transport — Status: Adopted. Current implementation covers Transport production; execution (consumption side) is not yet implemented.
+- Type Polish owns Analysis, Recommendation, User Decision, and Manual Handoff production. Gate 4 adds current-selection-only applied-marker recognition and preserves zero document mutation.
+- Type Adjuster owns current-selection validation, explicit Local Fix execution, and final manual adjustment. Gate 4 delivered `LF-UPRIGHT-001`, `LF-ROTATE-RUN-001`, group-member Nudge, and conflict-safe structural Reset. It remains non-judgmental and never becomes an automatic composition engine.
+- Transport and execution status: Manual Handoff Transport is Adopted; Safe Local Fix consumption and explicit execution are implemented and accepted on `feature/issue-30-gate4-safe-local-fix` at `dc6361157345ebb8b17264f63aef8fa0e265c5eb`. Real Figma Desktop acceptance remains Gate 5.
+- Gate 4 implementation is not present on verified `figma-os/main@c9def9785e86272c8d21d61f14a500cd8b45793c`; downstream work must inherit the accepted feature-branch commit explicitly.
 - Reference Assistant product work belongs in its own Product Repository (`ga7ming3249/reference-assistant`). ASD is used only for cross-product/global governance, not for tracking that product's day-to-day Issues.
 
 ## Current main
 
-Verified main (`ga7ming3249/asd`): `56a39696e990607ec56ac7b886edb4634b7129ef`
+Verified ASD base main before this State update: `a11ddb5203b21a0459b60f9b79432a45d05e5d08`
+
+Verified figma-os main: `c9def9785e86272c8d21d61f14a500cd8b45793c`
+
+Accepted, unmerged Gate 4 feature head: `dc6361157345ebb8b17264f63aef8fa0e265c5eb`
 
 ## Outstanding Work
 
 **Issue #30**
 
-Remaining Gates:
+Completed Gates:
 
-- Gate 4 — Safe Local Fix MVP
+- Gate 0 — Current implementation / transport review
+- Gate 1 — Shared Rules + analyzer
+- Gate 2 — Type Polish result UI
+- Gate 3 — Manual Handoff Transport
+- Gate 4 — Safe Local Fix MVP ([figma-os#5](https://github.com/ga7ming3249/figma-os/issues/5), Closed / Completed, accepted at `dc6361157345ebb8b17264f63aef8fa0e265c5eb`)
+
+Remaining Gate:
+
 - Gate 5 — Desktop Acceptance
 
-Issue remains Open. asd#30 stays the Parent Coordination Issue (Architecture Gates / Global Architect Review / State Synchronization); a `figma-os` Implementation Issue for Gate 4 will hold the actual Source/Tests/Documentation work once created. Per `docs/repository-issue-ownership.md`, that Implementation Issue is created only after a confirmed Gate 4 Architect Kickoff (Objective, In/Out Scope, Acceptance Criteria, Architecture Constraints) — not yet recorded as of 2026-07-22 (Gate 3's closing comment states Gate 4 is not authorized by that closure).
+Issue remains Open. `asd#30` remains the Parent Coordination Issue for Architecture Gates, Global Architect Review, completion judgment, and State Synchronization.
+
+Gate 5 is not started or authorized by the Gate 4 close. Before Desktop work begins, an explicit Gate 5 Architect Kickoff must define Objective, In Scope, Out of Scope, Acceptance Criteria, Architecture Constraints, and Desktop evidence plan. A new Gate-scoped `figma-os` Implementation Issue may be created only after that kickoff satisfies `docs/repository-issue-ownership.md`'s Conditional Creation Rule.
+
+Gate 5 must inherit `dc6361157345ebb8b17264f63aef8fa0e265c5eb` directly. It must not assume `figma-os/main@c9def978...` contains Gate 4.
 
 ## Knowledge Roadmap
 
