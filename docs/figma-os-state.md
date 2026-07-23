@@ -1,6 +1,6 @@
 # Figma OS State
 
-- Version: 16
+- Version: 17
 - Date: 2026-07-23
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
@@ -40,10 +40,10 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 | Documentation | 🟢 Synced (Documentation Sync completed 2026-07-17) |
 | Known Critical Bugs | 0 |
 | High Priority Issues | 0 |
-| Current Development Focus | [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) Phase A — Current Scale Contract and Integration Review |
-| Recommended First Action | #2 baseline/code-flow/Scale contract investigation |
+| Current Development Focus | [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) scoped Scale UI implementation |
+| Recommended First Action | create and verify isolated worktree, then implement accepted contract |
 | Gate 5 | [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) — Open / Authorized / Owner Priority Hold / not started |
-| State Confidence | Verified 2026-07-23 |
+| State Confidence | Phase A Accepted 2026-07-23; `main@c9def978...` unchanged; Gate 4 head `dc636115...` remains separate |
 
 ---
 
@@ -51,9 +51,9 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 
 Current recommended implementation order. This is a recommendation, not a commitment — it may change whenever Product State is updated.
 
-**P1 — figma-os#2: Type Adjuster Scale UI synchronization, Phase A**
+**P1 — figma-os#2: Type Adjuster Scale UI synchronization, scoped implementation**
 
-Reason: Vision Owner priority decision (2026-07-23) — prioritized ahead of Gate 5 Desktop Acceptance. Only the Phase A read-only Architecture Review (Current Scale Contract and Integration Review) is authorized now; baseline is canonical `main@c9def978...`, not the unmerged Gate 4 head.
+Reason: Vision Owner priority decision (2026-07-23) — prioritized ahead of Gate 5 Desktop Acceptance. Phase A (Current Scale Contract and Integration Review) received a corrected report and Architect Accept on 2026-07-23; scoped implementation is authorized in an isolated worktree outside Dropbox, baseline canonical `main@c9def978...`, not the unmerged Gate 4 head. No commit, push, PR, or main merge before the implementation report receives Architect Review.
 
 Prerequisite: None
 
@@ -120,16 +120,16 @@ Architecture
 Stable
 
 Current Focus
-figma-os#2 — Scale UI synchronization, Phase A Current Scale Contract
+figma-os#2 — Scale UI synchronization scoped implementation
 
 Highest Priority
-Complete #2 Phase A and obtain Architect Accept before implementation
+Implement the accepted Current Scale and interaction contract in an isolated worktree
 
 Next Milestone
-figma-os#2 scoped implementation
+Issue #2 implementation report and Architect Review
 
 Blockers
-Canonical Current Scale contract not yet accepted; Gate 5 is on Owner Priority Hold
+None for scoped implementation; commit/push/PR/main merge remain unauthorized
 
 Overall Health
 Healthy
@@ -237,7 +237,7 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 | [figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4) | Type Inventory | P3 | Preserve multiline text (backlog; after higher-priority work). Transferred from asd#3 (2026-07-22, Repository Issue Ownership Reorganization) |
 | [asd#28](https://github.com/ga7ming3249/asd/issues/28) | Type Adjuster / Type Polish | - | Japanese Vertical Typography & Latin Kerning — Knowledge Review deliverables completed |
 | [asd#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | OpenType Typography Features — Capability Review findings completed |
-| [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) | Type Adjuster | Priority 1 | Synchronize Scale UI with current selection; improve fine adjustment controls. Phase A read-only Architecture Review authorized; baseline `main@c9def978...`; no product code changes before Phase A Architect Accept |
+| [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) | Type Adjuster | Priority 1 | Synchronize Scale UI with current selection; improve fine adjustment controls. Phase A Accepted; scoped implementation authorized in an isolated worktree outside Dropbox, baseline `main@c9def978...`; no commit, push, PR, or main merge before implementation review |
 | [asd#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Parent Coordination Issue for Gate 5 Desktop Acceptance. Gate 5 on Owner Priority Hold pending figma-os#2 |
 | [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) | Type Adjuster / Type Polish | - | Gate 5 — Desktop Acceptance. Architect-verified and authorized; inherited baseline `dc636115...` (unmerged feature branch). Desktop Acceptance not started; Owner Priority Hold pending figma-os#2. Product code changes, PR, and main merge remain unauthorized |
 | [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) | Type Polish / Type Adjuster | Medium | Product Architecture Decision — canonical Utility (Scale/Baseline/Tracking) ownership. Depends on figma-os#2 |

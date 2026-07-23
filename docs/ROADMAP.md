@@ -1,6 +1,6 @@
 # ASD Roadmap
 
-- Version: 10
+- Version: 11
 - Last Reviewed: 2026-07-23
 - Status: Active
 
@@ -22,11 +22,13 @@ Documentation Architecture v1.0（[#12](https://github.com/ga7ming3249/asd/issue
 
 Vision Owner priority decision (2026-07-23): prioritized ahead of Gate 5 Desktop Acceptance.
 
-Phase A — read-only Architecture Review (Current Scale Contract and Integration Review). Canonical Current Scale source must be decided before implementation.
+Phase A (Current Scale Contract and Integration Review): Accepted — corrected report resolved prior blocking findings (2026-07-23).
+
+Scoped implementation authorized, using an isolated worktree outside Dropbox (`/Users/atsushitogami/Developer/figma-os-issue-2-scale-sync`, branch `feature/issue-2-scale-state-sync`).
 
 Baseline: `main@c9def9785e86272c8d21d61f14a500cd8b45793c`. Do not use the unmerged Gate 4 head.
 
-No product code changes before Phase A Architect Accept.
+Implementation report must receive Architect Review before any commit, push, PR, or main merge.
 
 **Issue #30 — Japanese Vertical — Standard Implementation**（Architecture-gated scoped exception）
 
