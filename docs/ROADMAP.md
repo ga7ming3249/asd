@@ -1,6 +1,6 @@
 # ASD Roadmap
 
-- Version: 14
+- Version: 15
 - Last Reviewed: 2026-07-25
 - Status: Active
 
@@ -36,15 +36,15 @@ PR #1マージ（2026-07-16）済み。実運用を通じて成熟させ、改�
 
 **Reference Assistant: Daily Preview operation**（[reference-assistant#1](https://github.com/ga7ming3249/reference-assistant/issues/1)、P1、Product Repositoryにて実施）
 
-2026-07-23、Vision Owner承認によりasd#4からSuccessor Issue方式で移管。実プロジェクトでの継続利用を通じて摩擦を発見し、証跡ベースの改善バックログを構築する。最初の実践目標は、実際の `collect → select → deliverable` サイクルを1件完了すること。Daily Previewは、[reference-assistant#5](https://github.com/ga7ming3249/reference-assistant/issues/5) の安全なpromotion経路が確立するまで停止継続。
+2026-07-23、Vision Owner承認によりasd#4からSuccessor Issue方式で移管。実プロジェクトでの継続利用を通じて摩擦を発見し、証跡ベースの改善バックログを構築する。最初の実践目標は、実際の `collect → select → deliverable` サイクルを1件完了すること。[reference-assistant#5](https://github.com/ga7ming3249/reference-assistant/issues/5) は2026-07-25にCompleted / Accepted / Closedとなり、Daily Preview再開の主要なSafety Blockerは解消済み。ただしDaily Preview再開自体はこの同期で自動確定しておらず、別途Owner-controlledな運用判断に従う。
 
-**Reference Assistant: Japan-first Collection Gate and Always-on Content Safety**（[reference-assistant#5](https://github.com/ga7ming3249/reference-assistant/issues/5)、P1、Daily Preview再開のための安全運用blocker）
+**Reference Assistant: Japan-first Collection Gate and Always-on Content Safety**（[reference-assistant#5](https://github.com/ga7ming3249/reference-assistant/issues/5)）— Delivered
 
-Status: Open / In Progress — Review / Validation transition（Accepted・Closedいずれでもない）。Draft PR [reference-assistant#6](https://github.com/ga7ming3249/reference-assistant/pull/6) は引き続きDraft/Open、reviewed commit `541a74e113d8ebe96175228c4627151f3f007e50`。残作業: Acceptance Criteria audit、Manual Live Validation、Independent Technical Review、Architect Review、Vision Owner restart approval。Daily Previewは引き続き停止。Human-reviewed Safety Promotionは推奨案のみでVision Owner未承認、Accepted Architectureとして記録しない。
+2026-07-25、**Completed / Delivered**。PR [reference-assistant#6](https://github.com/ga7ming3249/reference-assistant/pull/6) はMerged / Closed（accepted implementation commit `dee933fd2f934314b628f3213025ff8e6efd5bfa`、merge commit `672cada474240909729d876a882eb455ad44e103`）。Japan-first Collection Gate（JPを既定Remote SEARCH市場とする）、Shared Fail Closed Content Safety Boundary（Dedup前評価・Always-on・無効化不可）、Human-reviewed Promotion Workflow（eligibleな`indeterminate_safety`限定、Existing Ingest Pipelineへ差し戻し）の3点をDeliveredとして記録する。violence/gore/weapons等を含むComprehensive Safety Classification ExpansionはFuture Workであり、Issue #5の未完了scopeではない（別Issue化およびArchitecture Reviewなしに着手しない）。
 
 **Reference Assistant: Post-migration Cleanup**（[reference-assistant#7](https://github.com/ga7ming3249/reference-assistant/issues/7)、Maintenance backlog）
 
-Dropboxベースの開発ディレクトリへの移行後のクリーンアップ（旧`~/Developer/reference-assistant`のアーカイブ、ドキュメント・IDE設定・shell設定・ローカル自動化の参照更新）。reference-assistant#5とは独立したMaintenance Issueであり、**reference-assistant#5の完了をブロックしない**。
+Dropboxベースの開発ディレクトリへの移行後のクリーンアップ（旧`~/Developer/reference-assistant`のアーカイブ、ドキュメント・IDE設定・shell設定・ローカル自動化の参照更新）。reference-assistant#5（Completed）とは独立した低優先度Maintenance Issueであり、Issue #5の未完了作業ではない。
 
 ---
 
@@ -76,7 +76,7 @@ Foundation（Color Inventory / Component Package）が実運用で十分に成�
 
 **Reference Assistant: Future Candidates（証跡駆動）**
 
-常時稼働のContent Safety Gate自体は[reference-assistant#5](https://github.com/ga7ming3249/reference-assistant/issues/5)として現在進行中であり、Future候補ではない。Futureに残るSafety関連候補は、外部moderation engineの採用、GUIでの安全性表示、既存Libraryへの遡及scan、汎用的なreview workflowの高度化など、Issue #5の範囲を超える発展項目に限定する。GUI、Tag、Flow、Export/Figma、Presentationは、Daily Preview評価による証跡と前提となるArchitecture決定が揃うまでコミットしない。
+常時稼働のContent Safety Gate自体は[reference-assistant#5](https://github.com/ga7ming3249/reference-assistant/issues/5)として2026-07-25にDelivered済み（Completed / Accepted / Closed）。Futureに残るComprehensive Safety Classification Expansionは、violence / gore / weapons coverage、contextual harm、safe classification evaluation、reviewer authentication and permissions、authenticity and provenanceなど、Issue #5の範囲を超える発展項目に限定する。これらはIssue #5のIncomplete Scopeではなく、別Issue化およびArchitecture Reviewなしに実装開始しない。GUI、Tag、Flow、Export/Figma、Presentationは、Daily Preview評価による証跡と前提となるArchitecture決定が揃うまでコミットしない。
 
 ---
 
