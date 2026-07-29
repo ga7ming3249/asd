@@ -1,10 +1,10 @@
 # Figma OS State
 
-- Version: 20
-- Date: 2026-07-25
+- Version: 21
+- Date: 2026-07-29
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
-- Verified against: `ga7ming3249/figma-os` main branch (`2838450c91429e9bc9c312103e0741c64e0068d2`), accepted Gate 4 feature head (`dc6361157345ebb8b17264f63aef8fa0e265c5eb`), and ASD Issues, as of 2026-07-25
+- Verified against: `ga7ming3249/figma-os` main branch merge commit (`d3abd4f46ce89240a22a467bbbf712f4c5e10628`), accepted Gate 5 implementation commit (`9253ce8ce46dbd02225f9bfa73019f4662f575de`), and ASD Issues, as of 2026-07-29
 
 ---
 
@@ -40,10 +40,10 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 | Documentation | 🟢 Synced (Documentation Sync completed 2026-07-17) |
 | Known Critical Bugs | 0 |
 | High Priority Issues | 0 |
-| Current Development Focus | [asd#30](https://github.com/ga7ming3249/asd/issues/30) Gate 5 — Desktop Acceptance ([figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6)); figma-os#2 dependency resolved (Closed 2026-07-24), but Gate 5 remains on Owner Priority Hold pending an explicit Vision Owner decision to resume |
-| Recommended First Action | Await explicit Vision Owner decision to resume Gate 5 Desktop Acceptance; once resumed, Gate 5 must inherit `dc636115...` directly (`main` does not contain Gate 4) |
-| Gate 5 | [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) — Open / Authorized / Owner Priority Hold / not started |
-| State Confidence | figma-os#2 Completed / Accepted / Closed 2026-07-24, merged to `main@2838450c9...` via [figma-os#7](https://github.com/ga7ming3249/figma-os/pull/7); Gate 4 head `dc636115...` remains separate and unmerged |
+| Current Development Focus | [asd#30](https://github.com/ga7ming3249/asd/issues/30) Japanese Vertical — Standard / Safe Local Fix MVP — Gate 0 through Gate 5 complete; `asd#30` Closed / Completed as of this Canonical State Synchronization |
+| Recommended First Action | Machine-carried forward from the existing ROADMAP and Open Issue state (see Recommended Next Priorities below); no new priority is set by this synchronization |
+| Gate 5 | [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) — Accepted / Completed / Closed (2026-07-29T11:45:25Z); PR [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8) Merged to `main` at `d3abd4f46ce89240a22a467bbbf712f4c5e10628` |
+| State Confidence | figma-os#6 / Gate 5 Completed / Accepted / Closed 2026-07-29, accepted implementation commit `9253ce8ce46dbd02225f9bfa73019f4662f575de` merged to `main@d3abd4f4...` via [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8); Gate 4 head `dc636115...` is now merged as part of this lineage |
 
 ---
 
@@ -55,11 +55,9 @@ Current recommended implementation order. This is a recommendation, not a commit
 
 figma-os#2 is Completed / Accepted / Closed (2026-07-24). Findings A/B/C were corrected; PR [figma-os#7](https://github.com/ga7ming3249/figma-os/pull/7) merged to `main` at `2838450c91429e9bc9c312103e0741c64e0068d2` (implementation commit `874d94dbfa4336ab064822e1ccc07ece12795149`). Verified: Build Success, Typecheck Success, Automated Tests 138/138 passed, Desktop Verification All Pass. Scale State Sync is now an accepted capability of Type Adjuster. Cleanup of the isolated worktree/feature branch (`feature/issue-2-scale-state-sync`) used during implementation is optional maintenance only.
 
-**P1 — figma-os#6: Gate 5 Desktop Acceptance**
+**Completed — figma-os#6: Gate 5 Desktop Acceptance**
 
-Reason: Architect-verified and authorized. figma-os#2's completion resolves the dependency the Owner Priority Hold (2026-07-23) was conditioned on, but per existing policy Gate 5 "resumes only after an explicit Owner priority decision" — no such decision is included in this synchronization. Not a defect, architecture blocker, rejection, or cancellation.
-
-Prerequisite: Resumes only after an explicit Owner priority decision
+figma-os#6 is Accepted / Completed / Closed (2026-07-29T11:45:25Z). PR [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8) merged to `main` at `d3abd4f46ce89240a22a467bbbf712f4c5e10628` (accepted implementation commit `9253ce8ce46dbd02225f9bfa73019f4662f575de`). Verified: Type Adjuster full suite 278/278, Scale UI tests 109/109, Gate 4 Local Fix tests 163/163, G5-DEF-002 generated marker tests 6/6, Type Polish full suite 165/165, both builds PASS, Rebased-head Desktop Acceptance 7/7 PASS. Japanese Vertical — Standard / Safe Local Fix MVP Gate 0–Gate 5 are complete; `asd#30` is Closed / Completed.
 
 **P3 — figma-os#3: Type Polish Utility ownership decision**
 
@@ -105,10 +103,6 @@ Waiting for architecture decision. DSS v1.x is frozen as a spike; v2 is to be re
 
 Waiting for Product Architecture Decision on whether Scale/Baseline/Tracking Utility controls remain in Type Polish or become exclusively owned by Type Adjuster. Depends on completion of [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) (Type Adjuster Scale UI synchronization) before any Utility removal is considered. No implementation until this decision is approved.
 
-**Gate 5 resume decision**
-
-Gate 5 (Desktop Acceptance, [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6)) remains on Owner Priority Hold. The dependency it was conditioned on (figma-os#2) is now resolved (Closed 2026-07-24), but resumption still requires an explicit Vision Owner priority decision, which is not yet given.
-
 ---
 
 # Architect Snapshot
@@ -122,16 +116,16 @@ Architecture
 Stable
 
 Current Focus
-asd#30 Gate 5 — Desktop Acceptance (figma-os#6); figma-os#2 dependency resolved (Closed 2026-07-24)
+asd#30 Japanese Vertical — Standard / Safe Local Fix MVP — Gate 0–Gate 5 complete; asd#30 Closed / Completed (2026-07-29)
 
 Highest Priority
-Await explicit Vision Owner decision to resume Gate 5
+Next priorities carried forward mechanically from existing ROADMAP / Open Issue state (see Recommended Next Priorities)
 
 Next Milestone
-Gate 5 Desktop Acceptance (on Owner Priority Hold)
+None pending from Gate 5; see Recommended Next Priorities for the next item in sequence
 
 Blockers
-Gate 5 resumption awaits an explicit Vision Owner decision; no blocker impedes the overall product architecture
+None impede the overall product architecture
 
 Overall Health
 Healthy
@@ -187,8 +181,8 @@ This table reflects the verified repository and documentation state as of 2026-0
 | Status Stamp | `status-stamp/` | v0.3 | Design Sprint | Production | ASD Issue #1 (stamp-selection update) closed |
 | Color Inventory | `color-inventory/` | v1.0 | Design Sprint | Beta | Spec v0.3. v1 core (Generate / Raw Colors Workbench / Promote) in production trial. Promotion criteria in ROADMAP.md |
 | Component Package | `component-package/` | v1.0 | Design Sprint | Beta | v1 Core merged (PR #1, 2026-07-16). Canonical Documentation: `component-package/HISTORY.md` + `ROADMAP.md`; `asd#2` body + supplemental comments are the Historical Specification Record from v1 Core implementation. Promotion criteria in ROADMAP.md |
-| Type Adjuster | `type-adjuster/` | v0.5 | Feature Enhancement | Beta | Gate 4 accepted on unmerged feature branch `dc636115`: explicit pending-request revalidation and Apply, `LF-UPRIGHT-001`, `LF-ROTATE-RUN-001`, validated group-member Nudge, conflict-safe structural Reset. Remains non-judgmental. Scale State Sync ([figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2), Closed) merged to `main` at `2838450c9...` (PR #7, 2026-07-24) as an accepted capability, independent of the unmerged Gate 4/5 lineage |
-| Type Polish | `type-polish/` | v0.6 | Research | Experimental | Gate 4 accepted on unmerged feature branch `dc636115`: current-selection-only applied-marker reader, already-applied short-circuit, fail-closed blocked state, and zero document mutation. Owns Analysis, Recommendation, User Decision, and Handoff production. Utility ownership remains under [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) |
+| Type Adjuster | `type-adjuster/` | v0.5 | Feature Enhancement | Beta | Gate 4 + Gate 5 accepted and merged to `main` at `d3abd4f4...` (PR [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8), 2026-07-29, accepted implementation commit `9253ce8c...`): explicit pending-request revalidation and Apply, `LF-UPRIGHT-001`, `LF-ROTATE-RUN-001`, validated group-member Nudge, conflict-safe structural Reset using the `retained-original-node` architecture, and the shared generated marker contract. Remains non-judgmental. Scale State Sync ([figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2), Closed) is included in the same `main` lineage |
+| Type Polish | `type-polish/` | v0.6 | Research | Experimental | Gate 4 + Gate 5 accepted and merged to `main` at `d3abd4f4...` (PR [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8), 2026-07-29): current-selection-only applied-marker reader, already-applied short-circuit (priority over generated-skip within a valid Local Fix range), read-only ancestor-chain exclusion of Type Adjuster-generated output, fail-closed blocked state, and zero document mutation. Owns Analysis, Recommendation, User Decision, and Handoff production. Utility ownership remains under [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) |
 | Design Style Sheet | `design-style-sheet/` | v0.1.1 | Concept | Experimental (frozen spike) | v1.x preserved in repo as a frozen historical artifact (2026-07-17). No feature development; preservation fixes only. v2 redesign via new ASD Issue |
 
 Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-23, repository `ga7ming3249/reference-assistant` exists as its independent Product Repository; its Product Issues are owned there. `asd#4` and `asd#6` were closed after Successor Issue transfer to that repository (2026-07-23); `asd#5` remains historical (closed, unchanged).
@@ -196,6 +190,19 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 ---
 
 # Recent Changes
+
+## figma-os#6 — Gate 5 Desktop Acceptance — Accepted / Completed / Closed (2026-07-29)
+
+- Closed `2026-07-29T11:45:25Z` (2026-07-29 20:45:25 JST), state reason Completed.
+- PR [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8) merged to `figma-os/main` (base `main`, 7 commits, merged `2026-07-29T11:44:32Z`) — accepted implementation commit `9253ce8ce46dbd02225f9bfa73019f4662f575de`, merge commit `d3abd4f46ce89240a22a467bbbf712f4c5e10628`.
+- Verified: Type Adjuster full suite `278/278 PASS`, Scale UI tests `109/109 PASS`, Gate 4 Local Fix tests `163/163 PASS`, G5-DEF-002 generated marker tests `6/6 PASS`, Type Polish full suite `165/165 PASS`, Type Adjuster build PASS, Type Polish build PASS.
+- Desktop Acceptance: Pre-rebase `9/9 PASS` (macOS `26.5.2 (25F84)`, Figma Desktop App `126.6.14`); Rebased-head `7/7 PASS` (macOS `26.5.2 (25F84)`, Figma Desktop App `126.7.10`).
+- Confirmed architecture: Local Fix Reset uses `retained-original-node` — the original TextNode instance is retained and restored, not reconstructed; Reset resolves the unique valid Local Fix group from ancestor/descendant relationships among the Local Fix member, outer Frame, and selection container, failing closed on multiple candidates, corruption, invalidity, or ambiguity. Reset and Nudge availability remain independent conditions.
+- Confirmed cross-plugin generated marker contract: Type Adjuster attaches a shared generated marker to the outer Frame on every generation path (horizontal Split, vertical Split, Local Fix Apply); Type Polish reads the ancestor chain read-only and excludes Type Adjuster-generated output from normal analysis, with `already-applied` taking priority over `generated-skip` inside a valid Local Fix range. Type Polish performs zero document mutation.
+- Scale UI and Local Fix integration regression Accepted. Gate 4 accepted branch, Gate 4 Integration, Scale UI, and Gate 5 dependency history are closed.
+- Generic Vertical Split Reset and Reset button visual state are not Gate 5 defects or unfinished Gate 5 items; they remain Post-Gate-5 Follow-up Candidates only, not created as Issues by this synchronization.
+- Current implementation base is now `figma-os/main` merge commit `d3abd4f46ce89240a22a467bbbf712f4c5e10628`.
+- `asd#30` (Japanese Vertical — Standard / Safe Local Fix MVP, Gate 0–Gate 5) is Closed / Completed as of this Canonical State Synchronization.
 
 ## figma-os#2 — Completed / Accepted / Closed (2026-07-24)
 
@@ -217,7 +224,7 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 - Unsafe Unicode rejected
 - Remaining Desktop acceptance items outstanding
 
-## Issue #30 — Japanese Vertical — Standard: Architecture-gated scoped exception
+## Issue #30 — Japanese Vertical — Standard: Architecture-gated scoped exception — Closed / Completed (2026-07-29)
 
 - Gate 0 complete
 - Gate 1 Closed
@@ -226,15 +233,16 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 - Gate 4 Formally Closed — [figma-os#5](https://github.com/ga7ming3249/figma-os/issues/5), accepted `dc6361157345ebb8b17264f63aef8fa0e265c5eb`
 - Gate 5 Architect Kickoff Published
 - Gate 5 Primary Implementation Issue [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) created and Architect-verified
-- Gate 5 Desktop Acceptance authorized, then placed on Owner Priority Hold (2026-07-23) pending figma-os#2; that dependency is now resolved (figma-os#2 Closed 2026-07-24), but Gate 5 still resumes only after an explicit Vision Owner priority decision; product code changes and main merge remain unauthorized until then
-- Gate 4 remains unmerged; verified `figma-os/main` is now `2838450c91429e9bc9c312103e0741c64e0068d2` (figma-os#2 merged 2026-07-24) and still does not contain Gate 4
+- Gate 5 Desktop Acceptance authorized, then placed on Owner Priority Hold (2026-07-23) pending figma-os#2; that dependency was resolved (figma-os#2 Closed 2026-07-24), and Gate 5 subsequently resumed, completed, and was Accepted / Closed 2026-07-29 (see figma-os#6 above)
+- Gate 4 lineage (`dc6361157345ebb8b17264f63aef8fa0e265c5eb`) is now merged to `figma-os/main` via the Gate 5 accepted implementation commit `9253ce8ce46dbd02225f9bfa73019f4662f575de` (PR [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8), 2026-07-29); verified `figma-os/main` is now `d3abd4f46ce89240a22a467bbbf712f4c5e10628`
+- Japanese Vertical — Standard / Safe Local Fix MVP Gate 0–Gate 5 are complete; `asd#30` is Closed / Completed as of this Canonical State Synchronization
 
 ## Vision Owner priority decision — figma-os#2 prioritized (2026-07-23)
 
 - [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) became Priority 1; Phase A read-only Architect Kickoff (Current Scale Contract and Integration Review) published. Baseline was canonical `main@c9def9785e86272c8d21d61f14a500cd8b45793c`, not the unmerged Gate 4 head `dc6361157345ebb8b17264f63aef8fa0e265c5eb`. This decision governed figma-os#2's implementation through to its completion (2026-07-24, see below).
-- [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) (Gate 5 Desktop Acceptance) placed on Owner Priority Hold — remains Open and authorized, not a defect or cancellation. The dependency (figma-os#2) is now resolved; resumption still requires an explicit Owner priority decision.
+- [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) (Gate 5 Desktop Acceptance) was placed on Owner Priority Hold at the time of this decision — not a defect or cancellation. The dependency (figma-os#2) was subsequently resolved, and Gate 5 was later resumed, completed, and Accepted / Closed 2026-07-29 (see figma-os#6 above).
 - [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) remains Open / not started, downstream of figma-os#2 completion.
-- `figma-os#2`'s `main` lineage and Gate 4/5 (`dc636115...`) still overlap in Type Adjuster and require an explicit future integration/reconciliation scope before combination; no rebase, cherry-pick, or merge between the lineages is authorized.
+- `figma-os#2`'s `main` lineage and Gate 4/5 (`dc636115...`) overlapped in Type Adjuster at the time of this decision; they were subsequently combined via the Gate 5 accepted implementation commit `9253ce8ce46dbd02225f9bfa73019f4662f575de` (PR [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8), 2026-07-29).
 
 ## figma-os#2 — Phase A Accept, Nightly Integration, and Completion (2026-07-23 – 2026-07-24)
 
@@ -258,11 +266,9 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 | [figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4) | Type Inventory | P3 | Preserve multiline text (backlog; after higher-priority work). Transferred from asd#3 (2026-07-22, Repository Issue Ownership Reorganization) |
 | [asd#28](https://github.com/ga7ming3249/asd/issues/28) | Type Adjuster / Type Polish | - | Japanese Vertical Typography & Latin Kerning — Knowledge Review deliverables completed |
 | [asd#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | OpenType Typography Features — Capability Review findings completed |
-| [asd#30](https://github.com/ga7ming3249/asd/issues/30) | Type Polish / Type Adjuster | - | Japanese Vertical — Standard — Parent Coordination Issue for Gate 5 Desktop Acceptance. figma-os#2 dependency resolved; Gate 5 on Owner Priority Hold pending an explicit Vision Owner decision |
-| [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) | Type Adjuster / Type Polish | - | Gate 5 — Desktop Acceptance. Architect-verified and authorized; inherited baseline `dc636115...` (unmerged feature branch). Desktop Acceptance not started; figma-os#2 dependency resolved (Closed 2026-07-24), Owner Priority Hold remains pending an explicit Vision Owner decision. Product code changes, PR, and main merge remain unauthorized |
 | [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) | Type Polish / Type Adjuster | Medium | Product Architecture Decision — canonical Utility (Scale/Baseline/Tracking) ownership. Depends on figma-os#2 |
 
-Closed since last update: asd#9 (Guide Stamp — Canvas Guides), asd#11 (Type Adjuster — Virtual Body punctuation adjustment), asd#3 (Type Inventory multiline — transferred to figma-os#4, 2026-07-22), figma-os#5 (Issue #30 Gate 4 — Safe Local Fix MVP, accepted `dc636115`, not merged to main), figma-os#2 (Type Adjuster Scale UI synchronization, merged via PR #7 to `main@2838450c9...`, 2026-07-24).
+Closed since last update: asd#9 (Guide Stamp — Canvas Guides), asd#11 (Type Adjuster — Virtual Body punctuation adjustment), asd#3 (Type Inventory multiline — transferred to figma-os#4, 2026-07-22), figma-os#5 (Issue #30 Gate 4 — Safe Local Fix MVP, accepted `dc636115`, not merged to main), figma-os#2 (Type Adjuster Scale UI synchronization, merged via PR #7 to `main@2838450c9...`, 2026-07-24), figma-os#6 (Issue #30 Gate 5 — Desktop Acceptance, Accepted / Completed, merged via PR #8 to `main@d3abd4f4...`, 2026-07-29), asd#30 (Japanese Vertical — Standard / Safe Local Fix MVP, Gate 0–Gate 5 complete, Closed / Completed, 2026-07-29).
 
 (ASD-framework issue asd#8 does not touch figma-os code. Note: distinct from figma-os#4 above, which is a different repository's Issue #4. Reference Assistant Issues are no longer tracked in `asd` — see Out of scope note above.)
 
@@ -272,7 +278,7 @@ Closed since last update: asd#9 (Guide Stamp — Canvas Guides), asd#11 (Type Ad
 
 No known gaps — the reference inconsistencies found during the Repository Issue Ownership Reorganization (bare `asd#30`/`asd#3` references, a misquoted Issue title, three "new ASD Issue" pointers, and Component Package's Canonical Documentation description) were corrected in Phase 3 and verified against `figma-os` main.
 
-(Last sync: 2026-07-25, ASD Nightly Canonical State Synchronization, ASD-side documentation only — no `figma-os` product repository commit was made. This State update records that `figma-os#2` is Completed / Accepted / Closed (2026-07-24): Findings A/B/C were corrected, PR figma-os#7 merged to `main` at `2838450c91429e9bc9c312103e0741c64e0068d2`, verified Build/Typecheck Success, Automated Tests 138/138 passed, Desktop Verification All Pass. Verified `figma-os/main` is now `2838450c91429e9bc9c312103e0741c64e0068d2`, distinct from the accepted Gate 4 feature head `dc6361157345ebb8b17264f63aef8fa0e265c5eb`; `main` is not claimed to contain Gate 4. Prior sync: 2026-07-23, ASD Nightly Canonical State Synchronization — `figma-os#2`'s Phase A Accept remained valid while its scoped implementation, carried out uncommitted in an isolated worktree, received Architect judgment Changes Required pending Findings A/B/C and Desktop Verification. Prior sync: 2026-07-23 (earlier same day), Architect verification of Gate 5 Primary Implementation Issue `figma-os#6` and the resulting Gate 5 Desktop Acceptance authorization. Prior sync: 2026-07-23 (same day), figma-os#5 Gate 4 Formally Closed synchronization. Prior sync: 2026-07-22, figma-os commit `c9def97` — `guide-stamp`, `instance-checker`, `type-inventory`, `component-package` HISTORY.md/ROADMAP.md corrected per the asd#17–#24 Architecture Review. Earlier sync: 2026-07-17, commit `ab69c8b` — README/PLUGINS/ROADMAP/CLAUDE aligned with repository state; DSS v1.x spike committed as a frozen artifact, resolving the previously broken ROADMAP links. New inconsistencies discovered later are recorded here as new items, not as historical notes.)
+(Last sync: 2026-07-29, ASD Nightly Canonical State Synchronization, ASD-side documentation only — no `figma-os` product repository commit was made. This State update records that `figma-os#6` (Gate 5 — Desktop Acceptance) is Accepted / Completed / Closed (2026-07-29T11:45:25Z): PR figma-os#8 merged to `main` at `d3abd4f46ce89240a22a467bbbf712f4c5e10628` (accepted implementation commit `9253ce8ce46dbd02225f9bfa73019f4662f575de`), verified Type Adjuster full suite 278/278, Scale UI tests 109/109, Gate 4 Local Fix tests 163/163, G5-DEF-002 generated marker tests 6/6, Type Polish full suite 165/165, both builds PASS, Rebased-head Desktop Acceptance 7/7 PASS. Japanese Vertical — Standard / Safe Local Fix MVP Gate 0–Gate 5 are complete; `asd#30` is Closed / Completed. Prior sync: 2026-07-25, ASD Nightly Canonical State Synchronization, ASD-side documentation only — no `figma-os` product repository commit was made. That State update recorded that `figma-os#2` is Completed / Accepted / Closed (2026-07-24): Findings A/B/C were corrected, PR figma-os#7 merged to `main` at `2838450c91429e9bc9c312103e0741c64e0068d2`, verified Build/Typecheck Success, Automated Tests 138/138 passed, Desktop Verification All Pass. Verified `figma-os/main` is now `2838450c91429e9bc9c312103e0741c64e0068d2`, distinct from the accepted Gate 4 feature head `dc6361157345ebb8b17264f63aef8fa0e265c5eb`; `main` is not claimed to contain Gate 4. Prior sync: 2026-07-23, ASD Nightly Canonical State Synchronization — `figma-os#2`'s Phase A Accept remained valid while its scoped implementation, carried out uncommitted in an isolated worktree, received Architect judgment Changes Required pending Findings A/B/C and Desktop Verification. Prior sync: 2026-07-23 (earlier same day), Architect verification of Gate 5 Primary Implementation Issue `figma-os#6` and the resulting Gate 5 Desktop Acceptance authorization. Prior sync: 2026-07-23 (same day), figma-os#5 Gate 4 Formally Closed synchronization. Prior sync: 2026-07-22, figma-os commit `c9def97` — `guide-stamp`, `instance-checker`, `type-inventory`, `component-package` HISTORY.md/ROADMAP.md corrected per the asd#17–#24 Architecture Review. Earlier sync: 2026-07-17, commit `ab69c8b` — README/PLUGINS/ROADMAP/CLAUDE aligned with repository state; DSS v1.x spike committed as a frozen artifact, resolving the previously broken ROADMAP links. New inconsistencies discovered later are recorded here as new items, not as historical notes.)
 
 ---
 

@@ -1,7 +1,7 @@
 # ASD Roadmap
 
-- Version: 15
-- Last Reviewed: 2026-07-25
+- Version: 16
+- Last Reviewed: 2026-07-29
 - Status: Active
 
 ---
@@ -18,17 +18,17 @@ Documentation Architecture v1.0（[#12](https://github.com/ga7ming3249/asd/issue
 
 # Now
 
-**Issue #30 — Japanese Vertical — Standard Implementation**（Architecture-gated scoped exception）— next implementation target
+**Issue #30 — Japanese Vertical — Standard Implementation**（Architecture-gated scoped exception）— Completed
 
 Gate 4 — Safe Local Fix MVP: Completed / Formally Closed
 
-Gate 5 — Desktop Acceptance: Primary Issue [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) authorized by Architect verification. Desktop Acceptance has not started. The Owner Priority Hold (2026-07-23) was conditioned on figma-os#2, which is now Completed / Accepted / Closed (2026-07-24) — but per existing policy Gate 5 resumes only after an explicit Owner priority decision, which is not yet given. Gate 5 remains Open / Owner Priority Hold.
+Gate 5 — Desktop Acceptance: Primary Issue [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) is **Accepted / Completed / Closed** (`2026-07-29T11:45:25Z` / 2026-07-29 20:45:25 JST). PR [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8) **Merged** to `figma-os/main` (base `main`, 7 commits, merged `2026-07-29T11:44:32Z`) — accepted implementation commit `9253ce8ce46dbd02225f9bfa73019f4662f575de`, merge commit `d3abd4f46ce89240a22a467bbbf712f4c5e10628`. Verified: Type Adjuster full suite 278/278 PASS, Scale UI tests 109/109 PASS, Gate 4 Local Fix tests 163/163 PASS, G5-DEF-002 generated marker tests 6/6 PASS, Type Polish full suite 165/165 PASS, both builds PASS, Rebased-head Desktop Acceptance 7/7 PASS.
 
-Required baseline: `dc6361157345ebb8b17264f63aef8fa0e265c5eb` on `feature/issue-30-gate4-safe-local-fix`
+Accepted baseline: `dc6361157345ebb8b17264f63aef8fa0e265c5eb` on `feature/issue-30-gate4-safe-local-fix`, now merged to `figma-os/main` via the Gate 5 accepted implementation commit above.
 
-Merge status: not merged to `figma-os/main`; verified main is now `2838450c91429e9bc9c312103e0741c64e0068d2` (figma-os#2 merged 2026-07-24) and still does not contain Gate 4
+**Integration risk resolved**: figma-os#2's merged `main` lineage and the Gate 4/5 feature lineage (`dc636115...`) were combined via PR figma-os#8 (base `main`, merged 2026-07-29).
 
-**Integration risk**: figma-os#2's merged `main` lineage and the Gate 4/5 feature lineage (`dc636115...`) still overlap in Type Adjuster. An explicit reconciliation scope is required before combining them; no rebase, cherry-pick, or merge between the lineages is authorized yet.
+Japanese Vertical — Standard / Safe Local Fix MVP Gate 0 through Gate 5 are complete. [asd#30](https://github.com/ga7ming3249/asd/issues/30) is **Closed / Completed** as of this Canonical State Synchronization. Generic Vertical Split Reset and Reset button visual state are not Gate 5 defects or unfinished items; they remain Post-Gate-5 Follow-up Candidates only, not created as new Issues by this synchronization and not automatically promoted to the Committed Roadmap.
 
 **Component Package: production trial & polish**
 
