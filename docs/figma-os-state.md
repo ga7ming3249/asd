@@ -1,6 +1,6 @@
 # Figma OS State
 
-- Version: 21
+- Version: 22
 - Date: 2026-07-29
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
@@ -39,9 +39,9 @@ High-level product condition, readable in a few seconds. Qualitative by design �
 | Experimental Plugins | 2 (Type Polish; Design Style Sheet v1.x frozen spike) |
 | Documentation | 🟢 Synced (Documentation Sync completed 2026-07-17) |
 | Known Critical Bugs | 0 |
-| High Priority Issues | 0 |
-| Current Development Focus | [asd#30](https://github.com/ga7ming3249/asd/issues/30) Japanese Vertical — Standard / Safe Local Fix MVP — Gate 0 through Gate 5 complete; `asd#30` Closed / Completed as of this Canonical State Synchronization |
-| Recommended First Action | Machine-carried forward from the existing ROADMAP and Open Issue state (see Recommended Next Priorities below); no new priority is set by this synchronization |
+| High Priority Issues | 1 ([figma-os#10](https://github.com/ga7ming3249/figma-os/issues/10), `priority:P1`) |
+| Current Development Focus | [figma-os#10](https://github.com/ga7ming3249/figma-os/issues/10) — Type Polish / Type Adjuster User Guide (Documentation / UX Enablement, Architect-Accepted) |
+| Recommended First Action | `figma-os#10` — Type Polish / Type Adjuster User Guide |
 | Gate 5 | [figma-os#6](https://github.com/ga7ming3249/figma-os/issues/6) — Accepted / Completed / Closed (2026-07-29T11:45:25Z); PR [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8) Merged to `main` at `d3abd4f46ce89240a22a467bbbf712f4c5e10628` |
 | State Confidence | figma-os#6 / Gate 5 Completed / Accepted / Closed 2026-07-29, accepted implementation commit `9253ce8ce46dbd02225f9bfa73019f4662f575de` merged to `main@d3abd4f4...` via [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8); Gate 4 head `dc636115...` is now merged as part of this lineage |
 
@@ -59,31 +59,45 @@ figma-os#2 is Completed / Accepted / Closed (2026-07-24). Findings A/B/C were co
 
 figma-os#6 is Accepted / Completed / Closed (2026-07-29T11:45:25Z). PR [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8) merged to `main` at `d3abd4f46ce89240a22a467bbbf712f4c5e10628` (accepted implementation commit `9253ce8ce46dbd02225f9bfa73019f4662f575de`). Verified: Type Adjuster full suite 278/278, Scale UI tests 109/109, Gate 4 Local Fix tests 163/163, G5-DEF-002 generated marker tests 6/6, Type Polish full suite 165/165, both builds PASS, Rebased-head Desktop Acceptance 7/7 PASS. Japanese Vertical — Standard / Safe Local Fix MVP Gate 0–Gate 5 are complete; `asd#30` is Closed / Completed.
 
-**P3 — figma-os#3: Type Polish Utility ownership decision**
+Architect-Accepted execution order (2026-07-29 Nightly Canonical State Synchronization), numbered to avoid confusion with GitHub `priority:P0–P3` labels:
+
+**1 — figma-os#10: Type Polish / Type Adjuster User Guide** (`priority:P1`)
+
+Reason: Architect-Accepted. Current functionality exists but lacks canonical user-facing documentation. Documentation / UX Enablement; canonical source is Markdown inside `ga7ming3249/figma-os`. Scope: Type Polish guide, Type Adjuster guide, combined workflow, glossary, FAQ, navigation, and maintenance rule. Out of scope: Architecture Guide, Developer Guide, UI redesign, tooltip implementation, onboarding UI.
+
+Prerequisite: None (implementation-free — documents the current Accepted capability)
+
+**2 — figma-os#3: Type Polish Utility ownership decision**
 
 Reason: Product Architecture Decision remains downstream of figma-os#2 completion.
 
 Prerequisite: figma-os#2 completion
 
-**P4 — Component Package: production trial & polish**
+**3 — asd#31: Japanese Horizontal Typography Analysis Track** (`priority:P2`)
+
+Reason: Architect-Accepted. New capability track beginning at Gate 0; not blocking current production capability. Parent Coordination Issue for a new Gate 0–Gate 5 Japanese Horizontal Typography structure — not incomplete Gate 5 scope (Japanese Vertical — Standard Gate 5 is Accepted / Completed / Closed). Gate 0 Knowledge Collection may begin before figma-os#3 is resolved; Utility removal, transfer, or ownership-changing implementation must not begin before figma-os#3 is resolved. Type Polish remains zero-mutation; Type Adjuster retains execution and document-mutation ownership.
+
+Prerequisite: None for Gate 0 Knowledge Collection; figma-os#3 resolution required before any Utility ownership-changing implementation. Gate 0 may proceed independently when appropriate, but this is not the current first implementation priority.
+
+**4 — Component Package: production trial & polish**
 
 Reason: Recently merged (PR #1, 2026-07-16). Mature it through daily production use and collect small improvements as new Issues before starting the next Foundation work.
 
 Prerequisite: None (the trial itself is the work)
 
-**P5 — Color Inventory: Generate Inventory Page**
+**5 — Color Inventory: Generate Inventory Page**
 
 Reason: v1 core (Generate / Raw Colors Workbench / Promote) is in production trial; Inventory Page generation is the next increment toward Production promotion.
 
 Prerequisite: None
 
-**P6 — Type Inventory: multiline support ([figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4))**
+**6 — Type Inventory: multiline support ([figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4))**
 
 Reason: Backlog item per ASD priority assessment. Clear workaround exists; lower user impact.
 
 Prerequisite: None (Guide Stamp Canvas Guides, ASD #9, completed 2026-07-17)
 
-**P7 — Composer / Design Style Sheet v2**
+**7 — Composer / Design Style Sheet v2**
 
 Reason: Foundation plugins (Color Inventory, Component Package) need to mature through production use first; see Decisions Pending.
 
@@ -101,7 +115,7 @@ Waiting for architecture decision. DSS v1.x is frozen as a spike; v2 is to be re
 
 **Type Polish Utility ownership** ([figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3))
 
-Waiting for Product Architecture Decision on whether Scale/Baseline/Tracking Utility controls remain in Type Polish or become exclusively owned by Type Adjuster. Depends on completion of [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) (Type Adjuster Scale UI synchronization) before any Utility removal is considered. No implementation until this decision is approved.
+Waiting for Product Architecture Decision on whether Scale/Baseline/Tracking Utility controls remain in Type Polish or become exclusively owned by Type Adjuster. Depends on completion of [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) (Type Adjuster Scale UI synchronization) before any Utility removal is considered. No implementation until this decision is approved. [asd#31](https://github.com/ga7ming3249/asd/issues/31) (Japanese Horizontal Typography Analysis Track, `priority:P2`) is a future capability track gated on this same boundary: its Gate 0 Knowledge Collection may begin independently, but any Utility ownership-changing implementation within it must not begin before figma-os#3 is resolved.
 
 ---
 
@@ -116,16 +130,16 @@ Architecture
 Stable
 
 Current Focus
-asd#30 Japanese Vertical — Standard / Safe Local Fix MVP — Gate 0–Gate 5 complete; asd#30 Closed / Completed (2026-07-29)
+figma-os#10 — Type Polish / Type Adjuster User Guide (Documentation / UX Enablement, Architect-Accepted, priority:P1)
 
 Highest Priority
-Next priorities carried forward mechanically from existing ROADMAP / Open Issue state (see Recommended Next Priorities)
+User Guide (figma-os#10) — canonical user-facing documentation for the current Accepted Type Polish / Type Adjuster capability
 
 Next Milestone
-None pending from Gate 5; see Recommended Next Priorities for the next item in sequence
+User Guide initial Acceptance
 
 Blockers
-None impede the overall product architecture
+None
 
 Overall Health
 Healthy
@@ -181,8 +195,8 @@ This table reflects the verified repository and documentation state as of 2026-0
 | Status Stamp | `status-stamp/` | v0.3 | Design Sprint | Production | ASD Issue #1 (stamp-selection update) closed |
 | Color Inventory | `color-inventory/` | v1.0 | Design Sprint | Beta | Spec v0.3. v1 core (Generate / Raw Colors Workbench / Promote) in production trial. Promotion criteria in ROADMAP.md |
 | Component Package | `component-package/` | v1.0 | Design Sprint | Beta | v1 Core merged (PR #1, 2026-07-16). Canonical Documentation: `component-package/HISTORY.md` + `ROADMAP.md`; `asd#2` body + supplemental comments are the Historical Specification Record from v1 Core implementation. Promotion criteria in ROADMAP.md |
-| Type Adjuster | `type-adjuster/` | v0.5 | Feature Enhancement | Beta | Gate 4 + Gate 5 accepted and merged to `main` at `d3abd4f4...` (PR [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8), 2026-07-29, accepted implementation commit `9253ce8c...`): explicit pending-request revalidation and Apply, `LF-UPRIGHT-001`, `LF-ROTATE-RUN-001`, validated group-member Nudge, conflict-safe structural Reset using the `retained-original-node` architecture, and the shared generated marker contract. Remains non-judgmental. Scale State Sync ([figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2), Closed) is included in the same `main` lineage |
-| Type Polish | `type-polish/` | v0.6 | Research | Experimental | Gate 4 + Gate 5 accepted and merged to `main` at `d3abd4f4...` (PR [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8), 2026-07-29): current-selection-only applied-marker reader, already-applied short-circuit (priority over generated-skip within a valid Local Fix range), read-only ancestor-chain exclusion of Type Adjuster-generated output, fail-closed blocked state, and zero document mutation. Owns Analysis, Recommendation, User Decision, and Handoff production. Utility ownership remains under [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) |
+| Type Adjuster | `type-adjuster/` | v0.5 | Feature Enhancement | Beta | Gate 4 + Gate 5 accepted and merged to `main` at `d3abd4f4...` (PR [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8), 2026-07-29, accepted implementation commit `9253ce8c...`): explicit pending-request revalidation and Apply, `LF-UPRIGHT-001`, `LF-ROTATE-RUN-001`, validated group-member Nudge, conflict-safe structural Reset using the `retained-original-node` architecture, and the shared generated marker contract. Remains non-judgmental. Scale State Sync ([figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2), Closed) is included in the same `main` lineage. User-facing documentation tracked by [figma-os#10](https://github.com/ga7ming3249/figma-os/issues/10) |
+| Type Polish | `type-polish/` | v0.6 | Research | Experimental | Gate 4 + Gate 5 accepted and merged to `main` at `d3abd4f4...` (PR [figma-os#8](https://github.com/ga7ming3249/figma-os/pull/8), 2026-07-29): current-selection-only applied-marker reader, already-applied short-circuit (priority over generated-skip within a valid Local Fix range), read-only ancestor-chain exclusion of Type Adjuster-generated output, fail-closed blocked state, and zero document mutation. Owns Analysis, Recommendation, User Decision, and Handoff production. Utility ownership remains under [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3); a new Japanese Horizontal Typography capability track is tracked by [asd#31](https://github.com/ga7ming3249/asd/issues/31) (Gate 0, not incomplete Gate 5 scope). User-facing documentation tracked by [figma-os#10](https://github.com/ga7ming3249/figma-os/issues/10) |
 | Design Style Sheet | `design-style-sheet/` | v0.1.1 | Concept | Experimental (frozen spike) | v1.x preserved in repo as a frozen historical artifact (2026-07-17). No feature development; preservation fixes only. v2 redesign via new ASD Issue |
 
 Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-23, repository `ga7ming3249/reference-assistant` exists as its independent Product Repository; its Product Issues are owned there. `asd#4` and `asd#6` were closed after Successor Issue transfer to that repository (2026-07-23); `asd#5` remains historical (closed, unchanged).
@@ -190,6 +204,12 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 ---
 
 # Recent Changes
+
+## figma-os#10 and asd#31 — registered and Architect-Accepted (2026-07-29, second same-day sync)
+
+- [figma-os#10](https://github.com/ga7ming3249/figma-os/issues/10) — Type Polish / Type Adjuster User Guide. Open, Architect-Accepted, Documentation / UX Enablement, `priority:P1`. Labels: `documentation`, `ux`, `type-polish`, `type-adjuster`, `priority:P1`. Canonical source is Markdown inside `ga7ming3249/figma-os`. Scope: Type Polish guide, Type Adjuster guide, combined workflow guide, glossary, FAQ, navigation, maintenance rule. Out of scope: Architecture Guide, Developer Guide, UI redesign, tooltip implementation, onboarding UI.
+- [asd#31](https://github.com/ga7ming3249/asd/issues/31) — Type Polish — Japanese Horizontal Typography Analysis Track. Open, Architect-Accepted, Product Capability / Parent Coordination Issue, `priority:P2`. Labels: `enhancement`, `architecture`, `roadmap`, `product:type-polish`, `priority:P2`. New Gate 0–Gate 5 capability track; not incomplete Gate 5 scope (Japanese Vertical — Standard Gate 5 remains Accepted / Completed / Closed). Gate 0 Knowledge Collection may begin before figma-os#3 is resolved; Utility ownership-changing implementation is blocked until figma-os#3 is resolved.
+- Architect-Accepted execution order: 1) figma-os#10, 2) figma-os#3, 3) asd#31 (Gate 0 may proceed independently when appropriate, but is not the current first implementation priority).
 
 ## figma-os#6 — Gate 5 Desktop Acceptance — Accepted / Completed / Closed (2026-07-29)
 
@@ -276,9 +296,9 @@ Closed since last update: asd#9 (Guide Stamp — Canvas Guides), asd#11 (Type Ad
 
 # Documentation Sync
 
-No known gaps — the reference inconsistencies found during the Repository Issue Ownership Reorganization (bare `asd#30`/`asd#3` references, a misquoted Issue title, three "new ASD Issue" pointers, and Component Package's Canonical Documentation description) were corrected in Phase 3 and verified against `figma-os` main.
+No known gaps in ASD/figma-os internal documentation sync — the reference inconsistencies found during the Repository Issue Ownership Reorganization (bare `asd#30`/`asd#3` references, a misquoted Issue title, three "new ASD Issue" pointers, and Component Package's Canonical Documentation description) were corrected in Phase 3 and verified against `figma-os` main. Separately, a user-facing documentation gap exists (no Canonical User Guide for Type Polish / Type Adjuster); it is not an internal sync gap and is tracked as product work by [figma-os#10](https://github.com/ga7ming3249/figma-os/issues/10), not as a Documentation Sync defect.
 
-(Last sync: 2026-07-29, ASD Nightly Canonical State Synchronization, ASD-side documentation only — no `figma-os` product repository commit was made. This State update records that `figma-os#6` (Gate 5 — Desktop Acceptance) is Accepted / Completed / Closed (2026-07-29T11:45:25Z): PR figma-os#8 merged to `main` at `d3abd4f46ce89240a22a467bbbf712f4c5e10628` (accepted implementation commit `9253ce8ce46dbd02225f9bfa73019f4662f575de`), verified Type Adjuster full suite 278/278, Scale UI tests 109/109, Gate 4 Local Fix tests 163/163, G5-DEF-002 generated marker tests 6/6, Type Polish full suite 165/165, both builds PASS, Rebased-head Desktop Acceptance 7/7 PASS. Japanese Vertical — Standard / Safe Local Fix MVP Gate 0–Gate 5 are complete; `asd#30` is Closed / Completed. Prior sync: 2026-07-25, ASD Nightly Canonical State Synchronization, ASD-side documentation only — no `figma-os` product repository commit was made. That State update recorded that `figma-os#2` is Completed / Accepted / Closed (2026-07-24): Findings A/B/C were corrected, PR figma-os#7 merged to `main` at `2838450c91429e9bc9c312103e0741c64e0068d2`, verified Build/Typecheck Success, Automated Tests 138/138 passed, Desktop Verification All Pass. Verified `figma-os/main` is now `2838450c91429e9bc9c312103e0741c64e0068d2`, distinct from the accepted Gate 4 feature head `dc6361157345ebb8b17264f63aef8fa0e265c5eb`; `main` is not claimed to contain Gate 4. Prior sync: 2026-07-23, ASD Nightly Canonical State Synchronization — `figma-os#2`'s Phase A Accept remained valid while its scoped implementation, carried out uncommitted in an isolated worktree, received Architect judgment Changes Required pending Findings A/B/C and Desktop Verification. Prior sync: 2026-07-23 (earlier same day), Architect verification of Gate 5 Primary Implementation Issue `figma-os#6` and the resulting Gate 5 Desktop Acceptance authorization. Prior sync: 2026-07-23 (same day), figma-os#5 Gate 4 Formally Closed synchronization. Prior sync: 2026-07-22, figma-os commit `c9def97` — `guide-stamp`, `instance-checker`, `type-inventory`, `component-package` HISTORY.md/ROADMAP.md corrected per the asd#17–#24 Architecture Review. Earlier sync: 2026-07-17, commit `ab69c8b` — README/PLUGINS/ROADMAP/CLAUDE aligned with repository state; DSS v1.x spike committed as a frozen artifact, resolving the previously broken ROADMAP links. New inconsistencies discovered later are recorded here as new items, not as historical notes.)
+(Last sync: 2026-07-29, ASD Nightly Canonical State Synchronization (second same-day sync), ASD-side documentation only — no `figma-os` product repository commit was made. This State update records that [figma-os#10](https://github.com/ga7ming3249/figma-os/issues/10) (Type Polish / Type Adjuster User Guide) and [asd#31](https://github.com/ga7ming3249/asd/issues/31) (Japanese Horizontal Typography Analysis Track) are Open and Architect-Accepted, with Architect-Accepted execution order 1) figma-os#10, 2) figma-os#3, 3) asd#31. Prior sync (same day, first sync): This State update recorded that `figma-os#6` (Gate 5 — Desktop Acceptance) is Accepted / Completed / Closed (2026-07-29T11:45:25Z): PR figma-os#8 merged to `main` at `d3abd4f46ce89240a22a467bbbf712f4c5e10628` (accepted implementation commit `9253ce8ce46dbd02225f9bfa73019f4662f575de`), verified Type Adjuster full suite 278/278, Scale UI tests 109/109, Gate 4 Local Fix tests 163/163, G5-DEF-002 generated marker tests 6/6, Type Polish full suite 165/165, both builds PASS, Rebased-head Desktop Acceptance 7/7 PASS. Japanese Vertical — Standard / Safe Local Fix MVP Gate 0–Gate 5 are complete; `asd#30` is Closed / Completed. Prior sync: 2026-07-25, ASD Nightly Canonical State Synchronization, ASD-side documentation only — no `figma-os` product repository commit was made. That State update recorded that `figma-os#2` is Completed / Accepted / Closed (2026-07-24): Findings A/B/C were corrected, PR figma-os#7 merged to `main` at `2838450c91429e9bc9c312103e0741c64e0068d2`, verified Build/Typecheck Success, Automated Tests 138/138 passed, Desktop Verification All Pass. Verified `figma-os/main` is now `2838450c91429e9bc9c312103e0741c64e0068d2`, distinct from the accepted Gate 4 feature head `dc6361157345ebb8b17264f63aef8fa0e265c5eb`; `main` is not claimed to contain Gate 4. Prior sync: 2026-07-23, ASD Nightly Canonical State Synchronization — `figma-os#2`'s Phase A Accept remained valid while its scoped implementation, carried out uncommitted in an isolated worktree, received Architect judgment Changes Required pending Findings A/B/C and Desktop Verification. Prior sync: 2026-07-23 (earlier same day), Architect verification of Gate 5 Primary Implementation Issue `figma-os#6` and the resulting Gate 5 Desktop Acceptance authorization. Prior sync: 2026-07-23 (same day), figma-os#5 Gate 4 Formally Closed synchronization. Prior sync: 2026-07-22, figma-os commit `c9def97` — `guide-stamp`, `instance-checker`, `type-inventory`, `component-package` HISTORY.md/ROADMAP.md corrected per the asd#17–#24 Architecture Review. Earlier sync: 2026-07-17, commit `ab69c8b` — README/PLUGINS/ROADMAP/CLAUDE aligned with repository state; DSS v1.x spike committed as a frozen artifact, resolving the previously broken ROADMAP links. New inconsistencies discovered later are recorded here as new items, not as historical notes.)
 
 ---
 

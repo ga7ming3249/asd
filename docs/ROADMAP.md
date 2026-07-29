@@ -1,6 +1,6 @@
 # ASD Roadmap
 
-- Version: 16
+- Version: 17
 - Last Reviewed: 2026-07-29
 - Status: Active
 
@@ -50,13 +50,26 @@ Dropboxベースの開発ディレクトリへの移行後のクリーンアッ�
 
 # Next
 
-**Color Inventory: Generate Inventory Page**
+Architect-Accepted execution order (2026-07-29 Nightly Canonical State Synchronization): 1) Type Polish / Type Adjuster User Guide, 2) figma-os#3, 3) Japanese Horizontal Typography Analysis Track (see Future).
 
-v1 core（Generate / Raw Colors Workbench / Promote）は実運用検証中。Inventoryページ生成がProduction昇格に向けた次の増分。
+**Type Polish / Type Adjuster User Guide**
+
+* Issue: `ga7ming3249/figma-os#10`
+* Priority: P1
+* Type: Documentation / UX Enablement
+* Canonical source: Markdown in the figma-os repository
+* Scope: User Guide, workflow, glossary, FAQ
+* Out of scope: Architecture Guide, Developer Guide, UI redesign
+
+Architect-Accepted (2026-07-29). Reason: current functionality exists but lacks canonical user-facing documentation. Not incomplete Gate 5 work — Gate 5 (Desktop Acceptance) for Japanese Vertical — Standard is Completed (see Now above).
 
 **Type Polish Utility ownership consolidation decision**（[figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3)、Medium）
 
 Product Architecture Decision（実装ではない）。figma-os#2完了後にUtility削除を検討する前提。Issue #30 Gate 4への依存なし。
+
+**Color Inventory: Generate Inventory Page**
+
+v1 core（Generate / Raw Colors Workbench / Promote）は実運用検証中。Inventoryページ生成がProduction昇格に向けた次の増分。
 
 **Reference Assistant: Library Location Selection and Safe Relocation architecture design**（[reference-assistant#3](https://github.com/ga7ming3249/reference-assistant/issues/3)、P2）
 
@@ -65,6 +78,17 @@ GUIやリロケーション実装に先立ち、Library識別・選択・安全�
 ---
 
 # Future
+
+**Japanese Horizontal Typography Analysis Track**
+
+* Issue: `ga7ming3249/asd#31`
+* Priority: P2
+* Type: Parent Coordination Issue
+* Begins with Gate 0 Knowledge Collection
+* Production capability only after Gate 5 Acceptance
+* Utility ownership-changing implementation is blocked until figma-os#3 is resolved
+
+Architect-Accepted (2026-07-29). New Gate 0–Gate 5 capability track for Type Polish, distinct from and not incomplete work of the completed Japanese Vertical — Standard Gate 5 (see Now above). Gate 0 Knowledge Collection may begin before figma-os#3 is resolved; it is not the current first implementation priority (see Next above for the Architect-Accepted execution order).
 
 **Type Inventory: 多行テキスト対応**（[figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4)、P3・Backlog）
 
