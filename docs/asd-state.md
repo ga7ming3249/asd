@@ -1,7 +1,7 @@
 # ASD State
 
-- Version: 34
-- Date: 2026-07-30
+- Version: 35
+- Date: 2026-08-01
 - Status: Active
 
 ---
@@ -189,6 +189,7 @@ Status: Adopted (2026-07-22) — defines which repository (`asd`, `figma-os`, or
 - Gate 5 confirmed cross-plugin generated marker contract: Type Adjuster attaches a shared generated marker to the outer Frame on every generation path (horizontal Split, vertical Split, Local Fix Apply). Type Polish reads the ancestor chain of a target TextNode read-only and excludes Type Adjuster-generated output from normal analysis; within a valid Local Fix range, `already-applied` takes priority over `generated-skip`. Type Polish performs no document mutation.
 - Scale UI and Local Fix integration regression was Accepted as part of Gate 5. Gate 4 accepted implementation, Gate 4 Integration, Scale UI, and Gate 5 dependencies are resolved. No known unresolved defects remain in Gate 5 scope. Generic Vertical Split Reset and Reset button visual state are not Gate 5 defects or unfinished Gate 5 items; they remain Post-Gate-5 Follow-up Candidates only, not created as Issues by this synchronization.
 - Nightly Canonical State Synchronization (2026-07-29, second same-day sync): Two new Issues Architect-Accepted and registered — [asd#31](https://github.com/ga7ming3249/asd/issues/31) (Type Polish — Japanese Horizontal Typography Analysis Track; Open; Product Capability / Parent Coordination Issue; labels `enhancement`, `architecture`, `roadmap`, `product:type-polish`, `priority:P2`) and [figma-os#10](https://github.com/ga7ming3249/figma-os/issues/10) (Type Polish / Type Adjuster User Guide; Open; Documentation / UX Enablement; labels `documentation`, `ux`, `type-polish`, `type-adjuster`, `priority:P1`). `asd#31` begins a new Gate 0–Gate 5 Japanese Horizontal Typography capability track and is not incomplete Gate 5 scope — Gate 5 (Desktop Acceptance) for Japanese Vertical — Standard remains Accepted / Completed / Closed as recorded above. `asd#31` Gate 0 Knowledge Collection may begin before [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) is resolved; Utility removal, transfer, or ownership-changing implementation must not begin before figma-os#3 is resolved. Type Polish remains zero-mutation; Type Adjuster retains execution and document-mutation ownership. Architect-Accepted priority order: 1) [figma-os#10](https://github.com/ga7ming3249/figma-os/issues/10) — Type Polish / Type Adjuster User Guide, 2) [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) — Type Polish Utility ownership decision, 3) [asd#31](https://github.com/ga7ming3249/asd/issues/31) — Japanese Horizontal Typography Analysis Track. `asd#31` Gate 0 may proceed independently when appropriate, but it is not the current first implementation priority.
+- ASD Operations Architecture Improvement — Daily Initialization Workflow v2 ([asd#32](https://github.com/ga7ming3249/asd/issues/32), 2026-08-01): Global Architect initialization is standardized as a five-stage Session Lifecycle (Session Creation → Workspace Validation → Architecture Initialization → Execution → Finalization). GitHub Repository — `docs/asd-state.md`, `docs/figma-os-state.md`, `docs/ROADMAP.md` on the target branch — is now the Canonical Primary Source for Daily Initialization; daily re-upload of Canonical Documents by the Vision Owner is discontinued. Responsibility is split: GitHub Audit (Canonical Documents, Issue/PR state, dependencies, priority) remains a Global Architect responsibility, while Local Synchronization Audit (local branch, local HEAD vs `origin/main`, working tree, staged/unstaged/untracked state) is a Claude Code responsibility — read-only, no auto-remediation, its result passed to the Global Architect as input rather than independently re-verified. Daily Sessions are created inside the ASD Project as new chats named `ASD-YYMMDD`; moving an ordinary chat into the ASD Project afterward is not the standard flow. Start-of-Day status is one of `Ready to Proceed` / `Attention Required` / `Blocked` / `ASD Escalation Required`. The ASD Operations Prompt Library (`asd-prompt-library.html`, a local reference file outside this repository) has been updated accordingly and Accepted in Issue-scoped Architect review; the former separate next-morning-verification prompt is now merged into the ASD Daily Initialization Workflow v2 prompt. `asd#32` remains Open pending Close after this Canonical Documentation Synchronization.
 - Gate 0 Completed (2026-07-30): [asd#31](https://github.com/ga7ming3249/asd/issues/31) (Japanese Horizontal Typography Analysis Track) Gate 0 Knowledge Platform is Architecture-Review-Accepted and Finalized. Registered in `ga7ming3249/figma-os` at `references/type-polish/japanese-horizontal-typography/` (commit `8b15f28`, pushed to `figma-os/main`) — `README.md`, `INDEX.md`, `KB-0001` (Illustrator character composition v30.6), Knowledge Base Entry Template v0.2, Rule Catalog v0.1 (Rules HR-001–HR-006, all `Observed`, no `Accepted Rule`) with its template, `architecture-reviews/ARCHITECTURE-REVIEW-GATE0.md`, and `review-records/REVIEW-0001.md`. Original source material (`アキ量設定一覧_2026_v306.pdf`, redistribution/license/official status Unknown/Unconfirmed) stays local-only under `source-local/`, excluded via `.gitignore`, never committed. Result recorded on [asd#31](https://github.com/ga7ming3249/asd/issues/31#issuecomment-5127060715). `asd#31` remains Open as the Parent Coordination Issue. Current Phase: Knowledge Collection. The Knowledge Platform design itself is now Frozen — further work adds Knowledge Base entries (`KB-0002` and later) and accumulates Evidence, not Platform redesign, unless a critical architectural issue is discovered. Next Gate: Gate 1 (Cross-reference & Rule Consolidation).
 - Type Adjuster Scale UI synchronization Issue ([figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2)) — Completed / Accepted / Closed (see Nightly Canonical State Synchronization note above); independent Product Improvement, no Gate dependency.
 - Type Polish Utility ownership consolidation decision Issue registered ([figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3)) — Product Architecture Decision, remains Open / not started, downstream of figma-os#2 completion before any Utility removal is considered.
@@ -228,6 +229,7 @@ Typography Knowledge Base（asd#28, asd#29）を基盤として進行してい�
 | [reference-assistant#1](https://github.com/ga7ming3249/reference-assistant/issues/1) | Reference Assistant | P1 | Open | Daily Preview Operation — Primary Issue, Successor to asd#4. reference-assistant#5's Safety Blocker is resolved (Closed 2026-07-25); Daily Preview resumption is not automatically decided by this synchronization and remains subject to separate Owner-controlled operating conditions |
 | [reference-assistant#7](https://github.com/ga7ming3249/reference-assistant/issues/7) | Reference Assistant | - | Open / Maintenance | Post-migration Cleanup After Dropbox Development Directory Migration. Independent low-priority maintenance issue; not remaining reference-assistant#5 work |
 | [reference-assistant#3](https://github.com/ga7ming3249/reference-assistant/issues/3) | Reference Assistant | P2 | Open | Design Library Location Selection and Safe Relocation Model — Architecture Issue |
+| [asd#32](https://github.com/ga7ming3249/asd/issues/32) | ASD Process | - | Open / Canonical Documentation Reflected | Standardize Global Architect Initialization Workflow — Daily Initialization Workflow v2 adopted; GitHub Canonical Primary Source, GitHub Audit (Architect) / Local Synchronization Audit (CC) responsibility split, `ASD-YYMMDD` Daily Session naming. Prompt Library updated and Accepted; Canonical Documentation reflected 2026-08-01; pending Close |
 
 ## Architecture Notes
 
@@ -243,7 +245,7 @@ Typography Knowledge Base（asd#28, asd#29）を基盤として進行してい�
 
 ## Current main
 
-Verified ASD base main before this State update: `0d5fbc05164a6f5fe6f0778bc47620b9785e6f51`
+Verified ASD base main before this State update: `53d35ab0ca4b987406f45693430e71cd8cd805b5`
 
 Verified figma-os main: `d3abd4f46ce89240a22a467bbbf712f4c5e10628` (figma-os#6 / PR #8 merged, 2026-07-29; accepted implementation commit `9253ce8ce46dbd02225f9bfa73019f4662f575de`; supersedes prior `2838450c91429e9bc9c312103e0741c64e0068d2` from figma-os#2 / PR #7, 2026-07-24)
 
@@ -451,6 +453,39 @@ Always begins with **Daily Initialization** before reporting project status.
 
 Persistent State (`docs/asd-state.md`) and Session Context (the current date and any project status derived from it) are treated separately: Session Context must never be copied from the previous ASD session, a previous Daily Summary, `docs/asd-state.md`, or prior chat history.
 
+**Daily Initialization Workflow v2** (asd#32, adopted 2026-08-01)
+
+Daily Initialization is not information gathering. It is the step that establishes the Architecture Context the Global Architect uses for the day's decisions.
+
+Session Lifecycle:
+
+```
+Session Creation
+    ↓
+Workspace Validation
+    ↓
+Architecture Initialization
+    ↓
+Execution
+    ↓
+Finalization
+```
+
+Daily Session:
+
+- Created inside the ASD Project as a new chat named `ASD-YYMMDD`.
+- Moving an ordinary chat into the ASD Project afterward is not the standard flow.
+
+Canonical Primary Source:
+
+- `docs/asd-state.md`, `docs/figma-os-state.md`, `docs/ROADMAP.md` are read directly from GitHub on the target branch.
+- Daily re-upload of Canonical Documents by the Vision Owner is discontinued.
+
+Responsibility Boundary:
+
+- Global Architect: GitHub Repository Audit, Canonical Documents read, Issue/PR state, Architecture Assessment, priority and dependency evaluation, Daily Architecture Dashboard generation, State/ROADMAP update decisions.
+- Claude Code: Local Synchronization Audit only — local branch, local HEAD, `origin/main`, working tree, staged/unstaged/untracked state. Read-only, no auto-remediation; the result is passed to the Global Architect as input, not independently re-verified by the Architect.
+
 **Daily Initialization**
 
 Required fields:
@@ -462,6 +497,7 @@ Required fields:
 - Today's Priorities
 - Blockers
 - Recommended First Action
+- Start-of-Day Status: `Ready to Proceed` / `Attention Required` / `Blocked` / `ASD Escalation Required`
 
 After Daily Initialization completes, the normal Morning Brief continues.
 
@@ -471,7 +507,7 @@ Returns
 - Today's priorities
 - Blockers
 
-Ref: asd#8
+Ref: asd#8, asd#32
 
 ---
 

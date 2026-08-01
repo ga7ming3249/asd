@@ -1,7 +1,7 @@
 # ASD Roadmap
 
-- Version: 17
-- Last Reviewed: 2026-07-29
+- Version: 18
+- Last Reviewed: 2026-08-01
 - Status: Active
 
 ---
@@ -45,6 +45,10 @@ PR #1マージ（2026-07-16）済み。実運用を通じて成熟させ、改�
 **Reference Assistant: Post-migration Cleanup**（[reference-assistant#7](https://github.com/ga7ming3249/reference-assistant/issues/7)、Maintenance backlog）
 
 Dropboxベースの開発ディレクトリへの移行後のクリーンアップ（旧`~/Developer/reference-assistant`のアーカイブ、ドキュメント・IDE設定・shell設定・ローカル自動化の参照更新）。reference-assistant#5（Completed）とは独立した低優先度Maintenance Issueであり、Issue #5の未完了作業ではない。
+
+**ASD Operations: Daily Initialization Workflow v2**（[asd#32](https://github.com/ga7ming3249/asd/issues/32)）— Canonical Documentation Reflected
+
+Global Architect初期化フローをSession Lifecycle（Session Creation → Workspace Validation → Architecture Initialization → Execution → Finalization）として標準化。GitHub Repositoryを`docs/asd-state.md` / `docs/figma-os-state.md` / `docs/ROADMAP.md`のCanonical Primary Sourceとし、Vision Ownerによる毎朝のCanonical Documentsアップロード運用を廃止。GitHub AuditはGlobal Architectの責務、Local Synchronization Audit（読み取り専用、自動修正なし）はClaude Codeの責務として分離。Daily SessionはASD Project内で`ASD-YYMMDD`命名のチャットとして開始する。`asd-prompt-library.html`（本Repository管理外のローカル運用ファイル）はIssue-scoped Architectレビューで既にAccepted。2026-08-01、本Canonical Documentation Synchronizationにより`docs/asd-state.md`・`docs/ROADMAP.md`へ反映。asd#32はDocumentation反映完了後にCloseを予定するが、本同期ではCloseを実施していない。後続Issueの新規作成は不要。
 
 ---
 
