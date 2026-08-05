@@ -1,7 +1,7 @@
 # ASD State
 
-- Version: 35
-- Date: 2026-08-01
+- Version: 36
+- Date: 2026-08-05
 - Status: Active
 
 ---
@@ -204,6 +204,7 @@ Status: Adopted (2026-07-22) — defines which repository (`asd`, `figma-os`, or
 - [reference-assistant#1](https://github.com/ga7ming3249/reference-assistant/issues/1) (Daily Preview Operation) remains Open. Issue #5's completion resolves the safe Collection / Promotion Boundary that was the main recorded Safety Blocker, but Daily Preview resumption is **not automatically decided** by this synchronization — it remains subject to separate Owner-controlled operating conditions.
 - Dropbox repository migration (2026-07-25): the Dropbox repository is now the canonical local development repository for `reference-assistant`, superseding the prior `/Users/atsushitogami/Developer/reference-assistant` clone referenced above.
 - Reference Assistant Issue #7 — Post-migration Cleanup After Dropbox Development Directory Migration ([reference-assistant#7](https://github.com/ga7ming3249/reference-assistant/issues/7)): Open, independent low-priority maintenance issue. Not remaining Issue #5 work; does not block or gate Issue #5 (now Closed).
+- ASD Nightly Canonical Synchronization (2026-08-05): [asd#32](https://github.com/ga7ming3249/asd/issues/32) (Daily Initialization Workflow v2) verified **Closed / Completed** (`2026-08-01T06:31:41Z`). [asd#33](https://github.com/ga7ming3249/asd/issues/33) (Standardize Issue Completion Authority and Operation Directives) registered **Open** (created 2026-08-01) as an Architecture Improvement Issue addressing insufficient separation between Review Decision, Completion, and GitHub Operation. [asd#31](https://github.com/ga7ming3249/asd/issues/31) (Japanese Horizontal Typography Analysis Track) is **Closed** — GitHub's issue timeline shows exactly one close event (`2026-08-05T10:08:05Z`), five seconds after a KB-0005 Knowledge Extraction Complete comment was posted, and **no reopen event exists** anywhere in GitHub's history for this Issue; the original close was not Publisher-verified at the time. Repository verification of Issue #31's stated Knowledge Track scope, against `ga7ming3249/figma-os` `main`, found: KB-0001–KB-0003 registered (commits `8b15f28`, `3d22e8a`, `3f1599e`); **KB-0004 not found** anywhere (no file, no git history on any branch, no Issue comment content); **KB-0005** has an Architecture Review summary posted as an Issue comment claiming Knowledge Extraction Complete, but no corresponding repository file exists. Both KB-0004 and KB-0005 are **Remote Registration Pending** — not registered, no Accepted Commit SHA for either, and Publisher has not created or reconstructed either artifact. Separately, Publisher identified commit `5464a78bf3500475a8855f10cfb8aaa75b9caa39` on `figma-os/main` (2026-08-01, pushed directly with no PR) implementing a read-only Horizontal Analysis Profile — per its commit message: boundary observation (HR-001/HR-002), conflict *detection only* (HR-004, no auto-resolution), and Recommendation generation with execution capability never enabled; no Vertical pipeline, Type Adjuster, Handoff, Marker, or Utility code changed. No Architecture Review record for this commit has been identified. This commit is recorded as **Repository Evidence Identified — Architecture Classification Pending** (not Accepted, not Gate 2/3-satisfying, not Canonical Architecture) and is escalated for Global Architect review. Full detail: Publisher Verification comment on [asd#31](https://github.com/ga7ming3249/asd/issues/31#issuecomment-5190980016) and correction comment on [asd#33](https://github.com/ga7ming3249/asd/issues/33#issuecomment-5190983450). **Nightly Synchronization Final Status: Blocked** — required Canonical Artifacts (KB-0004/KB-0005) for `figma-os` registration are missing, and unclassified repository evidence (commit `5464a78`) requires Global Architect Architecture Classification before full reconciliation.
 
 ## Project Phase
 
@@ -225,11 +226,10 @@ Typography Knowledge Base（asd#28, asd#29）を基盤として進行してい�
 | [#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | Open | Knowledge Review deliverables completed — OpenType Typography Features |
 | [figma-os#10](https://github.com/ga7ming3249/figma-os/issues/10) | Type Polish / Type Adjuster | `priority:P1` | Open / Architect-Accepted | Type Polish / Type Adjuster User Guide — Documentation / UX Enablement. Canonical source: Markdown in `ga7ming3249/figma-os`. Priority order 1 of 3 |
 | [figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) | Type Polish / Type Adjuster | Medium | Open / Downstream of #2 | Product Architecture Decision — canonical ownership of Utility (Scale/Baseline/Tracking). Depends on figma-os#2 completion before any Utility removal. Priority order 2 of 3 |
-| [asd#31](https://github.com/ga7ming3249/asd/issues/31) | Type Polish | `priority:P2` | Open / Parent Coordination Issue — Gate 0 Completed | Japanese Horizontal Typography Analysis Track. Current Phase: Knowledge Collection. Gate 0 Knowledge Platform Finalized and Frozen (`figma-os` `8b15f28`); Next Gate: Gate 1 (Cross-reference & Rule Consolidation). Not incomplete Gate 5 scope. Utility ownership-changing implementation blocked until figma-os#3 is resolved. Priority order 3 of 3 |
 | [reference-assistant#1](https://github.com/ga7ming3249/reference-assistant/issues/1) | Reference Assistant | P1 | Open | Daily Preview Operation — Primary Issue, Successor to asd#4. reference-assistant#5's Safety Blocker is resolved (Closed 2026-07-25); Daily Preview resumption is not automatically decided by this synchronization and remains subject to separate Owner-controlled operating conditions |
 | [reference-assistant#7](https://github.com/ga7ming3249/reference-assistant/issues/7) | Reference Assistant | - | Open / Maintenance | Post-migration Cleanup After Dropbox Development Directory Migration. Independent low-priority maintenance issue; not remaining reference-assistant#5 work |
 | [reference-assistant#3](https://github.com/ga7ming3249/reference-assistant/issues/3) | Reference Assistant | P2 | Open | Design Library Location Selection and Safe Relocation Model — Architecture Issue |
-| [asd#32](https://github.com/ga7ming3249/asd/issues/32) | ASD Process | - | Open / Canonical Documentation Reflected | Standardize Global Architect Initialization Workflow — Daily Initialization Workflow v2 adopted; GitHub Canonical Primary Source, GitHub Audit (Architect) / Local Synchronization Audit (CC) responsibility split, `ASD-YYMMDD` Daily Session naming. Prompt Library updated and Accepted; Canonical Documentation reflected 2026-08-01; pending Close |
+| [asd#33](https://github.com/ga7ming3249/asd/issues/33) | ASD Process | - | Open | Standardize Issue Completion Authority and Operation Directives — Architecture Improvement addressing insufficient separation between Review Decision, Completion, and GitHub Operation, following an unverified KB-0005 review comment that closed asd#31 |
 
 ## Architecture Notes
 
@@ -245,9 +245,9 @@ Typography Knowledge Base（asd#28, asd#29）を基盤として進行してい�
 
 ## Current main
 
-Verified ASD base main before this State update: `53d35ab0ca4b987406f45693430e71cd8cd805b5`
+Verified ASD base main before this State update: `02c5d9ec351ee68fe362e7438bf0e59c9d7569f1`
 
-Verified figma-os main: `d3abd4f46ce89240a22a467bbbf712f4c5e10628` (figma-os#6 / PR #8 merged, 2026-07-29; accepted implementation commit `9253ce8ce46dbd02225f9bfa73019f4662f575de`; supersedes prior `2838450c91429e9bc9c312103e0741c64e0068d2` from figma-os#2 / PR #7, 2026-07-24)
+Verified figma-os main: `5464a78bf3500475a8855f10cfb8aaa75b9caa39` — current `figma-os/main` HEAD as verified 2026-08-05 (Repository fact only; includes commits `8b15f28`/`3d22e8a`/`3f1599e` — KB-0001–KB-0003 registration — and `5464a78` — Horizontal Analysis Profile implementation, **Repository Evidence Identified, Architecture Classification Pending**, see Current Project Overview). Supersedes prior `d3abd4f46ce89240a22a467bbbf712f4c5e10628` (figma-os#6 / PR #8, 2026-07-29), which itself superseded `2838450c91429e9bc9c312103e0741c64e0068d2` (figma-os#2 / PR #7, 2026-07-24).
 
 Gate 4 accepted feature head: `dc6361157345ebb8b17264f63aef8fa0e265c5eb` ([figma-os#5](https://github.com/ga7ming3249/figma-os/issues/5), Closed) — now merged to `figma-os/main` via the Gate 5 accepted implementation commit above
 

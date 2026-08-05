@@ -1,7 +1,7 @@
 # ASD Roadmap
 
-- Version: 18
-- Last Reviewed: 2026-08-01
+- Version: 19
+- Last Reviewed: 2026-08-05
 - Status: Active
 
 ---
@@ -46,15 +46,21 @@ PR #1マージ（2026-07-16）済み。実運用を通じて成熟させ、改�
 
 Dropboxベースの開発ディレクトリへの移行後のクリーンアップ（旧`~/Developer/reference-assistant`のアーカイブ、ドキュメント・IDE設定・shell設定・ローカル自動化の参照更新）。reference-assistant#5（Completed）とは独立した低優先度Maintenance Issueであり、Issue #5の未完了作業ではない。
 
-**ASD Operations: Daily Initialization Workflow v2**（[asd#32](https://github.com/ga7ming3249/asd/issues/32)）— Canonical Documentation Reflected
+**ASD Operations: Daily Initialization Workflow v2**（[asd#32](https://github.com/ga7ming3249/asd/issues/32)）— **Completed / Closed**（`2026-08-01T06:31:41Z`）
 
-Global Architect初期化フローをSession Lifecycle（Session Creation → Workspace Validation → Architecture Initialization → Execution → Finalization）として標準化。GitHub Repositoryを`docs/asd-state.md` / `docs/figma-os-state.md` / `docs/ROADMAP.md`のCanonical Primary Sourceとし、Vision Ownerによる毎朝のCanonical Documentsアップロード運用を廃止。GitHub AuditはGlobal Architectの責務、Local Synchronization Audit（読み取り専用、自動修正なし）はClaude Codeの責務として分離。Daily SessionはASD Project内で`ASD-YYMMDD`命名のチャットとして開始する。`asd-prompt-library.html`（本Repository管理外のローカル運用ファイル）はIssue-scoped Architectレビューで既にAccepted。2026-08-01、本Canonical Documentation Synchronizationにより`docs/asd-state.md`・`docs/ROADMAP.md`へ反映。asd#32はDocumentation反映完了後にCloseを予定するが、本同期ではCloseを実施していない。後続Issueの新規作成は不要。
+Global Architect初期化フローをSession Lifecycle（Session Creation → Workspace Validation → Architecture Initialization → Execution → Finalization）として標準化。GitHub Repositoryを`docs/asd-state.md` / `docs/figma-os-state.md` / `docs/ROADMAP.md`のCanonical Primary Sourceとし、Vision Ownerによる毎朝のCanonical Documentsアップロード運用を廃止。GitHub AuditはGlobal Architectの責務、Local Synchronization Audit（読み取り専用、自動修正なし）はClaude Codeの責務として分離。Daily SessionはASD Project内で`ASD-YYMMDD`命名のチャットとして開始する。`asd-prompt-library.html`（本Repository管理外のローカル運用ファイル）はIssue-scoped Architectレビューで既にAccepted。2026-08-01、Canonical Documentation Synchronizationにより`docs/asd-state.md`・`docs/ROADMAP.md`へ反映し、同日Issue-scoped Architectレビューで`Accepted`、Publisherにより`Close`済み。後続Issueの新規作成は不要。
+
+**ASD Operations: Standardize Issue Completion Authority and Operation Directives**（[asd#33](https://github.com/ga7ming3249/asd/issues/33)）— Open / Architecture Improvement
+
+Review Decision、Completion、GitHub Operationの分離を標準化するIssue。背景: asd#31のKB-0005 Architecture Reviewコメント投稿直後（5秒後）に親Issue（asd#31）がGitHub上でCloseされ、この操作はPublisher未検証だった（GitHub Timeline/Events APIで確認済み、Reopenイベントは存在しない）。2026-08-05のNightly Canonical Synchronizationで、asd#31のKnowledge Track成果物（KB-0004/KB-0005）がRepository未登録であること、および`figma-os/main`上の未分類コミット（`5464a78`、PRなし、Architecture Review記録未確認）が追加で判明し、本Issueが扱う問題の実例として記録された（詳細: [asd#31 Publisher Verification](https://github.com/ga7ming3249/asd/issues/31#issuecomment-5190980016)、[asd#33 Correction Comment](https://github.com/ga7ming3249/asd/issues/33#issuecomment-5190983450)）。Deliverables: Completion Authority Matrix、Issue Lifecycle Definition、Review Vocabulary Standard、Operation Directive Template、Handoff Template更新、Prompt Library更新案。
 
 ---
 
 # Next
 
 Architect-Accepted execution order (2026-07-29 Nightly Canonical State Synchronization): 1) Type Polish / Type Adjuster User Guide, 2) figma-os#3, 3) Japanese Horizontal Typography Analysis Track (see Future).
+
+**Status update (2026-08-05)**: Item 1 (figma-os#10) and item 2 (figma-os#3) are unaffected and remain the current order. Item 3 (asd#31) is Closed as of 2026-08-05 — see Future for its status update; any further Horizontal Typography work (Gate 1 and beyond) requires a new Issue and is pending Global Architect Architecture Classification of repository findings recorded on [asd#31](https://github.com/ga7ming3249/asd/issues/31#issuecomment-5190980016) and [asd#33](https://github.com/ga7ming3249/asd/issues/33).
 
 **Type Polish / Type Adjuster User Guide**
 
@@ -93,6 +99,8 @@ GUIやリロケーション実装に先立ち、Library識別・選択・安全�
 * Utility ownership-changing implementation is blocked until figma-os#3 is resolved
 
 Architect-Accepted (2026-07-29). New Gate 0–Gate 5 capability track for Type Polish, distinct from and not incomplete work of the completed Japanese Vertical — Standard Gate 5 (see Now above). Gate 0 Knowledge Collection may begin before figma-os#3 is resolved; it is not the current first implementation priority (see Next above for the Architect-Accepted execution order).
+
+**Status update (2026-08-05 Nightly Canonical Synchronization)**: asd#31 is **Closed** (`2026-08-05T10:08:05Z` — GitHub's issue timeline shows exactly one close event and no reopen event; the original close was not Publisher-verified). This entry is no longer an active in-progress Future Parent Issue. Repository verification found: KB-0001–KB-0003 registered in `figma-os`; **KB-0004 and KB-0005 are Remote Registration Pending** (no artifact found for either — no repository file, no git history, and for KB-0004 no Issue comment either); no Accepted Commit SHA exists for either. Separately, commit `5464a78` on `figma-os/main` (2026-08-01, pushed directly with no PR) implements a read-only Horizontal Analysis Profile per its own commit message; no Architecture Review record for it has been identified — recorded as **Repository Evidence Identified, Architecture Classification Pending**, not inferred to satisfy Gate 2 or Gate 3, and escalated for Global Architect review. Gate 1 and beyond are **Future Candidates requiring a new Issue**, contingent on that classification. Full detail: [asd#31 Publisher Verification](https://github.com/ga7ming3249/asd/issues/31#issuecomment-5190980016), [asd#33 correction](https://github.com/ga7ming3249/asd/issues/33#issuecomment-5190983450). The original Architect-Accepted description above is preserved as the historical record as of 2026-07-29 and is not rewritten.
 
 **Type Inventory: 多行テキスト対応**（[figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4)、P3・Backlog）
 
