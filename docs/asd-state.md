@@ -1,7 +1,7 @@
 # ASD State
 
-- Version: 36
-- Date: 2026-08-05
+- Version: 37
+- Date: 2026-08-07
 - Status: Active
 
 ---
@@ -128,6 +128,19 @@ Responsibilities
 The Independent Reviewer is not the final decision-maker. Product decisions remain with the Owner; architecture and ASD governance decisions go through Architect Review.
 
 **Reviewer model is not fixed.** The Owner selects the reviewer model based on availability, cost, fit for the task, context capacity, technical review capability, and independence from the Architect and implementation roles. Fable5 remains the preferred reviewer when available; GPT-5.6 Sol (run in Claude Code) is the current primary reviewer while Fable5's usage conditions make daily use impractical. This is an availability-based reviewer selection, not a permanent replacement — Fable5 may return, exclusively or alongside GPT-5.6 Sol, once its access conditions improve. See `owner-rules.md` for the full policy.
+
+---
+
+## Execution Authority and Proxy Handoff
+
+These rules take precedence over fixed role assignments when service capabilities or operating conditions change.
+
+1. **Human Authorization is mandatory.** No AI actor may create, edit, delete, publish, Commit, Push, Close, Merge, or otherwise mutate project state without explicit authorization from the Vision Owner.
+2. **Role assignments may change.** Architect, Publisher, Engineer, Director, or Reviewer assignments may be changed to match current AI service capabilities, provided architectural intent, quality standards, decision rationale, and current state remain transferable.
+3. **Proxy execution requires mandatory follow-up.** When an actor performs work assigned to another role, the proxy executor must notify and hand off to the originally assigned actor.
+4. **The follow-up must include:** the reason for proxy execution; actions and results; Issue, Commit, file, or other references; decisions and unresolved items; requested verification or continuation; and the status of Canonical record updates.
+5. **Proxy execution is not synchronized until handoff is possible.** The originally assigned actor must be able to verify the result and resume responsibility. Duplicate execution is not required; audit, acknowledgment, and continuation are the default.
+6. **Chat history is not the record.** These rules and any material changes to them must be synchronized to Canonical Documents before an Architect chat is intentionally replaced, so ChatGPT and Claude Code can reconstruct the same current state.
 
 ---
 
