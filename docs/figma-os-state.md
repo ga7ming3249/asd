@@ -1,10 +1,10 @@
 # Figma OS State
 
-- Version: 23
-- Date: 2026-08-05
+- Version: 24
+- Date: 2026-08-07
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
-- Verified against: `ga7ming3249/figma-os` `main` HEAD (`5464a78bf3500475a8855f10cfb8aaa75b9caa39`, Repository fact only — see Decisions Pending for Architecture Classification status of the newest commit), and ASD Issues, as of 2026-08-05
+- Verified against: `ga7ming3249/figma-os` `main` HEAD (`031887cbf1b65336682212f13df3d609ce46267a`, Repository fact only), and ASD Issues, as of 2026-08-07
 
 ---
 
@@ -119,10 +119,6 @@ Waiting for architecture decision. DSS v1.x is frozen as a spike; v2 is to be re
 
 Waiting for Product Architecture Decision on whether Scale/Baseline/Tracking Utility controls remain in Type Polish or become exclusively owned by Type Adjuster. Depends on completion of [figma-os#2](https://github.com/ga7ming3249/figma-os/issues/2) (Type Adjuster Scale UI synchronization) before any Utility removal is considered. No implementation until this decision is approved. [asd#31](https://github.com/ga7ming3249/asd/issues/31) (Japanese Horizontal Typography Analysis Track, `priority:P2`, now Closed — see Recommended Next Priorities) was a future capability track gated on this same boundary.
 
-**Commit `5464a78` Architecture Classification** (identified 2026-08-05 Nightly Canonical Synchronization)
-
-Commit `5464a78bf3500475a8855f10cfb8aaa75b9caa39` on `figma-os/main` (2026-08-01, pushed directly with no PR) adds a read-only Horizontal Analysis Profile (`type-polish/src/core/horizontal/`) per asd#31's Rule Catalog v0.2, described in its own commit message as read-only / non-mutating (boundary observation, conflict detection only, no execution capability enabled). No Architecture Review record or formal Acceptance for this commit has been identified anywhere (not on asd#31, not as a PR review, not elsewhere). Global Architect review is needed to classify this commit (Accepted / Rejected / requires a new Issue) before it is treated as satisfying any Gate. Not inferred here to satisfy Gate 2 or Gate 3, and not inferred to supersede or substitute for the still-unregistered KB-0004 / KB-0005.
-
 **KB-0004 / KB-0005 Remote Registration** (identified 2026-08-05 Nightly Canonical Synchronization)
 
 Neither a `knowledge-base/` entry nor an `architecture-reviews/` file exists in the repository for KB-0004 or KB-0005, despite an Issue comment describing KB-0005's Knowledge Extraction as Complete/Accepted. No source artifact has been located locally or in GitHub to register verbatim. Requires either the original artifact being supplied for verbatim registration, or a Global Architect decision on how to proceed.
@@ -149,7 +145,7 @@ Next Milestone
 User Guide initial Acceptance
 
 Blockers
-None affecting Recommended First Action (figma-os#10). Pending, not blocking: Architecture Classification of `main` commit `5464a78` and KB-0004/KB-0005 Remote Registration for the now-Closed asd#31 track — see Decisions Pending.
+None affecting Recommended First Action (figma-os#10). Pending, not blocking: KB-0004/KB-0005 Remote Registration for the now-Closed asd#31 track — see Decisions Pending. (Architecture Classification of `main` commit `5464a78` was resolved 2026-08-07 via asd#34 — Experimental, Accepted Commit: No — see Recent Changes.)
 
 Overall Health
 Healthy
@@ -214,6 +210,24 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 ---
 
 # Recent Changes
+
+## Issue #34 — Repository Evidence Classification: Commit `5464a78` Resolved (2026-08-07)
+
+[asd#34](https://github.com/ga7ming3249/asd/issues/34) (Review and Classify Repository Evidence Commit 5464a78) is **Closed / Completed** (`2026-08-07T09:03:45Z`, Issue-scoped Architect final result: Accepted). This resolves the commit-`5464a78` Architecture Classification Pending item recorded in the 2026-08-05 synchronization below; that item has been removed from Decisions Pending accordingly.
+
+- Architecture Classification: **Experimental**
+- Accepted Commit: **No**
+- Functional Implementation Scope: Gate 2 + partial Gate 3 equivalent (a functional-scope classification only, not Gate Acceptance)
+- Canonical Gate Acceptance: **Gate 0 only** — Gate 1 / Gate 2 / Gate 3 Acceptance: **Not established**
+- Read-only / zero-mutation: Verified by available static and test evidence
+- Recommendation Scope: Present, non-executable
+- Rule Promotion: **None**
+- Utility Ownership Change: **None**
+- Freeze Compliance: **Not established** (the pre-existing Type Polish no-feature-addition Freeze predates the commit; no exception or superseding Architecture Decision was found)
+- Immediate Revert: Not required
+- Publication Commit: [`031887cbf1b65336682212f13df3d609ce46267a`](https://github.com/ga7ming3249/figma-os/commit/031887cbf1b65336682212f13df3d609ce46267a) — records `references/type-polish/japanese-horizontal-typography/architecture-reviews/ARCHITECTURE-REVIEW-COMMIT-5464A78.md`, `.../review-records/REVIEW-0002.md`, and a `type-polish/HISTORY.md` entry
+
+KB-0004 / KB-0005 Remote Registration Pending is unaffected by this resolution and remains outstanding (see Decisions Pending).
 
 ## ASD Nightly Canonical Synchronization — Repository Evidence Review (2026-08-05)
 

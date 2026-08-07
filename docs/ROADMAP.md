@@ -1,7 +1,7 @@
 # ASD Roadmap
 
-- Version: 19
-- Last Reviewed: 2026-08-05
+- Version: 20
+- Last Reviewed: 2026-08-07
 - Status: Active
 
 ---
@@ -48,7 +48,7 @@ Dropboxベースの開発ディレクトリへの移行後のクリーンアッ�
 
 **ASD Operations: Daily Initialization Workflow v2**（[asd#32](https://github.com/ga7ming3249/asd/issues/32)）— **Completed / Closed**（`2026-08-01T06:31:41Z`）
 
-Global Architect初期化フローをSession Lifecycle（Session Creation → Workspace Validation → Architecture Initialization → Execution → Finalization）として標準化。GitHub Repositoryを`docs/asd-state.md` / `docs/figma-os-state.md` / `docs/ROADMAP.md`のCanonical Primary Sourceとし、Vision Ownerによる毎朝のCanonical Documentsアップロード運用を廃止。GitHub AuditはGlobal Architectの責務、Local Synchronization Audit（読み取り専用、自動修正なし）はClaude Codeの責務として分離。Daily SessionはASD Project内で`ASD-YYMMDD`命名のチャットとして開始する。`asd-prompt-library.html`（本Repository管理外のローカル運用ファイル）はIssue-scoped Architectレビューで既にAccepted。2026-08-01、Canonical Documentation Synchronizationにより`docs/asd-state.md`・`docs/ROADMAP.md`へ反映し、同日Issue-scoped Architectレビューで`Accepted`、Publisherにより`Close`済み。後続Issueの新規作成は不要。
+Global Architect初期化フローをSession Lifecycle（Session Creation → Workspace Validation → Architecture Initialization → Execution → Finalization）として標準化。GitHub Repositoryを`docs/asd-state.md` / `docs/figma-os-state.md` / `docs/ROADMAP.md`のCanonical Primary Sourceとし、Vision Ownerによる毎朝のCanonical Documentsアップロード運用を廃止。GitHub AuditはGlobal Architectの責務、Local Synchronization Audit（読み取り専用、自動修正なし）はClaude Codeの責務として分離。Daily SessionはASD Project内で`ASD-YYMMDD`命名のチャットとして開始する。`asd-prompt-library.html`（Canonical管理: [`ga7ming3249/asd-operations`](https://github.com/ga7ming3249/asd-operations) `main`ブランチ、2026-08-07時点でP0/P1/P2 **Completed / Accepted**、検証済みCommit `f3837c992bb7dea82c859c67454e1372683a3279`）はIssue-scoped Architectレビューで既にAccepted。2026-08-01、Canonical Documentation Synchronizationにより`docs/asd-state.md`・`docs/ROADMAP.md`へ反映し、同日Issue-scoped Architectレビューで`Accepted`、Publisherにより`Close`済み。後続Issueの新規作成は不要。
 
 **ASD Operations: Standardize Issue Completion Authority and Operation Directives**（[asd#33](https://github.com/ga7ming3249/asd/issues/33)）— Open / Architecture Improvement
 
@@ -60,7 +60,9 @@ Review Decision、Completion、GitHub Operationの分離を標準化するIssue�
 
 Architect-Accepted execution order (2026-07-29 Nightly Canonical State Synchronization): 1) Type Polish / Type Adjuster User Guide, 2) figma-os#3, 3) Japanese Horizontal Typography Analysis Track (see Future).
 
-**Status update (2026-08-05)**: Item 1 (figma-os#10) and item 2 (figma-os#3) are unaffected and remain the current order. Item 3 (asd#31) is Closed as of 2026-08-05 — see Future for its status update; any further Horizontal Typography work (Gate 1 and beyond) requires a new Issue and is pending Global Architect Architecture Classification of repository findings recorded on [asd#31](https://github.com/ga7ming3249/asd/issues/31#issuecomment-5190980016) and [asd#33](https://github.com/ga7ming3249/asd/issues/33).
+**Status update (2026-08-05)**: Item 1 (figma-os#10) and item 2 (figma-os#3) are unaffected and remain the current order. Item 3 (asd#31) is Closed as of 2026-08-05 — see Future for its status update; any further Horizontal Typography work (Gate 1 and beyond) requires a new Issue and explicit Architecture Authorization.
+
+**Status update (2026-08-07)**: Repository Evidence Classification of commit `5464a78` (recorded on asd#31 and asd#33) is resolved via [asd#34](https://github.com/ga7ming3249/asd/issues/34) — **Experimental**, **Accepted Commit: No**; see Future for detail.
 
 **Type Polish / Type Adjuster User Guide**
 
@@ -101,6 +103,8 @@ GUIやリロケーション実装に先立ち、Library識別・選択・安全�
 Architect-Accepted (2026-07-29). New Gate 0–Gate 5 capability track for Type Polish, distinct from and not incomplete work of the completed Japanese Vertical — Standard Gate 5 (see Now above). Gate 0 Knowledge Collection may begin before figma-os#3 is resolved; it is not the current first implementation priority (see Next above for the Architect-Accepted execution order).
 
 **Status update (2026-08-05 Nightly Canonical Synchronization)**: asd#31 is **Closed** (`2026-08-05T10:08:05Z` — GitHub's issue timeline shows exactly one close event and no reopen event; the original close was not Publisher-verified). This entry is no longer an active in-progress Future Parent Issue. Repository verification found: KB-0001–KB-0003 registered in `figma-os`; **KB-0004 and KB-0005 are Remote Registration Pending** (no artifact found for either — no repository file, no git history, and for KB-0004 no Issue comment either); no Accepted Commit SHA exists for either. Separately, commit `5464a78` on `figma-os/main` (2026-08-01, pushed directly with no PR) implements a read-only Horizontal Analysis Profile per its own commit message; no Architecture Review record for it has been identified — recorded as **Repository Evidence Identified, Architecture Classification Pending**, not inferred to satisfy Gate 2 or Gate 3, and escalated for Global Architect review. Gate 1 and beyond are **Future Candidates requiring a new Issue**, contingent on that classification. Full detail: [asd#31 Publisher Verification](https://github.com/ga7ming3249/asd/issues/31#issuecomment-5190980016), [asd#33 correction](https://github.com/ga7ming3249/asd/issues/33#issuecomment-5190983450). The original Architect-Accepted description above is preserved as the historical record as of 2026-07-29 and is not rewritten.
+
+**Status update (2026-08-07)**: [asd#34](https://github.com/ga7ming3249/asd/issues/34) (Review and Classify Repository Evidence Commit 5464a78) is **Closed / Completed**. Commit `5464a78`'s Architecture Classification is resolved: **Experimental**, **Accepted Commit: No**, Canonical Gate Acceptance **Gate 0 only** (Gate 1 / Gate 2 / Gate 3 Acceptance: **Not established**), no Rule Promotion, no Utility Ownership change, Freeze Compliance **Not established**. Gate 1 and beyond remain **Future Candidates requiring a new Issue and explicit Architecture Authorization** — this classification does not itself open or authorize further Horizontal Typography implementation work. **KB-0004 / KB-0005 Remote Registration Pending is unaffected and remains outstanding.** Publication commit: [`031887cbf1b65336682212f13df3d609ce46267a`](https://github.com/ga7ming3249/figma-os/commit/031887cbf1b65336682212f13df3d609ce46267a).
 
 **Type Inventory: 多行テキスト対応**（[figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4)、P3・Backlog）
 
