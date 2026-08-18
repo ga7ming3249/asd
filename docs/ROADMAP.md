@@ -1,6 +1,6 @@
 # ASD Roadmap
 
-- Version: 22
+- Version: 23
 - Last Reviewed: 2026-08-18
 - Status: Active
 
@@ -17,6 +17,20 @@ Documentation Architecture v1.0（[#12](https://github.com/ga7ming3249/asd/issue
 ---
 
 # Now
+
+**Vision Owner Priority Decision — Type Polishの完成を第一優先とする**（2026-08-18）
+
+Vision Owner決定。現在Figma OSで優先的に開発するPluginは次の4つ: 1) Type Polish、2) Type Adjuster、3) Type Inventory、4) Color Inventory。この中で**Type Polishの完成を第一優先のProduct Goal**とする。
+
+Type Adjusterは単体で既に日常実務利用に達する成熟度にあるが、Figma OSとしての強みは、Type Polish（組版判断の保存・再利用、組版仕上げ）とType Adjuster（実行・手動微調整）のセット運用によって完成する。
+
+**Type PolishをJapanese Vertical専用Pluginとして扱わない。** Type PolishのCanonical Product Identityは、組版判断を保存・再利用し、和欧補正・日付・時刻・約物などの組版仕上げを半自動化し、将来的にJapanese Horizontal / Mixed Japanese–Latin / Latin typography等へ展開するProductである。現在Japanese Verticalが最も進んでいるのは実装フェーズ上の状態であり、Product Scopeそのものを縦組みに限定するものではない。
+
+[figma-os#12](https://github.com/ga7ming3249/figma-os/issues/12)（Plain-node Manual Adjustment Strategy）は引き続き変更なしでImmediate Next Architecture Dependencyだが、単独のType Adjuster目標としてではなく、**Type Polish / Type Adjusterのproduct architectureを完成させる一部**として位置づける。
+
+**本Synchronizationは以下を行わない**: asd#31の再Open、asd#28のClose、新規Implementation Authorization、runtime code変更、figma-os#12のスキップ、Horizontal / Latin実装の自動承認。
+
+[asd#28](https://github.com/ga7ming3249/asd/issues/28) / [asd#31](https://github.com/ga7ming3249/asd/issues/31)を含む、未解決のJapanese Horizontal / Mixed Japanese–Latin / Latin typography capability workのReconciliationが必要——詳細はFuture節「Type Polish Capability Roadmap Reconciliation」を参照。
 
 **Issue #30 — Japanese Vertical — Standard Implementation**（Architecture-gated scoped exception）— Completed
 
@@ -76,6 +90,8 @@ Architect-Accepted execution order (2026-07-29 Nightly Canonical State Synchroni
 
 **Status update (2026-08-18, second sync)**: Item 1 (figma-os#10, Type Polish / Type Adjuster User Guide) is now **Completed / Accepted / Closed** — see "Now" above. It no longer occupies a Next-section execution-order slot; [figma-os#12](https://github.com/ga7ming3249/figma-os/issues/12) (Plain-node Manual Adjustment Strategy, "Type Polish Utility Ownership — Migration Track" below) is the current Recommended First Action / Next Architecture Dependency. A separate Presentation/Distribution-layer Issue (offline HTML copy of the accepted User Guide for Dropbox viewing) was registered in `ga7ming3249/figma-os`; per explicit State Update Decision, that Issue's registration is not itself tracked in this Next section.
 
+**Status update (2026-08-18, third sync — Vision Owner Priority Decision)**: figma-os#12 remains unchanged as the immediate Next Architecture Dependency (see "Now" above) — this sync does not skip or reorder it. It is now explicitly framed as part of completing the Type Polish / Type Adjuster product architecture rather than an isolated Type Adjuster-only objective. Type Polish's Canonical Product Identity is confirmed to extend beyond Japanese Vertical; see "Now" above and the new Future entry "Type Polish Capability Roadmap Reconciliation" for the asd#28 / asd#31 / Horizontal / Mixed Japanese–Latin / Latin typography reconciliation this implies.
+
 **Type Polish Utility Ownership — Migration Track**（[figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) Completed 2026-08-18 の follow-up chain）
 
 figma-os#3のCanonical Ownership Decision（Type Adjusterがmanual adjustment [Scale/Baseline/Tracking] のcanonical owner、Type Polish Utilityはlegacy compatibility capability pending migration/removal、即時削除禁止）を受けた4件のfollow-up Issue。すべて`ga7ming3249/figma-os`にOpenで登録済み。
@@ -115,6 +131,20 @@ Architect-Accepted (2026-07-29). New Gate 0–Gate 5 capability track for Type P
 **Status update (2026-08-05 Nightly Canonical Synchronization)**: asd#31 is **Closed** (`2026-08-05T10:08:05Z` — GitHub's issue timeline shows exactly one close event and no reopen event; the original close was not Publisher-verified). This entry is no longer an active in-progress Future Parent Issue. Repository verification found: KB-0001–KB-0003 registered in `figma-os`; **KB-0004 and KB-0005 are Remote Registration Pending** (no artifact found for either — no repository file, no git history, and for KB-0004 no Issue comment either); no Accepted Commit SHA exists for either. Separately, commit `5464a78` on `figma-os/main` (2026-08-01, pushed directly with no PR) implements a read-only Horizontal Analysis Profile per its own commit message; no Architecture Review record for it has been identified — recorded as **Repository Evidence Identified, Architecture Classification Pending**, not inferred to satisfy Gate 2 or Gate 3, and escalated for Global Architect review. Gate 1 and beyond are **Future Candidates requiring a new Issue**, contingent on that classification. Full detail: [asd#31 Publisher Verification](https://github.com/ga7ming3249/asd/issues/31#issuecomment-5190980016), [asd#33 correction](https://github.com/ga7ming3249/asd/issues/33#issuecomment-5190983450). The original Architect-Accepted description above is preserved as the historical record as of 2026-07-29 and is not rewritten.
 
 **Status update (2026-08-07)**: [asd#34](https://github.com/ga7ming3249/asd/issues/34) (Review and Classify Repository Evidence Commit 5464a78) is **Closed / Completed**. Commit `5464a78`'s Architecture Classification is resolved: **Experimental**, **Accepted Commit: No**, Canonical Gate Acceptance **Gate 0 only** (Gate 1 / Gate 2 / Gate 3 Acceptance: **Not established**), no Rule Promotion, no Utility Ownership change, Freeze Compliance **Not established**. Gate 1 and beyond remain **Future Candidates requiring a new Issue and explicit Architecture Authorization** — this classification does not itself open or authorize further Horizontal Typography implementation work. **KB-0004 / KB-0005 Remote Registration Pending is unaffected and remains outstanding.** Publication commit: [`031887cbf1b65336682212f13df3d609ce46267a`](https://github.com/ga7ming3249/figma-os/commit/031887cbf1b65336682212f13df3d609ce46267a).
+
+**Type Polish Capability Roadmap Reconciliation**（Vision Owner Priority Decision 2026-08-18 のfollow-up、"Now"参照）
+
+Type Polishが将来展開するJapanese Horizontal / Mixed Japanese–Latin / Latin typography / standard finishing capabilityについて、以下を対象にReconciliationが必要:
+
+- [asd#28](https://github.com/ga7ming3249/asd/issues/28) — Japanese Vertical Typography & Latin Kerning Knowledge Review（deliverables completed、Issue自体はOpenのまま）
+- [asd#31](https://github.com/ga7ming3249/asd/issues/31) — Japanese Horizontal Typography Analysis Track（Closed、Gate 0のみ、KB-0004/KB-0005 Remote Registration Pending — 詳細は`figma-os-state.md`参照）
+- Horizontal Analysis capability自体（commit `5464a78`、Architecture Classification: Experimental、Accepted Commit: No、Canonical Gate Acceptance: Gate 0 only、asd#34で確定済み）
+- Mixed Japanese–Latin typography（未着手）
+- Latin typography / standard finishing（未着手）
+
+Reconciliationが決定すべき事項: 各項目をCompleted / Experimental / Frozen / Unfinished / Successor Issueのいずれとして扱うか、Issue Ownershipをどう再編するか。新規Product-specific IssueはRepository Issue Ownership Policyに従い通常`ga7ming3249/figma-os`に登録する。ASD Parent Coordination Issue（`ga7ming3249/asd`側）はGlobal Architecture / Gate間調整が真に必要な場合にのみ設ける。
+
+本項目自体は決定ではなくReconciliationの必要性の記録であり、asd#31の再Open・asd#28のClose・新規Implementation Authorizationのいずれも行わない。Reconciliation自体はIssue-scoped Architectへの提示・別Issue化を通じて別途実施する。
 
 **Type Inventory: 多行テキスト対応**（[figma-os#4](https://github.com/ga7ming3249/figma-os/issues/4)、P3・Backlog）
 
