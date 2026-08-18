@@ -1,7 +1,7 @@
 # ASD Roadmap
 
-- Version: 20
-- Last Reviewed: 2026-08-07
+- Version: 21
+- Last Reviewed: 2026-08-18
 - Status: Active
 
 ---
@@ -50,6 +50,10 @@ Dropboxベースの開発ディレクトリへの移行後のクリーンアッ�
 
 Global Architect初期化フローをSession Lifecycle（Session Creation → Workspace Validation → Architecture Initialization → Execution → Finalization）として標準化。GitHub Repositoryを`docs/asd-state.md` / `docs/figma-os-state.md` / `docs/ROADMAP.md`のCanonical Primary Sourceとし、Vision Ownerによる毎朝のCanonical Documentsアップロード運用を廃止。GitHub AuditはGlobal Architectの責務、Local Synchronization Audit（読み取り専用、自動修正なし）はClaude Codeの責務として分離。Daily SessionはASD Project内で`ASD-YYMMDD`命名のチャットとして開始する。`asd-prompt-library.html`（Canonical管理: [`ga7ming3249/asd-operations`](https://github.com/ga7ming3249/asd-operations) `main`ブランチ、2026-08-07時点でP0/P1/P2 **Completed / Accepted**、検証済みCommit `f3837c992bb7dea82c859c67454e1372683a3279`）はIssue-scoped Architectレビューで既にAccepted。2026-08-01、Canonical Documentation Synchronizationにより`docs/asd-state.md`・`docs/ROADMAP.md`へ反映し、同日Issue-scoped Architectレビューで`Accepted`、Publisherにより`Close`済み。後続Issueの新規作成は不要。
 
+**Type Polish Utility Ownership Canonical Decision**（[figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3)）— **Completed / Accepted / Closed**（`2026-08-18T05:03:24Z`）
+
+Issue-scoped Architect final result: Accepted。Canonical manual-adjustment owner: **Type Adjuster**（Scale / Baseline / Tracking）。Type Polish既存Utilityは**Legacy Compatibility Capability Pending Migration/Removal**へ再分類——即時削除は引き続き禁止。Type Polish Freezeの例外は、以下Migration Trackで扱うUtility deprecation/removal migrationに限定し、他のType Polish変更を許可しない。**本Closeはimplementation authorizationではない**——figma-os#3のClose単独ではType Polish Utility削除を許可しない。Follow-up chainおよびNext Architecture Dependency（figma-os#12）はNext節「Type Polish Utility Ownership — Migration Track」を参照。Architecture Decision comment: [figma-os#3#issuecomment-5323799447](https://github.com/ga7ming3249/figma-os/issues/3#issuecomment-5323799447)。
+
 **ASD Operations: Standardize Issue Completion Authority and Operation Directives**（[asd#33](https://github.com/ga7ming3249/asd/issues/33)）— Open / Architecture Improvement
 
 Review Decision、Completion、GitHub Operationの分離を標準化するIssue。背景: asd#31のKB-0005 Architecture Reviewコメント投稿直後（5秒後）に親Issue（asd#31）がGitHub上でCloseされ、この操作はPublisher未検証だった（GitHub Timeline/Events APIで確認済み、Reopenイベントは存在しない）。2026-08-05のNightly Canonical Synchronizationで、asd#31のKnowledge Track成果物（KB-0004/KB-0005）がRepository未登録であること、および`figma-os/main`上の未分類コミット（`5464a78`、PRなし、Architecture Review記録未確認）が追加で判明し、本Issueが扱う問題の実例として記録された（詳細: [asd#31 Publisher Verification](https://github.com/ga7ming3249/asd/issues/31#issuecomment-5190980016)、[asd#33 Correction Comment](https://github.com/ga7ming3249/asd/issues/33#issuecomment-5190983450)）。Deliverables: Completion Authority Matrix、Issue Lifecycle Definition、Review Vocabulary Standard、Operation Directive Template、Handoff Template更新、Prompt Library更新案。
@@ -64,6 +68,8 @@ Architect-Accepted execution order (2026-07-29 Nightly Canonical State Synchroni
 
 **Status update (2026-08-07)**: Repository Evidence Classification of commit `5464a78` (recorded on asd#31 and asd#33) is resolved via [asd#34](https://github.com/ga7ming3249/asd/issues/34) — **Experimental**, **Accepted Commit: No**; see Future for detail.
 
+**Status update (2026-08-18)**: Item 2 (figma-os#3) is **Completed / Accepted / Closed** — see Now above. It is superseded in this execution order by [figma-os#12](https://github.com/ga7ming3249/figma-os/issues/12) (Plain-node Manual Adjustment Strategy), the Next Architecture Dependency; see "Type Polish Utility Ownership — Migration Track" below. Item 1 (figma-os#10) is unaffected but its scope must now incorporate the figma-os#3 canonical ownership decision, coordinated with figma-os#14 to avoid overlap. Item 3 (asd#31) remains Closed as recorded 2026-08-05.
+
 **Type Polish / Type Adjuster User Guide**
 
 * Issue: `ga7ming3249/figma-os#10`
@@ -75,9 +81,16 @@ Architect-Accepted execution order (2026-07-29 Nightly Canonical State Synchroni
 
 Architect-Accepted (2026-07-29). Reason: current functionality exists but lacks canonical user-facing documentation. Not incomplete Gate 5 work — Gate 5 (Desktop Acceptance) for Japanese Vertical — Standard is Completed (see Now above).
 
-**Type Polish Utility ownership consolidation decision**（[figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3)、Medium）
+**Type Polish Utility Ownership — Migration Track**（[figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) Completed 2026-08-18 の follow-up chain）
 
-Product Architecture Decision（実装ではない）。figma-os#2完了後にUtility削除を検討する前提。Issue #30 Gate 4への依存なし。
+figma-os#3のCanonical Ownership Decision（Type Adjusterがmanual adjustment [Scale/Baseline/Tracking] のcanonical owner、Type Polish Utilityはlegacy compatibility capability pending migration/removal、即時削除禁止）を受けた4件のfollow-up Issue。すべて`ga7ming3249/figma-os`にOpenで登録済み。
+
+- [figma-os#12](https://github.com/ga7ming3249/figma-os/issues/12) — Plain-node Manual Adjustment Strategy。**Next Architecture Dependency**。plain/ungenerated TextNodeへのmanual adjustment（Scale/Baseline/Tracking）をMaintain/Replace/Discontinueのいずれにするか決定する。実装ではない。
+- [figma-os#13](https://github.com/ga7ming3249/figma-os/issues/13) — Manual Adjustment Migration。**Contingent**——#12が「Type Adjuster側の対応が必要」と判断した場合にのみ必要になるimplementation Issue。無条件の実装予定として扱わない。
+- [figma-os#14](https://github.com/ga7ming3249/figma-os/issues/14) — Utility Ownership Documentation Migration。`type-polish/README.md` / `type-adjuster/README.md` / ROADMAP等を更新。figma-os#10（User Guide）とのscope重複を避けるため協調が必要。
+- [figma-os#15](https://github.com/ga7ming3249/figma-os/issues/15) — Utility Deprecation / Removal。**Blocked**——#12・#13（該当する場合）・#14、およびregression/Desktop verification完了まで着手しない。**前倒ししない。**
+
+Dependency order: #12 → #13（該当する場合） → #14 → #15。Type Polish Freezeの例外はこのMigration Trackに限定され、他のType Polish変更を許可しない。本Trackの登録自体はimplementation authorizationではない。
 
 **Color Inventory: Generate Inventory Page**
 
@@ -98,9 +111,11 @@ GUIやリロケーション実装に先立ち、Library識別・選択・安全�
 * Type: Parent Coordination Issue
 * Begins with Gate 0 Knowledge Collection
 * Production capability only after Gate 5 Acceptance
-* Utility ownership-changing implementation is blocked until figma-os#3 is resolved
+* Utility ownership-changing implementation is blocked until the figma-os#3 follow-up migration chain (figma-os#12 → #13 if applicable → #14 → #15) completes
 
 Architect-Accepted (2026-07-29). New Gate 0–Gate 5 capability track for Type Polish, distinct from and not incomplete work of the completed Japanese Vertical — Standard Gate 5 (see Now above). Gate 0 Knowledge Collection may begin before figma-os#3 is resolved; it is not the current first implementation priority (see Next above for the Architect-Accepted execution order).
+
+**Status update (2026-08-18)**: figma-os#3 is now Completed / Accepted / Closed (see Now above). The blocking condition above is superseded — it is no longer gated on figma-os#3 itself, but on the figma-os#3 follow-up migration chain (figma-os#12 → #13 if applicable → #14 → #15, see Next → "Type Polish Utility Ownership — Migration Track"). asd#31 remains Closed (2026-08-05); any future Horizontal Typography work still requires a new Issue and explicit Architecture Authorization, independent of this update.
 
 **Status update (2026-08-05 Nightly Canonical Synchronization)**: asd#31 is **Closed** (`2026-08-05T10:08:05Z` — GitHub's issue timeline shows exactly one close event and no reopen event; the original close was not Publisher-verified). This entry is no longer an active in-progress Future Parent Issue. Repository verification found: KB-0001–KB-0003 registered in `figma-os`; **KB-0004 and KB-0005 are Remote Registration Pending** (no artifact found for either — no repository file, no git history, and for KB-0004 no Issue comment either); no Accepted Commit SHA exists for either. Separately, commit `5464a78` on `figma-os/main` (2026-08-01, pushed directly with no PR) implements a read-only Horizontal Analysis Profile per its own commit message; no Architecture Review record for it has been identified — recorded as **Repository Evidence Identified, Architecture Classification Pending**, not inferred to satisfy Gate 2 or Gate 3, and escalated for Global Architect review. Gate 1 and beyond are **Future Candidates requiring a new Issue**, contingent on that classification. Full detail: [asd#31 Publisher Verification](https://github.com/ga7ming3249/asd/issues/31#issuecomment-5190980016), [asd#33 correction](https://github.com/ga7ming3249/asd/issues/33#issuecomment-5190983450). The original Architect-Accepted description above is preserved as the historical record as of 2026-07-29 and is not rewritten.
 
