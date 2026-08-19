@@ -1,7 +1,7 @@
 # ASD Roadmap
 
-- Version: 23
-- Last Reviewed: 2026-08-18
+- Version: 24
+- Last Reviewed: 2026-08-19
 - Status: Active
 
 ---
@@ -26,7 +26,7 @@ Type Adjusterは単体で既に日常実務利用に達する成熟度にある�
 
 **Type PolishをJapanese Vertical専用Pluginとして扱わない。** Type PolishのCanonical Product Identityは、組版判断を保存・再利用し、和欧補正・日付・時刻・約物などの組版仕上げを半自動化し、将来的にJapanese Horizontal / Mixed Japanese–Latin / Latin typography等へ展開するProductである。現在Japanese Verticalが最も進んでいるのは実装フェーズ上の状態であり、Product Scopeそのものを縦組みに限定するものではない。
 
-[figma-os#12](https://github.com/ga7ming3249/figma-os/issues/12)（Plain-node Manual Adjustment Strategy）は引き続き変更なしでImmediate Next Architecture Dependencyだが、単独のType Adjuster目標としてではなく、**Type Polish / Type Adjusterのproduct architectureを完成させる一部**として位置づける。
+[figma-os#12](https://github.com/ga7ming3249/figma-os/issues/12)（Plain-node Manual Adjustment Strategy）は2026-08-19にAccepted / Completed / Closedとなった——Disposition: Scale/Baseline/Trackingいずれもplain TextNode向けには**Discontinue**（Type Adjusterへの拡張は行わない。Type Polish plugin自体の廃止ではない）。詳細・Product Boundaryは下記「Type Polish Utility Ownership — Migration Track」参照。
 
 **本Synchronizationは以下を行わない**: asd#31の再Open、asd#28のClose、新規Implementation Authorization、runtime code変更、figma-os#12のスキップ、Horizontal / Latin実装の自動承認。
 
@@ -72,6 +72,12 @@ Issue-scoped Architect final result: Accepted。Canonical manual-adjustment owne
 
 Issue-scoped Architect final result: Accepted。Completion comment: [figma-os#10#issuecomment-5327103969](https://github.com/ga7ming3249/figma-os/issues/10#issuecomment-5327103969)。Canonical User Guideを`docs/user-guides/`配下のMarkdown（`type-polish.md` / `type-adjuster.md` / `type-polish-type-adjuster-workflow.md` / `glossary.md` / `faq.md`）として`ga7ming3249/figma-os`へ納品。`README.md` / `PLUGINS.md` / 両プラグインの`README.md`からNavigation追加。Documentation-onlyのdiff（Source/tests/`docs/shared/handoff-schema.md`は無変更）。Accepted commit `423e6054b8c20a8c6e4b81cde38c34fb6bca3daf`（初版）→ `d3ebb1c33ea3d4c4824504309ffe349693556a92`（Accepted修正: Type Polishのzero-mutation範囲はDocument Contentのみであり、Local Fix Handoffの共有メタデータ書き込みを除外することを明確化）——`d3ebb1c...`が最終Accepted `figma-os/main` HEAD。figma-os#3のCanonical Ownership Decisionを反映: Scale/Baseline/TrackingのCanonical OwnerはType Adjuster、Type Polish自身のUtilityパネルはLegacy Compatibility Capability Pending Migration/Removalとして記述し、現Ownerとしては説明しない。Follow-up candidate（`docs/shared/handoff-schema.md`のGate 4/5記述drift、`type-adjuster/HISTORY.md`のGate 3/4/5履歴欠落、Type Adjusterのtest runner整備）はfigma-os#10のscopeでは未実装のまま記録。Presentation/Distribution層（Dropbox向けoffline HTML化）の別Issueが`ga7ming3249/figma-os`に登録済みだが、今回のState Update DecisionによりそのIssue登録自体はこの同期の対象外。
 
+**Type Adjuster — Plain-node Manual Adjustment Strategy**（[figma-os#12](https://github.com/ga7ming3249/figma-os/issues/12)）— **Completed / Accepted / Closed**（2026-08-19）
+
+Issue-scoped Architect final result: Accepted。Architecture Decision comment: [figma-os#12#issuecomment-5336743790](https://github.com/ga7ming3249/figma-os/issues/12#issuecomment-5336743790)。**Disposition: Discontinue**——Scale / Baseline / Trackingいずれも、plain / ungenerated TextNodeに対してはType Adjusterへ拡張しない（Type Polish plugin自体の廃止ではない）。Repository Evidence CollectionによりType Adjuster（Split起点・原本アンカー）とType Polish legacy Utility（plain TextNode直接操作）の意味論的差異が確認され、legacy Utilityの実利用頻度はRepository evidenceのみからは`Unknown`と記録された。その後Vision Ownerから現行workflowの直接証跡が得られた: fine adjustmentが必要になった時点で既にSplit → Type Adjusterへ移行しており、plain TextNodeのまま残るのは文字範囲ごとのfont assignment（和文/欧文混在、明朝/ゴシック混在等）という別のcapabilityである。**新規Canonical Product Boundary**: Type Polish = preset-based typography preparation/composition、Type Adjuster = Split後のindividual fine typography adjustment。Canonical workflow: `Text Layer → Type Polish → Type Adjuster（Split → Fine Adjustment）`——役割分担の記述であり、全Text LayerへのType Polish適用を必須にする意味ではない。figma-os#3のCanonical Ownership Decisionを再確認するものであり、再Openするものではない。Type Polish Utilityの即時削除は引き続き禁止。Type Polish Capability Roadmap Reconciliationは本Decisionでは決定しない。Split-target選択UX（character-index方式の使いづらさ）がfollow-up candidateとしてClose commentに記録されたが、新規Issueは作成していない。
+
+[figma-os#13](https://github.com/ga7ming3249/figma-os/issues/13)（Manual Adjustment Migration）は**Closed / Not Planned**（2026-08-19）。#12がすべてDiscontinueと判断したため独立したscopeが存在せず、実装は着手していない。Migration Trackの依存順は`#14 → #15`へ更新（詳細は「Next」節参照）。
+
 **ASD Operations: Standardize Issue Completion Authority and Operation Directives**（[asd#33](https://github.com/ga7ming3249/asd/issues/33)）— Open / Architecture Improvement
 
 Review Decision、Completion、GitHub Operationの分離を標準化するIssue。背景: asd#31のKB-0005 Architecture Reviewコメント投稿直後（5秒後）に親Issue（asd#31）がGitHub上でCloseされ、この操作はPublisher未検証だった（GitHub Timeline/Events APIで確認済み、Reopenイベントは存在しない）。2026-08-05のNightly Canonical Synchronizationで、asd#31のKnowledge Track成果物（KB-0004/KB-0005）がRepository未登録であること、および`figma-os/main`上の未分類コミット（`5464a78`、PRなし、Architecture Review記録未確認）が追加で判明し、本Issueが扱う問題の実例として記録された（詳細: [asd#31 Publisher Verification](https://github.com/ga7ming3249/asd/issues/31#issuecomment-5190980016)、[asd#33 Correction Comment](https://github.com/ga7ming3249/asd/issues/33#issuecomment-5190983450)）。Deliverables: Completion Authority Matrix、Issue Lifecycle Definition、Review Vocabulary Standard、Operation Directive Template、Handoff Template更新、Prompt Library更新案。
@@ -92,16 +98,18 @@ Architect-Accepted execution order (2026-07-29 Nightly Canonical State Synchroni
 
 **Status update (2026-08-18, third sync — Vision Owner Priority Decision)**: figma-os#12 remains unchanged as the immediate Next Architecture Dependency (see "Now" above) — this sync does not skip or reorder it. It is now explicitly framed as part of completing the Type Polish / Type Adjuster product architecture rather than an isolated Type Adjuster-only objective. Type Polish's Canonical Product Identity is confirmed to extend beyond Japanese Vertical; see "Now" above and the new Future entry "Type Polish Capability Roadmap Reconciliation" for the asd#28 / asd#31 / Horizontal / Mixed Japanese–Latin / Latin typography reconciliation this implies.
 
+**Status update (2026-08-19, ASD Canonical State Synchronization)**: figma-os#12 is now **Accepted / Completed / Closed** — Disposition: Discontinue for Scale/Baseline/Tracking on plain TextNode, all three; see "Now" above ("Type Adjuster — Plain-node Manual Adjustment Strategy"). figma-os#13 is **Closed / Not Planned** (no independent scope). Neither occupies a slot in this execution order any longer; the current Migration Track next step is [figma-os#14](https://github.com/ga7ming3249/figma-os/issues/14) (not yet started). The Migration Track dependency order below is updated to `#14 → #15`.
+
 **Type Polish Utility Ownership — Migration Track**（[figma-os#3](https://github.com/ga7ming3249/figma-os/issues/3) Completed 2026-08-18 の follow-up chain）
 
-figma-os#3のCanonical Ownership Decision（Type Adjusterがmanual adjustment [Scale/Baseline/Tracking] のcanonical owner、Type Polish Utilityはlegacy compatibility capability pending migration/removal、即時削除禁止）を受けた4件のfollow-up Issue。すべて`ga7ming3249/figma-os`にOpenで登録済み。
+figma-os#3のCanonical Ownership Decision（Type Adjusterがmanual adjustment [Scale/Baseline/Tracking] のcanonical owner、Type Polish Utilityはlegacy compatibility capability pending migration/removal、即時削除禁止）を受けた4件のfollow-up Issue。`ga7ming3249/figma-os`に登録済み。
 
-- [figma-os#12](https://github.com/ga7ming3249/figma-os/issues/12) — Plain-node Manual Adjustment Strategy。**Next Architecture Dependency**。plain/ungenerated TextNodeへのmanual adjustment（Scale/Baseline/Tracking）をMaintain/Replace/Discontinueのいずれにするか決定する。実装ではない。
-- [figma-os#13](https://github.com/ga7ming3249/figma-os/issues/13) — Manual Adjustment Migration。**Contingent**——#12が「Type Adjuster側の対応が必要」と判断した場合にのみ必要になるimplementation Issue。無条件の実装予定として扱わない。
-- [figma-os#14](https://github.com/ga7ming3249/figma-os/issues/14) — Utility Ownership Documentation Migration。`type-polish/README.md` / `type-adjuster/README.md` / ROADMAP等を更新。figma-os#10（User Guide）は2026-08-18にCompleted（commit `d3ebb1c...`）——#14はこれをsync inputとして扱い、内容を再定義しない。
-- [figma-os#15](https://github.com/ga7ming3249/figma-os/issues/15) — Utility Deprecation / Removal。**Blocked**——#12・#13（該当する場合）・#14、およびregression/Desktop verification完了まで着手しない。**前倒ししない。**
+- [figma-os#12](https://github.com/ga7ming3249/figma-os/issues/12) — Plain-node Manual Adjustment Strategy。**Accepted / Completed / Closed（2026-08-19）**。Disposition: Scale/Baseline/Trackingすべて**Discontinue**（plain/ungenerated TextNode向けにType Adjusterを拡張しない）。実装ではなく決定のみ。
+- [figma-os#13](https://github.com/ga7ming3249/figma-os/issues/13) — Manual Adjustment Migration。**Closed / Not Planned（2026-08-19）**——#12がすべてDiscontinueと判断したため独立scopeが存在せず、無条件の実装予定ではなかった。
+- [figma-os#14](https://github.com/ga7ming3249/figma-os/issues/14) — Utility Ownership Documentation Migration。`type-polish/README.md` / `type-adjuster/README.md` / ROADMAP等を更新。figma-os#10（User Guide）は2026-08-18にCompleted（commit `d3ebb1c...`）——#14はこれをsync inputとして扱い、内容を再定義しない。#12/#13解決を受け、現在Migration Trackの次ステップ（未着手）。
+- [figma-os#15](https://github.com/ga7ming3249/figma-os/issues/15) — Utility Deprecation / Removal。**Blocked**——#14、およびregression/Desktop verification完了まで着手しない。**前倒ししない。**
 
-Dependency order: #12 → #13（該当する場合） → #14 → #15。Type Polish Freezeの例外はこのMigration Trackに限定され、他のType Polish変更を許可しない。本Trackの登録自体はimplementation authorizationではない。
+Dependency order: **#14 → #15**（figma-os#12はAccepted / Completed / Closed 2026-08-19、figma-os#13はClosed / Not Planned 2026-08-19、いずれも独立scopeは残らなかった）。Type Polish Freezeの例外はこのMigration Trackに限定され、他のType Polish変更を許可しない。本Trackの登録自体はimplementation authorizationではない。
 
 **Color Inventory: Generate Inventory Page**
 
@@ -127,6 +135,8 @@ GUIやリロケーション実装に先立ち、Library識別・選択・安全�
 Architect-Accepted (2026-07-29). New Gate 0–Gate 5 capability track for Type Polish, distinct from and not incomplete work of the completed Japanese Vertical — Standard Gate 5 (see Now above). Gate 0 Knowledge Collection may begin before figma-os#3 is resolved; it is not the current first implementation priority (see Next above for the Architect-Accepted execution order).
 
 **Status update (2026-08-18)**: figma-os#3 is now Completed / Accepted / Closed (see Now above). The blocking condition above is superseded — it is no longer gated on figma-os#3 itself, but on the figma-os#3 follow-up migration chain (figma-os#12 → #13 if applicable → #14 → #15, see Next → "Type Polish Utility Ownership — Migration Track"). asd#31 remains Closed (2026-08-05); any future Horizontal Typography work still requires a new Issue and explicit Architecture Authorization, independent of this update.
+
+**Status update (2026-08-19)**: figma-os#12 is now Accepted / Completed / Closed — Discontinue for Scale/Baseline/Tracking on plain TextNode, all three — and figma-os#13 is Closed / Not Planned (no independent scope). The migration chain the blocking condition above refers to is now `#14 → #15`, unaffected by and independent of this Track's own status. Utility ownership-changing implementation for Japanese Horizontal remains blocked until `#14 → #15` completes. This status update does not authorize any Horizontal Typography implementation work.
 
 **Status update (2026-08-05 Nightly Canonical Synchronization)**: asd#31 is **Closed** (`2026-08-05T10:08:05Z` — GitHub's issue timeline shows exactly one close event and no reopen event; the original close was not Publisher-verified). This entry is no longer an active in-progress Future Parent Issue. Repository verification found: KB-0001–KB-0003 registered in `figma-os`; **KB-0004 and KB-0005 are Remote Registration Pending** (no artifact found for either — no repository file, no git history, and for KB-0004 no Issue comment either); no Accepted Commit SHA exists for either. Separately, commit `5464a78` on `figma-os/main` (2026-08-01, pushed directly with no PR) implements a read-only Horizontal Analysis Profile per its own commit message; no Architecture Review record for it has been identified — recorded as **Repository Evidence Identified, Architecture Classification Pending**, not inferred to satisfy Gate 2 or Gate 3, and escalated for Global Architect review. Gate 1 and beyond are **Future Candidates requiring a new Issue**, contingent on that classification. Full detail: [asd#31 Publisher Verification](https://github.com/ga7ming3249/asd/issues/31#issuecomment-5190980016), [asd#33 correction](https://github.com/ga7ming3249/asd/issues/33#issuecomment-5190983450). The original Architect-Accepted description above is preserved as the historical record as of 2026-07-29 and is not rewritten.
 
