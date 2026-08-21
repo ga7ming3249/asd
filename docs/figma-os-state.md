@@ -1,6 +1,6 @@
 # Figma OS State
 
-- Version: 32
+- Version: 33
 - Date: 2026-08-21
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
@@ -57,6 +57,21 @@ Vision Owner Priority Decision (2026-08-18). Current priority Figma OS plugins, 
 **Type Polish must not be treated as a Japanese-Vertical-only plugin.** Its Canonical Product Identity: store and reuse typography judgment, and semi-automate finishing work (和欧補正・日付・時刻・約物), with future expansion into Japanese Horizontal / Mixed Japanese–Latin / Latin typography. Japanese Vertical being currently the most advanced capability is an implementation-phase state, not a Product Scope limitation.
 
 [figma-os#12](https://github.com/ga7ming3249/figma-os/issues/12) is Accepted / Completed / Closed (2026-08-19) — see "Type Polish Utility Ownership — Migration Chain" below for its Decision (Discontinue for Scale/Baseline/Tracking on plain TextNode, all three) and the resulting Product Boundary between Type Polish and Type Adjuster. [figma-os#14](https://github.com/ga7ming3249/figma-os/issues/14) (Utility Ownership Documentation Migration) is Accepted / Completed / Closed (2026-08-19). [figma-os#15](https://github.com/ga7ming3249/figma-os/issues/15) (Utility Deprecation / Removal) is now also Accepted / Completed / Closed (2026-08-20, accepted commit `d08b39b03403c3e55bf9948f871e350b245878da`) — the Type Polish Utility Ownership Migration Chain is complete, and Type Polish no longer exposes the legacy Scale/Baseline/Tracking Utility. **Type Polish itself remains active and is not deprecated** — its preset preparation/apply/update, Japanese Vertical/Horizontal analysis, and Local Fix Handoff capabilities are unaffected. [asd#35](https://github.com/ga7ming3249/asd/issues/35) (Product Development) is **Accepted / Completed / Closed (2026-08-20)** — Product Architecture work is complete, and Type Polish's Canonical Product Architecture is a Preset-based Typography Product Platform (see "Recent Changes" below for full detail). [figma-os#17](https://github.com/ga7ming3249/figma-os/issues/17) (Preset Platform Foundation) is now also **Accepted / Completed / Closed (2026-08-21)** — the Foundation is Implemented, with Figma Desktop Acceptance Cases 1–9 all Pass. Recommended First Action moves to [figma-os#18](https://github.com/ga7ming3249/figma-os/issues/18) (Existing Capability Migration / Reference) → [figma-os#19](https://github.com/ga7ming3249/figma-os/issues/19) (Preset Management UI), in parallel with [asd#36](https://github.com/ga7ming3249/asd/issues/36) (Knowledge & Preset Lifecycle, supporting). A new Product Architecture / Rule Standardization Issue, [figma-os#20](https://github.com/ga7ming3249/figma-os/issues/20) (Typography Rule & Spacing Standardization), was registered from figma-os#17 Desktop Acceptance observations — see Product Health above and "Recommended Next Priorities" → "Completed — figma-os#17" below.
+
+## Type Polish Freeze Governance — Scoped Preset Platform Exception
+
+ASD Global Architecture Decision (2026-08-21): Accepted [asd#35](https://github.com/ga7ming3249/asd/issues/35) formally supersedes the existing Type Polish no-feature-addition Freeze **only for the Accepted Preset Platform Product Development sequence**:
+
+`figma-os#17 → figma-os#18 → figma-os#19`
+
+The general Type Polish Freeze remains active outside this sequence.
+
+- [figma-os#17](https://github.com/ga7ming3249/figma-os/issues/17) remains **Accepted / Completed / Closed**. No re-review, revert, or reclassification is required. The absence of an explicit Freeze-supersession record before #17 implementation is classified as an Architecture governance / documentation gap, not an implementation defect.
+- [figma-os#18](https://github.com/ga7ming3249/figma-os/issues/18) and [figma-os#19](https://github.com/ga7ming3249/figma-os/issues/19) may use this exception only within their own Accepted Issue scopes and only for changes directly necessary to implement the Accepted asd#35 Preset Platform Architecture.
+- The exception does **not** automatically propagate to [figma-os#20](https://github.com/ga7ming3249/figma-os/issues/20), Japanese Horizontal productionization, general Mixed Japanese–Latin implementation, Latin typography, OpenType expansion, future Type Polish capability tracks, Type Adjuster ownership changes, or unrelated Type Polish functionality. Those remain subject to the general Freeze unless separately authorized.
+- The `time` preset `80%` documentation vs `65%` shipped-runtime discrepancy remains independently unresolved. Canonical production value remains `Unknown`; production `time` `PresetRevision` creation, activation, and legacy binding remain prohibited until a separate explicit decision is recorded.
+
+The corresponding execution constraint has also been synchronized to `ga7ming3249/figma-os` `CLAUDE.md` at commit `e45cd98c51dc86c5e88d1e25e64cde6677d9c5c5`.
 
 **This decision does not**: reopen [asd#31](https://github.com/ga7ming3249/asd/issues/31), close [asd#28](https://github.com/ga7ming3249/asd/issues/28), authorize any new implementation, change runtime code, skip figma-os#12, or auto-authorize Horizontal/Latin implementation work.
 

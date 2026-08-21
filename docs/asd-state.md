@@ -1,6 +1,6 @@
 # ASD State
 
-- Version: 45
+- Version: 46
 - Date: 2026-08-21
 - Status: Active
 
@@ -141,6 +141,21 @@ These rules take precedence over fixed role assignments when service capabilitie
 4. **The follow-up must include:** the reason for proxy execution; actions and results; Issue, Commit, file, or other references; decisions and unresolved items; requested verification or continuation; and the status of Canonical record updates.
 5. **Proxy execution is not synchronized until handoff is possible.** The originally assigned actor must be able to verify the result and resume responsibility. Duplicate execution is not required; audit, acknowledgment, and continuation are the default.
 6. **Chat history is not the record.** These rules and any material changes to them must be synchronized to Canonical Documents before an Architect chat is intentionally replaced, so ChatGPT and Claude Code can reconstruct the same current state.
+
+### Type Polish Freeze Governance Synchronization — 2026-08-21
+
+Accepted [asd#35](https://github.com/ga7ming3249/asd/issues/35) is the superseding Architecture authority over the existing Type Polish no-feature-addition Freeze **solely for the Accepted Preset Platform Product Development track**:
+
+`figma-os#17 → figma-os#18 → figma-os#19`
+
+This is a scoped exception, not a general lifting of the Type Polish Freeze. The general Type Polish Freeze remains in force outside this track.
+
+- [figma-os#17](https://github.com/ga7ming3249/figma-os/issues/17) remains **Accepted / Completed / Closed** under this authority and requires no re-review, revert, or reclassification. The previously missing explicit Freeze-supersession record is classified as an **Architecture governance / documentation gap**, not an implementation defect.
+- [figma-os#18](https://github.com/ga7ming3249/figma-os/issues/18) and [figma-os#19](https://github.com/ga7ming3249/figma-os/issues/19) may rely on this exception only within their respective Accepted Issue scopes and only for Type Polish source, persistence, validation, UI, and directly supporting changes necessary to implement the Accepted asd#35 Preset Platform Architecture.
+- This authority does **not** automatically extend to [figma-os#20](https://github.com/ga7ming3249/figma-os/issues/20), Japanese Horizontal productionization, general Mixed Japanese–Latin implementation, Latin typography, OpenType expansion, future Type Polish capability tracks, Type Adjuster ownership changes, reintroduction of Scale / Baseline / Tracking Utility into Type Polish, or unrelated Type Polish features. Separate Architecture Authorization is required where applicable.
+- The independent `time` preset discrepancy remains unresolved: documentation `80%`, shipped runtime `65%`, Canonical production value `Unknown`. This Freeze Governance Decision does not authorize production `time` `PresetRevision` creation, activation, or legacy binding.
+
+**Publication execution note:** this Canonical synchronization was explicitly authorized by the Vision Owner and executed through the ASD Proxy Execution path because Claude Code's execution boundary prevented it from writing a governance change affecting its own future operating constraints. Claude Code remains the assigned Publisher / Primary Engineer and resumes responsibility after read-only verification of the published Canonical state.
 
 ---
 
