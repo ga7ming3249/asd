@@ -1,10 +1,10 @@
 # Figma OS State
 
-- Version: 34
-- Date: 2026-08-22
+- Version: 35
+- Date: 2026-11-19
 - Status: Active
 - Maintainer: Claude Code (Primary Engineer)
-- Verified against: `ga7ming3249/figma-os` `main` HEAD (`22044e05ba26c43474ca5a01669b38483f293bdb`, Repository fact — figma-os#18's accepted implementation/instrumentation commit on top of `a96ad202337ba72d9732b75e169cc2ba807e71ec`), and ASD Issues, as of 2026-08-22. This version records figma-os#18's Accepted / Completed / Closed status (legacy `wao`/`date`/`yakumono` migration onto the #17 Preset Platform Foundation implemented; "Japanese Vertical — Standard" registered as a Platform reference entry; Figma Desktop Acceptance 7/7 Pass; production `time` remains explicitly excluded and unresolved) and the registration of [figma-os#21](https://github.com/ga7ming3249/figma-os/issues/21) (Type Adjuster — Node 24 test-runner compatibility, independent maintenance follow-up).
+- Verified against: `ga7ming3249/figma-os` `main` HEAD (`22044e05ba26c43474ca5a01669b38483f293bdb`, Repository fact — figma-os#18's accepted implementation/instrumentation commit on top of `a96ad202337ba72d9732b75e169cc2ba807e71ec`), and ASD Issues, as of 2026-08-22. This version records figma-os#18's Accepted / Completed / Closed status (legacy `wao`/`date`/`yakumono` migration onto the #17 Preset Platform Foundation implemented; "Japanese Vertical — Standard" registered as a Platform reference entry; Figma Desktop Acceptance 7/7 Pass; production `time` remains explicitly excluded and unresolved) and the registration of [figma-os#21](https://github.com/ga7ming3249/figma-os/issues/21) (Type Adjuster — Node 24 test-runner compatibility, independent maintenance follow-up). **Version 35 (2026-11-19)** is a progress synchronization for figma-os#20 (Step 15–17 Completed; S1-A Pending; Issue #20 Open / Not Accepted) — it is not an Acceptance decision; `figma-os/main` HEAD was re-verified unchanged at `22044e05ba26c43474ca5a01669b38483f293bdb` (no `figma-os` repository change accompanies it).
 
 ---
 
@@ -296,7 +296,7 @@ Top Product Priority
 Type Polish completion (Vision Owner Priority Decision, 2026-08-18) — see Product Priority. Priority plugin order: 1) Type Polish, 2) Type Adjuster, 3) Type Inventory, 4) Color Inventory.
 
 Current Focus
-[figma-os#18](https://github.com/ga7ming3249/figma-os/issues/18) (Existing Capability Migration / Reference) is Accepted / Completed / Closed 2026-08-22 — legacy `wao`/`date`/`yakumono` migration onto the #17 Preset Platform Foundation is implemented, "Japanese Vertical — Standard" is registered as a Platform reference entry, and Figma Desktop Acceptance is 7/7 Pass. Implementation proceeds via [figma-os#19](https://github.com/ga7ming3249/figma-os/issues/19) (Preset Management UI, next dependency); registration is not implementation authorization. Production `time` remains explicitly excluded from #18 — the `80%`/`65%` discrepancy remains unresolved. [figma-os#21](https://github.com/ga7ming3249/figma-os/issues/21) (Type Adjuster — Node 24 test-runner compatibility) is registered as an independent maintenance follow-up, not blocking #19. [asd#36](https://github.com/ga7ming3249/asd/issues/36) remains the parallel Knowledge track. See "Completed — figma-os#18" and Recent Changes.
+[figma-os#18](https://github.com/ga7ming3249/figma-os/issues/18) (Existing Capability Migration / Reference) is Accepted / Completed / Closed 2026-08-22 — legacy `wao`/`date`/`yakumono` migration onto the #17 Preset Platform Foundation is implemented, "Japanese Vertical — Standard" is registered as a Platform reference entry, and Figma Desktop Acceptance is 7/7 Pass. Implementation proceeds via [figma-os#19](https://github.com/ga7ming3249/figma-os/issues/19) (Preset Management UI, next dependency); registration is not implementation authorization. Production `time` remains explicitly excluded from #18 — the `80%`/`65%` discrepancy remains unresolved. [figma-os#21](https://github.com/ga7ming3249/figma-os/issues/21) (Type Adjuster — Node 24 test-runner compatibility) is registered as an independent maintenance follow-up, not blocking #19. [asd#36](https://github.com/ga7ming3249/asd/issues/36) remains the parallel Knowledge track. See "Completed — figma-os#18" and Recent Changes. **Update (2026-11-19, progress synchronization — not Acceptance):** [figma-os#20](https://github.com/ga7ming3249/figma-os/issues/20) Step 15–17 are Completed; S1-A is Pending, W-1/Y-1 are Inconclusive, Y-1 Visual Quality is Unacceptable (Vision Owner assessment), Issue #20 is Open / Not Accepted, and it resumes at Step 18 (S1-A Gate Decision & Evidence Finalization Planning) — see Recent Changes.
 
 Highest Priority
 figma-os#19 (Preset Management UI) — next Product implementation candidate now that figma-os#17's Foundation and figma-os#18's legacy-capability migration are both Implemented
@@ -370,6 +370,45 @@ Out of scope: **Reference Assistant** is not part of `figma-os`. As of 2026-07-2
 ---
 
 # Recent Changes
+
+## figma-os#20 — Step 15–17 Progress Synchronization (2026-11-19) — NOT an Acceptance decision
+
+Global Architect decision (2026-11-19): State Update Required / Approved for Publication. [figma-os#20](https://github.com/ga7ming3249/figma-os/issues/20) is **Open / In Progress / Not Accepted**. Step 15–17 are Completed, including **Step 17 — Desktop P3 Evidence Integration**. Work resumes at **Step 18 — S1-A Gate Decision & Evidence Finalization Planning** (Issue #20 dedicated chat). Findings below are labeled by provenance; they are not merged into a single quality verdict.
+
+**A. Evidence-derived findings (structural, Verified via API-obs)**
+
+- W-1 / Y-1 Structural Verification: **Verified via API-obs**.
+- Desktop P3: Major B1 Frame / Child values **match** API-obs.
+- Y-1 B0: Major values **verified**.
+- W-1 B0: **Partially verified**; mixed-font details remain **Unknown**.
+- Observed mismatches: **0**.
+- Visual Change: **Observed** in both W-1 and Y-1.
+- "0 mismatches" is a structural-value finding only; it says nothing about visual quality (see B).
+
+**B. Vision Owner assessments (not evidence-derived)**
+
+- Y-1 Visual Quality: **Unacceptable** (Vision Owner assessment).
+- W-1 Visual Quality: **Not established**.
+
+**C. Unknown / Unavailable / Not measured**
+
+- Migration State: **Unavailable**.
+- Apply-time state: **Unknown**.
+- Reproducibility: **Not measured**.
+- W-1 B0 mixed-font details: **Unknown**.
+
+**D. Local-only / not yet in the repository (reported by Claude Code; not independently verified in this synchronization)**
+
+- Screenshot evidence: 11 images inspected, with SHA-256 and dimensions recorded by Claude Code. Evidence Index and naming alignment are **pending**.
+- Step 17 evidence is **not yet formally incorporated** into the Validation Cards / README.
+
+**E. Resulting status**
+
+- S1-A Gate: **Pending** (Overall Pending). W-1 / Y-1 Overall: **Inconclusive**.
+- Issue #20: **In Progress / Not Accepted / Open**.
+- Production `time` migration: **Hard Block** — the `80%`/`65%` discrepancy remains unresolved and is not addressed here.
+
+**Not changed / not authorized by this synchronization**: `docs/ROADMAP.md` (v26); the `figma-os` repository; GitHub Issue #20 (not updated or closed); production code, Figma nodes, runtime behavior; `time` migration. S1-A, W-1, Y-1, and Issue #20 are **not** marked Accepted. No implicit authorization is granted; subsequent Gate/Acceptance decisions are evaluated separately by the Global Architect.
 
 ## figma-os#17 — Preset Platform Foundation — Accepted / Completed / Closed (2026-08-21)
 
@@ -626,7 +665,7 @@ Publisher audit of `ga7ming3249/figma-os` `main` against asd#31's Knowledge Trac
 | [asd#29](https://github.com/ga7ming3249/asd/issues/29) | Type Adjuster / Type Polish | - | OpenType Typography Features — Capability Review findings completed |
 | [asd#36](https://github.com/ga7ming3249/asd/issues/36) | Type Polish | - | Typography Knowledge & Preset Lifecycle — Parent Architecture Track, registered 2026-08-20; continuous knowledge/evidence intake feeding Rule Catalog / Preset Candidates. Parallel supporting track — see Recent Changes |
 | [figma-os#19](https://github.com/ga7ming3249/figma-os/issues/19) | Type Polish | - | Preset Management UI — Product Implementation Issue, registered 2026-08-20; **next Product implementation dependency** now that figma-os#17 and figma-os#18 are both Accepted/Completed/Closed; consumes figma-os#17's Foundation and figma-os#18's migrated legacy capability state; not blocked by figma-os#21 — see Recent Changes |
-| [figma-os#20](https://github.com/ga7ming3249/figma-os/issues/20) | Type Polish | - | Typography Rule & Spacing Standardization — Product Architecture / Rule Standardization Issue, registered 2026-08-21 from figma-os#17 Desktop Acceptance observations (pre-existing typography-rule ambiguity, not a #17 regression); does not automatically block all of #18/#19; coordinates with asd#36; authorizes no runtime implementation by itself — see Recent Changes |
+| [figma-os#20](https://github.com/ga7ming3249/figma-os/issues/20) | Type Polish | - | Typography Rule & Spacing Standardization — Product Architecture / Rule Standardization Issue, registered 2026-08-21 from figma-os#17 Desktop Acceptance observations (pre-existing typography-rule ambiguity, not a #17 regression); does not automatically block all of #18/#19; coordinates with asd#36; authorizes no runtime implementation by itself; **2026-11-19 progress sync (not Acceptance)**: Step 15–17 Completed, S1-A Pending, W-1/Y-1 Inconclusive, Y-1 Visual Quality Unacceptable (Vision Owner assessment), Open / Not Accepted, `time` migration Hard Block, resumes at Step 18 — see Recent Changes |
 | [figma-os#21](https://github.com/ga7ming3249/figma-os/issues/21) | Type Adjuster | - | Node 24 test-runner compatibility — independent test-infrastructure maintenance follow-up, registered 2026-08-22 from a discrepancy discovered during figma-os#18 regression running (`ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX` in two `type-adjuster` test files under Node 24's native TS-stripping); does not block figma-os#19 — see Recent Changes |
 
 The production `time` preset `80%` documentation vs. `65%` shipped-runtime discrepancy remains an independent unresolved blocker (Canonical production value `Unknown`) — not associated with any open Issue at this time; production `time` `PresetRevision` creation, activation, and legacy binding remain prohibited pending a separate explicit Canonical decision.
